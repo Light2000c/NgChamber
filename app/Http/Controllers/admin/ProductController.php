@@ -15,7 +15,15 @@ class ProductController extends Controller
         ]);
     }
 
-    public function delete(){
+    public function destroy(Product $product){
+
+        // $products = Product::find($product->id);
+
+        $success = $product->delete();
+
+        if($success){
+            return back();
+        }
 
     }
 

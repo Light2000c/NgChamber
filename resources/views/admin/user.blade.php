@@ -39,7 +39,13 @@
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->created_at }}</td>
                         <td>{{ $user->updated_at }}</td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                        <td>
+                            <form action="{{ route('adminUsersDelete', $user) }}" method="post">
+                                @csrf
+                               @method('delete')
+                            <button class="btn btn-primary btn-sm">delete</button>
+                        </form>
+                    </td>
                       </tr>
                       @endforeach
                     </tbody>

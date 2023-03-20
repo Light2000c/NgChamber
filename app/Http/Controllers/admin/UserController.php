@@ -14,4 +14,15 @@ class UserController extends Controller
             'users' => $users,
         ]);
     }
+
+    public function destroy(User $user){
+        // $products = Product::find($product->id);
+
+        $success = $user->delete();
+
+        if($success){
+            return back();
+        }
+
+    }
 }

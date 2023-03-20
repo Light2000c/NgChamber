@@ -51,7 +51,7 @@
                         <td>{{ $blog->updated_at }}</td>
                         <td><a href="{{ route('view-blog', $blog) }}" class="btn btn-primary btn-sm">view</a></td>
                         <td>
-                            <form action="{{ route('adminBlog', $blog) }}" method="post">
+                            <form action="{{ route('adminBlogDelete', $blog) }}" method="post">
                                 @csrf
                                @method('delete')
                             <button class="btn btn-primary btn-sm">delete</button>

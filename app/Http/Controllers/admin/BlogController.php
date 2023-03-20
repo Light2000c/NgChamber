@@ -18,9 +18,9 @@ class BlogController extends Controller
 
     public function destroy(Blog $blog){
 
-        $blogs = Blog::find($blog->id);
+        // $blogs = Blog::find($blog->id);
 
-        $success =$blogs->delete;
+        $success = $blog->delete();
         if($success){
             return back();
         }

@@ -26,6 +26,7 @@
                   <table id="dataTableExample" class="table">
                     <thead>
                       <tr>
+                        <th>ID</th>
                         <th>Title</th>
                         <th>Category</th>
                         <th>To</th>
@@ -41,6 +42,7 @@
                     <tbody>
                         @foreach($events as $event)
                       <tr>
+                        <td>{{ $event->id }}</td>
                         <td>{{ $event->title }}</td>
                         <td>{{ $event->category }}</td>
                         <td>{{ $event->to }}</td>
@@ -50,7 +52,13 @@
                         <td>{{ $event->created_at }}</td>
                         <td>{{ $event->updated }}</td>
                         <td><a href="{{ route('view-event', $event) }}" class="btn btn-primary btn-sm">view</a></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                        <td>
+                            <form action="{{ route('adminEventDelete', $event) }}" method="post">
+                                @csrf
+                               @method('delete')
+                            <button class="btn btn-primary btn-sm">delete</button>
+                        </form>
+                    </td>
                       </tr>
                       @endforeach
                     </tbody>

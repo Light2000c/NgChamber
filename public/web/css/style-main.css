@@ -35,7 +35,7 @@ This file contains the common styles of this theme.
 		* Services.less
 		* Shop.less
 		* Blog.less
-		* Shortcode.less 
+		* Shortcode.less
 			* Alerts.less
 			* Buttons.less
 			* Blockquote.less
@@ -85,6 +85,15 @@ This file contains the common styles of this theme.
  * Typography.less
  * -----------------------------------------------
 */
+html{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+}
 ::selection {
   background: #333333;
   color: #fff;
@@ -750,8 +759,8 @@ section > .container-fluid {
   color: #eee;
   font-size: 64px;
 }
-/*  
- * Extra.less 
+/*
+ * Extra.less
  * -----------------------------------------------
 */
 /* -------- Heading Style ---------- */
@@ -3403,7 +3412,7 @@ table.no-border td {
   padding: 0 8px 0 3px;
 }
 /*
- * blog.less 
+ * blog.less
  * -----------------------------------------------
 */
 .post {
@@ -6701,8 +6710,8 @@ blockquote p {
 .working-process.theme-colored li a {
   color: #fff;
 }
-/*  
- * home-boxes.less 
+/*
+ * home-boxes.less
  * -----------------------------------------------
 */
 .home-boxes .each-box {

@@ -2,7 +2,7 @@
 
 
 @section('content')
-<!-- Start main-content -->
+  <!-- Start main-content -->
   <div class="main-content">
     <!-- Section: home -->
     <section id="home">
@@ -13,9 +13,9 @@
           <ul>
 
             <!-- SLIDE 1 -->
-            <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="images/bg/bg5.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide 1" data-description="">
+            <li data-index="rs-1" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="web/images/bg/bg5.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide 1" data-description="">
               <!-- MAIN IMAGE -->
-              <img src="images/bg/bg5.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+              <img src="web/images/bg/bg5.jpg"  alt=""  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
               <!-- LAYERS -->
 
               <!-- LAYER NR. 1 -->
@@ -118,9 +118,9 @@
             </li>
 
             <!-- SLIDE 2 -->
-            <li data-index="rs-2" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="images/bg/bg7.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide 2" data-description="">
+            <li data-index="rs-2" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="web/images/bg/bg7.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide 2" data-description="">
               <!-- MAIN IMAGE -->
-              <img src="images/bg/bg7.jpg"  alt=""  data-bgposition="center 40%" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+              <img src="web/images/bg/bg7.jpg"  alt=""  data-bgposition="center 40%" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
               <!-- LAYERS -->
 
               <!-- LAYER NR. 1 -->
@@ -223,9 +223,9 @@
             </li>
 
             <!-- SLIDE 3 -->
-            <li data-index="rs-3" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="images/bg/bg1.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide 3" data-description="">
+            <li data-index="rs-3" data-transition="slidingoverlayhorizontal" data-slotamount="default" data-easein="default" data-easeout="default" data-masterspeed="default" data-thumb="web/images/bg/bg1.jpg" data-rotate="0" data-saveperformance="off" data-title="Slide 3" data-description="">
               <!-- MAIN IMAGE -->
-              <img src="images/bg/bg1.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
+              <img src="web/images/bg/bg1.jpg"  alt=""  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat" class="rev-slidebg" data-bgparallax="10" data-no-retina>
               <!-- LAYERS -->
 
               <!-- LAYER NR. 1 -->
@@ -483,7 +483,7 @@
               <div class="row mt-40">
                 <div class="col-md-6 wow fadeInUp" data-wow-duration="1s">
                   <div class="mb-sm-30">
-                    <img class="img-fullwidth" src="images/about/7.jpg" alt="">
+                    <img class="img-fullwidth" src="web/images/about/7.jpg" alt="">
                     <h4 class="letter-space-1 mt-10">Graduation<span class="text-theme-color-2"> Degree</span></h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam dolore tempore.</p>
                     <a href="#" class="btn btn-sm btn-theme-colored">Read more</a>
@@ -491,7 +491,7 @@
                 </div>
                 <div class="col-md-6 wow fadeInUp" data-wow-duration="1.2s">
                   <div class="mb-sm-30">
-                    <img class="img-fullwidth" src="images/about/8.jpg" alt="">
+                    <img class="img-fullwidth" src="web/images/about/8.jpg" alt="">
 
                     <h4 class=" letter-space-1 mt-10">Online<span class="text-theme-color-2"> Learning</span></h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, magnam dolore tempore.</p>
@@ -623,7 +623,7 @@
               </div>
             </div>
           </div>
-          <div class="col-sm-6 col-md-6 p-0 bg-img-cover wow fadeInRight hidden-xs" data-bg-img="images/photos/ab1.jpg" data-wow-duration="1s" data-wow-delay="0.3s">
+          <div class="col-sm-6 col-md-6 p-0 bg-img-cover wow fadeInRight hidden-xs" data-bg-img="web/images/photos/ab1.jpg" data-wow-duration="1s" data-wow-delay="0.3s">
           </div>
         </div>
       </div>
@@ -646,7 +646,7 @@
               <div class="item">
                 <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="images/project/p1.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/project/p1.jpg">
                     <div class="hover-link">
                       <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="#"><span>$500</span> </a>
                     </div>
@@ -666,7 +666,7 @@
               <div class="item">
                 <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="images/project/p2.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/project/p2.jpg">
                     <div class="hover-link">
                       <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="#"><span>$500</span> </a>
                     </div>
@@ -686,7 +686,7 @@
               <div class="item">
                 <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="images/project/p3.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/project/p3.jpg">
                     <div class="hover-link">
                       <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="#"><span>$500</span> </a>
                     </div>
@@ -706,7 +706,7 @@
               <div class="item">
                 <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="images/project/p4.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/project/p4.jpg">
                     <div class="hover-link">
                       <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="#"><span>$500</span> </a>
                     </div>
@@ -726,7 +726,7 @@
               <div class="item">
                 <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="images/project/p5.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/project/p5.jpg">
                     <div class="hover-link">
                       <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="#"><span>$500</span> </a>
                     </div>
@@ -746,7 +746,7 @@
               <div class="item">
                 <div class="project mb-30 border-2px">
                   <div class="thumb">
-                    <img class="img-fullwidth" alt="" src="images/project/p6.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/project/p6.jpg">
                     <div class="hover-link">
                       <a class="btn btn-flat btn-dark btn-theme-colored btn-md pull-left font-20" href="#"><span>$500</span> </a>
                     </div>
@@ -771,7 +771,7 @@
 
 
     <!-- Divider: Funfact -->
-    <section class="divider parallax layer-overlay" data-bg-img="images/bg/bg6.jpg" data-parallax-ratio="0.7">
+    <section class="divider parallax layer-overlay" data-bg-img="web/images/bg/bg6.jpg" data-parallax-ratio="0.7">
       <div class="container pt-70 pb-60">
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-3 mb-md-50">
@@ -823,7 +823,7 @@
               <div class="item">
                 <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                   <div class="team-thumb">
-                    <img class="img-fullwidth" alt="" src="images/team/lg1.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/team/lg1.jpg">
                     <div class="team-overlay"></div>
                   </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
@@ -841,7 +841,7 @@
               <div class="item">
                 <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                   <div class="team-thumb">
-                    <img class="img-fullwidth" alt="" src="images/team/lg5.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/team/lg5.jpg">
                     <div class="team-overlay"></div>
                   </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
@@ -859,7 +859,7 @@
               <div class="item">
                 <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                   <div class="team-thumb">
-                    <img class="img-fullwidth" alt="" src="images/team/lg9.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/team/lg9.jpg">
                     <div class="team-overlay"></div>
                   </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
@@ -877,7 +877,7 @@
               <div class="item">
                 <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                   <div class="team-thumb">
-                    <img class="img-fullwidth" alt="" src="images/team/lg8.jpg">
+                    <img class="img-fullwidth" alt="" src="web/images/team/lg8.jpg">
                     <div class="team-overlay"></div>
                   </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
@@ -899,7 +899,7 @@
     </section>
 
     <!-- Section: events -->
-    <section id="events" class="divider parallax layer-overlay overlay-dark-8" data-stellar-background-ratio="0.5" data-bg-img="images/bg/bg1.jpg">
+    <section id="events" class="divider parallax layer-overlay overlay-dark-8" data-stellar-background-ratio="0.5" data-bg-img="web/images/bg/bg1.jpg">
       <div class="container pt-70 pb-40">
         <div class="section-title mb-30">
           <div class="row">
@@ -916,7 +916,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="thumb">
-                    <img class="img-fullwidth mb-sm-0" src="images/about/as7.jpg" alt="">
+                    <img class="img-fullwidth mb-sm-0" src="web/images/about/as7.jpg" alt="">
                     </div>
                   </div>
                   <div class="col-md-6 p-30 pl-sm-50">
@@ -936,7 +936,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="thumb">
-                    <img class="img-fullwidth mb-sm-0" src="images/about/as8.jpg" alt="">
+                    <img class="img-fullwidth mb-sm-0" src="web/images/about/as8.jpg" alt="">
                     </div>
                   </div>
                   <div class="col-md-6 p-30 pl-sm-50">
@@ -956,7 +956,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="thumb">
-                    <img class="img-fullwidth mb-sm-0" src="images/about/as9.jpg" alt="">
+                    <img class="img-fullwidth mb-sm-0" src="web/images/about/as9.jpg" alt="">
                     </div>
                   </div>
                   <div class="col-md-6 p-30 pl-sm-50">
@@ -976,7 +976,7 @@
                 <div class="row">
                   <div class="col-md-6">
                     <div class="thumb">
-                    <img class="img-fullwidth mb-sm-0" src="images/about/as10.jpg" alt="">
+                    <img class="img-fullwidth mb-sm-0" src="web/images/about/as10.jpg" alt="">
                     </div>
                   </div>
                   <div class="col-md-6 p-30 pl-sm-50">
@@ -1024,7 +1024,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item campus">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/1.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/1.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1032,7 +1032,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/1.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/1.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1043,7 +1043,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item photos students">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/2.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/2.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1051,7 +1051,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/2.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/2.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1062,7 +1062,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item campus">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/3.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/3.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1070,7 +1070,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/3.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/3.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1081,7 +1081,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item photos">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/4.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/4.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1089,7 +1089,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/4.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/4.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1100,7 +1100,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item campus students">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/5.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/5.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1108,7 +1108,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/5.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/5.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1119,7 +1119,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item students">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/6.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/6.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1127,7 +1127,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/6.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/6.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1138,7 +1138,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item photos">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/7.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/7.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1146,7 +1146,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/7.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/7.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1157,7 +1157,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item students">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/8.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/8.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1165,7 +1165,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/8.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/8.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1176,7 +1176,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item photos">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/4.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/4.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1184,7 +1184,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/4.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/4.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1195,7 +1195,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item campus students">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/5.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/5.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1203,7 +1203,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/5.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/5.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1214,7 +1214,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item students">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/6.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/6.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1222,7 +1222,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/6.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/6.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1233,7 +1233,7 @@
                 <!-- Portfolio Item Start -->
                 <div class="gallery-item photos">
                   <div class="thumb">
-                    <img class="img-fullwidth" src="images/gallery/7.jpg" alt="project">
+                    <img class="img-fullwidth" src="web/images/gallery/7.jpg" alt="project">
                     <div class="overlay-shade"></div>
                     <div class="text-holder">
                       <div class="title text-center">Sample Title</div>
@@ -1241,7 +1241,7 @@
                     <div class="icons-holder">
                       <div class="icons-holder-inner">
                         <div class="styled-icons icon-sm icon-dark icon-circled icon-theme-colored">
-                          <a href="images/gallery/7.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
+                          <a href="web/images/gallery/7.jpg" data-lightbox-gallery="gallery" title="Your Title Here"><i class="fa fa-picture-o"></i></a>
                         </div>
                       </div>
                     </div>
@@ -1258,7 +1258,7 @@
     </section>
 
     <!-- Section: Client Say -->
-    <section class="divider parallax layer-overlay overlay-dark-4" data-background-ratio="0.5" data-bg-img="images/bg/bg2.jpg">
+    <section class="divider parallax layer-overlay overlay-dark-4" data-background-ratio="0.5" data-bg-img="web/images/bg/bg2.jpg">
       <div class="container pt-60 pb-60">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
@@ -1266,7 +1266,7 @@
             <div class="owl-carousel-1col" data-dots="true">
               <div class="item">
                 <div class="testimonial-wrapper text-center">
-                  <div class="thumb"><img class="" alt="" src="images/testimonials/1.jpg"></div>
+                  <div class="thumb"><img class="" alt="" src="web/images/testimonials/1.jpg"></div>
                   <div class="content pt-10">
                     <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque est quasi, quas ipsam, expedita placeat facilis odio illo ex accusantium eaque itaque officiis et sit. Vero quo, impedit neque.</p>
                     <h4 class="author text-white mb-0">Catherine Grace</h4>
@@ -1276,7 +1276,7 @@
               </div>
               <div class="item">
                 <div class="testimonial-wrapper text-center">
-                  <div class="thumb"><img class="" alt="" src="images/testimonials/2.jpg"></div>
+                  <div class="thumb"><img class="" alt="" src="web/images/testimonials/2.jpg"></div>
                   <div class="content pt-10">
                     <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque est quasi, quas ipsam, expedita placeat facilis odio illo ex accusantium eaque itaque officiis et sit. Vero quo, impedit neque.</p>
                     <h4 class="author text-white mb-0">Catherine Grace</h4>
@@ -1286,7 +1286,7 @@
               </div>
               <div class="item">
                 <div class="testimonial-wrapper text-center">
-                  <div class="thumb"><img class="" alt="" src="images/testimonials/3.jpg"></div>
+                  <div class="thumb"><img class="" alt="" src="web/images/testimonials/3.jpg"></div>
                   <div class="content pt-10">
                     <p class="lead text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque est quasi, quas ipsam, expedita placeat facilis odio illo ex accusantium eaque itaque officiis et sit. Vero quo, impedit neque.</p>
                     <h4 class="author text-white mb-0">Catherine Grace</h4>
@@ -1317,7 +1317,7 @@
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
                   <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="images/blog/1.jpg" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="post-thumb thumb"> <img src="web/images/blog/1.jpg" alt="" class="img-responsive img-fullwidth"> </div>
                     <div class="entry-meta meta-absolute text-center pl-10 pr-10">
                     <div class="display-table">
                       <div class="display-table-cell">
@@ -1341,7 +1341,7 @@
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".4s">
                   <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="post-thumb thumb"> <img src="web/images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
                     <div class="entry-meta meta-absolute text-center pl-10 pr-10">
                       <div class="display-table">
                         <div class="display-table-cell">
@@ -1365,7 +1365,7 @@
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".6s">
                   <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="post-thumb thumb"> <img src="web/images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
                     <div class="entry-meta meta-absolute text-center pl-10 pr-10">
                       <div class="display-table">
                         <div class="display-table-cell">
@@ -1389,7 +1389,7 @@
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30">
                   <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="post-thumb thumb"> <img src="web/images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
                     <div class="entry-meta meta-absolute text-center pl-10 pr-10">
                       <div class="display-table">
                         <div class="display-table-cell">
@@ -1413,7 +1413,7 @@
               <div class="item">
                 <article class="post clearfix maxwidth600 mb-sm-30">
                   <div class="entry-header">
-                    <div class="post-thumb thumb"> <img src="images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
+                    <div class="post-thumb thumb"> <img src="web/images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
                     <div class="entry-meta meta-absolute text-center pl-10 pr-10">
                       <div class="display-table">
                         <div class="display-table-cell">
@@ -1447,16 +1447,16 @@
           <div class="col-md-12">
             <!-- Section: Clients -->
             <div class="owl-carousel-6col transparent text-center owl-nav-top">
-              <div class="item"> <a href="#"><img src="images/clients/w1.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w2.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w3.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w4.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w5.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w6.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w3.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w4.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w5.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w6.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w1.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w2.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w3.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w4.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w5.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w6.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w3.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w4.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w5.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="web/images/clients/w6.png" alt=""></a></div>
             </div>
           </div>
         </div>
@@ -1465,6 +1465,5 @@
 
   </div>
   <!-- end main-content -->
-
 
   @endsection

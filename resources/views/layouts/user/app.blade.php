@@ -35,7 +35,7 @@
 <!-- CSS | Responsive media queries -->
 <link href="web/css/responsive.css" rel="stylesheet" type="text/css">
 <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
-<link href="web/css/style.css" rel="stylesheet" type="text/css">
+<!-- <link href="web/css/style.css" rel="stylesheet" type="text/css"> -->
 
 <!-- Revolution Slider 5.x CSS settings -->
 <link  href="web/js/revolution-slider/css/settings.css" rel="stylesheet" type="text/css"/>
@@ -63,10 +63,7 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 <![endif]-->
 </head>
-<style>
-
-</style>
-<body class="boxed-layout pt-40 pb-40 pt-sm-0"  data-bg-img="web/images/pattern/p13.png">
+<body class="">
 <div id="wrapper" class="clearfix">
   <!-- preloader -->
   <div id="preloader">
@@ -635,11 +632,11 @@
   </header>
 
 
-    @yield('content')
+  @yield('content')
 
 
-  <!-- Footer -->
-  <footer id="footer" class="footer bg-black-222" data-bg-img="web/images/footer-bg.png">
+   <!-- Footer -->
+   <footer id="footer" class="footer bg-black-222" data-bg-img="web/images/footer-bg.png">
     <div class="container pt-70 pb-40">
       <div class="row">
         <div class="col-sm-6 col-md-3">
@@ -795,4 +792,3 @@
 <script type="text/javascript" src="web/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
 </body>
 </html>
-

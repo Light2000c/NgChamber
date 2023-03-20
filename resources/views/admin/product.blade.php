@@ -50,7 +50,13 @@
                         <td>{{ $product->created_at }}</td>
                         <td>{{ $product->updated_at }}</td>
                         <td><a href="{{ route('view-product', $product) }}" class="btn btn-primary btn-sm">view</a></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                        <td>
+                            <form action="{{ route('adminProductDelete', $product) }}" method="post">
+                                @csrf
+                               @method('delete')
+                            <button class="btn btn-primary btn-sm">delete</button>
+                        </form>
+                    </td>
                       </tr>
                       @endforeach
                     </tbody>
