@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\admin;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -9,7 +10,10 @@ use Illuminate\Support\Facades\Auth;
 class AddProductController extends Controller
 {
     public function index(){
-        return view('admin.addProduct');
+        $category = Category::where('model', 'product')->get();
+        return view('admin.addProduct',[
+            'categories' => $category,
+        ]);
     }
 
     public function store(Request $request){
@@ -17,7 +21,8 @@ class AddProductController extends Controller
      $this->validate($request, [
         'product_name' => 'required|unique:products,product_name',
         'product_category' => 'required',
-        'product_image' => 'required|mimes:jpeg,jpg,png,jfif',
+        'product_price' => 'required',
+        'product_image' => 'required|mimes:jpeg,jpg,png,jfif,webp',
         'product_description' => 'required',
      ]);
 
@@ -29,6 +34,10 @@ class AddProductController extends Controller
      $product = Auth::user()->product()->create([
       'product_name'=> $request->product_name,
       'product_category'=> $request->product_category,
+      'product_price'=> $request->product_price,
+      'product_brand'=> $request->product_brand,
+      'product_size'=> $request->product_size,
+      'product_colour'=> $request->product_colour,
       'product_image'=> $new_image,
       'product_description'=> $request->product_description,
      ]);

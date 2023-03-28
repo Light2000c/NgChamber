@@ -47,9 +47,13 @@ License: For each use you must have a valid license purchased only from above li
   <link rel="shortcut icon" href="/web1/assets/images/favicon.png" />
 
 
-
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="/personal/category.js"></script>
+  {{-- <script src="personal/event.js"></script> --}}
+
+
 </head>
 <body>
 @include('sweetalert::alert')
@@ -60,7 +64,8 @@ License: For each use you must have a valid license purchased only from above li
 		<nav class="sidebar">
       <div class="sidebar-header">
         <a href="#" class="sidebar-brand">
-          Noble<span>UI</span>
+          {{-- Noble<span>UI</span> --}}
+          <img src="/logos/NIDCC LOGO DIMENSIONED.png" alt="">
         </a>
         <div class="sidebar-toggler not-active">
           <span></span>
@@ -90,19 +95,26 @@ License: For each use you must have a valid license purchased only from above li
               <span class="link-title">Events</span>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Education</span>
             </a>
-          </li>
+          </li> --}}
 
           <li class="nav-item">
+            <a href="{{ route('adminCategory') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Category</span>
+            </a>
+          </li>
+
+          {{-- <li class="nav-item">
             <a href="{{ route('adminServices') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Services</span>
             </a>
-          </li>
+          </li> --}}
 
 
           <li class="nav-item nav-category">Product</li>
@@ -111,25 +123,25 @@ License: For each use you must have a valid license purchased only from above li
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Products</span>
             </a>
-          </li>
+          {{-- </li>
           <li class="nav-item">
             <a href="{{ route('adminOrders') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Order</span>
             </a>
-          </li>
+          </li> --}}
           <li class="nav-item">
-            <a href="{{ route('adminCarts') }}" class="nav-link">
+            <a href="" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Carts</span>
+              <span class="link-title">Wishlist</span>
             </a>
           </li>
-          <li class="nav-item">
+          {{-- <li class="nav-item">
             <a href="{{ route('adminTransactions') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Transactions</span>
             </a>
-          </li>
+          </li> --}}
 
 
           <li class="nav-item nav-category">People</li>
@@ -216,7 +228,7 @@ License: For each use you must have a valid license purchased only from above li
 						</div>
 					</form>
 					<ul class="navbar-nav">
-						<li class="nav-item dropdown">
+						{{-- <li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<i class="flag-icon flag-icon-us mt-1" title="us"></i> <span class="ms-1 me-1 d-none d-md-inline-block">English</span>
 							</a>
@@ -227,178 +239,13 @@ License: For each use you must have a valid license purchased only from above li
                 <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-pt" title="pt" id="pt"></i> <span class="ms-1"> Portuguese </span></a>
                 <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-es" title="es" id="es"></i> <span class="ms-1"> Spanish </span></a>
 							</div>
-            </li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="appsDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="grid"></i>
-							</a>
-							<div class="dropdown-menu p-0" aria-labelledby="appsDropdown">
-                <div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-									<p class="mb-0 fw-bold">Web Apps</p>
-									<a href="javascript:;" class="text-muted">Edit</a>
-								</div>
-                <div class="row g-0 p-1">
-                  <div class="col-3 text-center">
-                    <a href="pages/apps/chat.html" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="message-square" class="icon-lg mb-1"></i><p class="tx-12">Chat</p></a>
-                  </div>
-                  <div class="col-3 text-center">
-                    <a href="pages/apps/calendar.html" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="calendar" class="icon-lg mb-1"></i><p class="tx-12">Calendar</p></a>
-                  </div>
-                  <div class="col-3 text-center">
-                    <a href="pages/email/inbox.html" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="mail" class="icon-lg mb-1"></i><p class="tx-12">Email</p></a>
-                  </div>
-                  <div class="col-3 text-center">
-                    <a href="pages/general/profile.html" class="dropdown-item d-flex flex-column align-items-center justify-content-center wd-70 ht-70"><i data-feather="instagram" class="icon-lg mb-1"></i><p class="tx-12">Profile</p></a>
-                  </div>
-                </div>
-								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-									<a href="javascript:;">View all</a>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="messageDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="mail"></i>
-							</a>
-							<div class="dropdown-menu p-0" aria-labelledby="messageDropdown">
-								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-									<p>9 New Messages</p>
-									<a href="javascript:;" class="text-muted">Clear all</a>
-								</div>
-                <div class="p-1">
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face2.jpg" alt="userr">
-                    </div>
-                    <div class="d-flex justify-content-between flex-grow-1">
-                      <div class="me-4">
-                        <p>Leonardo Payne</p>
-                        <p class="tx-12 text-muted">Project status</p>
-                      </div>
-                      <p class="tx-12 text-muted">2 min ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face3.jpg" alt="userr">
-                    </div>
-                    <div class="d-flex justify-content-between flex-grow-1">
-                      <div class="me-4">
-                        <p>Carl Henson</p>
-                        <p class="tx-12 text-muted">Client meeting</p>
-                      </div>
-                      <p class="tx-12 text-muted">30 min ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face4.jpg" alt="userr">
-                    </div>
-                    <div class="d-flex justify-content-between flex-grow-1">
-                      <div class="me-4">
-                        <p>Jensen Combs</p>
-                        <p class="tx-12 text-muted">Project updates</p>
-                      </div>
-                      <p class="tx-12 text-muted">1 hrs ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face5.jpg" alt="userr">
-                    </div>
-                    <div class="d-flex justify-content-between flex-grow-1">
-                      <div class="me-4">
-                        <p>Amiah Burton</p>
-                        <p class="tx-12 text-muted">Project deatline</p>
-                      </div>
-                      <p class="tx-12 text-muted">2 hrs ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face6.jpg" alt="userr">
-                    </div>
-                    <div class="d-flex justify-content-between flex-grow-1">
-                      <div class="me-4">
-                        <p>Yaretzi Mayo</p>
-                        <p class="tx-12 text-muted">New record</p>
-                      </div>
-                      <p class="tx-12 text-muted">5 hrs ago</p>
-                    </div>
-                  </a>
-                </div>
-								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-									<a href="javascript:;">View all</a>
-								</div>
-							</div>
-						</li>
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<i data-feather="bell"></i>
-								<div class="indicator">
-									<div class="circle"></div>
-								</div>
-							</a>
-							<div class="dropdown-menu p-0" aria-labelledby="notificationDropdown">
-								<div class="px-3 py-2 d-flex align-items-center justify-content-between border-bottom">
-									<p>6 New Notifications</p>
-									<a href="javascript:;" class="text-muted">Clear all</a>
-								</div>
-                <div class="p-1">
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-											<i class="icon-sm text-white" data-feather="gift"></i>
-                    </div>
-                    <div class="flex-grow-1 me-2">
-											<p>New Order Recieved</p>
-											<p class="tx-12 text-muted">30 min ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-											<i class="icon-sm text-white" data-feather="alert-circle"></i>
-                    </div>
-                    <div class="flex-grow-1 me-2">
-											<p>Server Limit Reached!</p>
-											<p class="tx-12 text-muted">1 hrs ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-                      <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face6.jpg" alt="userr">
-                    </div>
-                    <div class="flex-grow-1 me-2">
-											<p>New customer registered</p>
-											<p class="tx-12 text-muted">2 sec ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-											<i class="icon-sm text-white" data-feather="layers"></i>
-                    </div>
-                    <div class="flex-grow-1 me-2">
-											<p>Apps are ready for update</p>
-											<p class="tx-12 text-muted">5 hrs ago</p>
-                    </div>
-                  </a>
-                  <a href="javascript:;" class="dropdown-item d-flex align-items-center py-2">
-                    <div class="wd-30 ht-30 d-flex align-items-center justify-content-center bg-primary rounded-circle me-3">
-											<i class="icon-sm text-white" data-feather="download"></i>
-                    </div>
-                    <div class="flex-grow-1 me-2">
-											<p>Download completed</p>
-											<p class="tx-12 text-muted">6 hrs ago</p>
-                    </div>
-                  </a>
-                </div>
-								<div class="px-3 py-2 d-flex align-items-center justify-content-center border-top">
-									<a href="javascript:;">View all</a>
-								</div>
-							</div>
-						</li>
+            </li> --}}
 						<li class="nav-item dropdown">
 							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face1.jpg" alt="profile">
+								{{-- <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face1.jpg" alt="profile"> --}}
+                @if(Auth::user())
+                {{ Auth::user()->fullname }}
+                @endif
 							</a>
 							<div class="dropdown-menu p-0" aria-labelledby="profileDropdown">
 								<div class="d-flex flex-column align-items-center border-bottom px-5 py-3">
@@ -408,8 +255,8 @@ License: For each use you must have a valid license purchased only from above li
 									<div class="text-center">
                                         @if(Auth::user())
 										<p class="tx-16 fw-bolder">{{ Auth::user()->fullname }}</p>
+                    <p class="tx-12 text-muted">{{ Auth::user()->email }}</p>
                                         @endif
-										<p class="tx-12 text-muted">amiahburton@gmail.com</p>
 									</div>
 								</div>
                 <ul class="list-unstyled p-1">
@@ -452,8 +299,7 @@ License: For each use you must have a valid license purchased only from above li
 
 <!-- partial:partials/_footer.html -->
 			<footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
-				<p class="text-muted mb-1 mb-md-0">Copyright © 2022 <a href="https://www.nobleui.com" target="_blank">NobleUI</a>.</p>
-				<p class="text-muted">Handcrafted With <i class="mb-1 text-primary ms-1 icon-sm" data-feather="heart"></i></p>
+				<p class="text-muted mb-1 mb-md-0">Copyright © 2023 <a href="" target="_blank">NiDCC</a>.</p>
 			</footer>
 			<!-- partial -->
 
@@ -478,6 +324,8 @@ License: For each use you must have a valid license purchased only from above li
 <!-- Custom js for this page -->
 <script src="/web1/assets/js/dashboard-light.js"></script>
 <!-- End custom js for this page -->
+
+
 
 </body>
 </html>

@@ -29,8 +29,10 @@
                         <th>ID</th>
                         <th>Title</th>
                         <th>Category</th>
-                        <th>To</th>
-                        <th>From</th>
+                        <th>Location</th>
+                        <th>Host</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
                         <th>Image</th>
                         <th>Description</th>
                         <th>Created_at</th>
@@ -43,12 +45,14 @@
                         @foreach($events as $event)
                       <tr>
                         <td>{{ $event->id }}</td>
-                        <td>{{ $event->title }}</td>
+                        <td class="text-wrap">{{ Str::limit($event->title,50) }}</td>
                         <td>{{ $event->category }}</td>
-                        <td>{{ $event->to }}</td>
-                        <td>{{ $event->from }}</td>
+                        <td>{{ $event->location }}</td>
+                        <td>{{ $event->host }}</td>
+                        <td>{{ $event->start_date }}</td>
+                        <td>{{ $event->end_date }}</td>
                         <td><img src="/event/{{ $event->image }}" alt="" srcset=""></td>
-                        <td>{{ $event->description }}</td>
+                        <td class="text-wrap">{{ Str::limit($event->description,50) }}</td>
                         <td>{{ $event->created_at }}</td>
                         <td>{{ $event->updated }}</td>
                         <td><a href="{{ route('view-event', $event) }}" class="btn btn-primary btn-sm">view</a></td>

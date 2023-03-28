@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\BlogController;
 use App\Http\Controllers\admin\CartController;
@@ -14,20 +15,30 @@ use App\Http\Controllers\admin\ServiceController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\pages\AboutUsController;
 use App\Http\Controllers\pages\ContactController;
+use App\Http\Controllers\pages\ProfileController;
 use App\Http\Controllers\admin\AddEventController;
+use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\viewBlogController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\viewEventController;
 use App\Http\Controllers\admin\AddProductController;
+use App\Http\Controllers\admin\AddCategoryController;
 use App\Http\Controllers\admin\AddServicesController;
 use App\Http\Controllers\admin\TeamMembersController;
 use App\Http\Controllers\admin\TransactionController;
 use App\Http\Controllers\admin\viewProductController;
+use App\Http\Controllers\pages\EditProfileController;
+use App\Http\Controllers\pages\EventDetailsController;
+use App\Http\Controllers\pages\viewBlogpostController;
 use App\Http\Controllers\admin\AddTeamMembersController;
 use App\Http\Controllers\pages\BlogController as PageBlog;
 use App\Http\Controllers\admin\LoginController as AdminLogin;
 use App\Http\Controllers\pages\ServicesController as PageService;
+use App\Http\Controllers\pages\CartController as PagesCartController;
 use App\Http\Controllers\pages\EventController as mainEventController;
+use App\Http\Controllers\pages\viewProductController as PagesViewProductController;
+use App\Http\Controllers\payment\PaystackController;
+use App\Http\Controllers\payment\StripeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,17 +69,39 @@ Route::post('login', [LoginController::class, 'login']);
 Route::get('register', [RegisterController::class, 'index'])->name('register');
 Route::post('register', [RegisterController::class, 'register']);
 
-Route::get('events', [mainEventController::class, 'index']);
+Route::get('events', [mainEventController::class, 'index'])->name('event');
+Route::get('events/{id}', [EventDetailsController::class, 'index']);
 
-Route::get('shop', [ShopController::class, 'index']);
+Route::get('shop', [ShopController::class, 'index'])->name('shop');
+Route::get('shop/{product}', [PagesViewProductController::class, 'index'])->name('product-details');
 
-Route::get('blogs', [PageBlog::class, 'index']);
+Route::get('blogs', [PageBlog::class, 'index'])->name('blog');
+Route::get('blogs/{blog}', [viewBlogpostController::class, 'index'])->name('viewBlog');
 
 Route::get('services', [PageService::class, 'index']);
 
-Route::get('about-us', [AboutUsController::class, 'index']);
+Route::get('about-us', [AboutUsController::class, 'index'])->name('about');
 
-Route::get('contact-us', [ContactController::class, 'index']);
+Route::get('contact-us', [ContactController::class, 'index'])->name('contact');
+
+Route::post('cart/{product}', [PagesCartController::class, 'store'])->name('cart');
+Route::delete('cart/{product}', [PagesCartController::class, 'destroy'])->name('cart');
+
+Route::get('profile', [ProfileController::class, 'index'])->name('profile');
+Route::post('profile', [ProfileController::class, 'store'])->middleware('has_store');
+
+Route::get('edit-profile', [EditProfileController::class, 'index'])->name('edit-profile');
+Route::post('edit-profile', [EditProfileController::class, 'store']);
+
+Route::get('/pay', [StripeController::class, 'index'])->name('pay');
+Route::post('checkout', [StripeController::class, 'checkout'])->name('checkout');
+Route::get('/success', [StripeController::class, 'success'])->name('success');
+
+Route::get('paystack',[PaystackController::class, 'index'])->name('paystack');
+
+Route::post('/pay-with-paystack', [PaystackController::class, 'redirectToGateway'])->name('pay-with-paystack');
+
+Route::get('/payment/callback', [PaystackController::class, 'handleGatewayCallback']);
 
 
 // Admin Routes
@@ -106,15 +139,24 @@ Route::put('admin/product/{product}', [viewProductController::class, 'update']);
 Route::get('admin/orders', [OrderController::class, 'index'])->name('adminOrders');
 
 Route::get('admin/carts', [CartController::class, 'index'])->name('adminCarts');
+Route::delete('admin/carts/{cart}', [CartController::class, 'destroy'])->name('adminCartDelete');
 
 Route::get('admin/transactions', [TransactionController::class, 'index'])->name('adminTransactions');
 
 Route::get('admin/team-members', [TeamMembersController::class, 'index'])->name('adminTeam');
+Route::delete('admin/team-members/{user}', [TeamMembersController::class, 'destroy'])->name('adminMembersDelete');
 
 Route::get('admin/add-team-members', [AddTeamMembersController::class, 'index'])->name('adminAddTeam');
 
+
 Route::get('admin/users', [UserController::class, 'index'])->name('adminUsers');
-Route::delete('admin/users', [UserController::class, 'destroy'])->name('adminUsersDelete');
+Route::delete('admin/users/{user}', [UserController::class, 'destroy'])->name('adminUsersDelete');
+
+Route::get('admin/category', [CategoryController::class, 'index'])->name('adminCategory');
+Route::delete('admin/category/{category}', [CategoryController::class, 'destroy'])->name('deleteCategory');
+
+Route::get('admin/add-category', [AddCategoryController::class, 'index'])->name('addCategory');
+Route::post('admin/add-category', [AddCategoryController::class, 'store']);
 
 });
 

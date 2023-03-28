@@ -56,7 +56,7 @@
                                 @method('put')
                <div class="form-group mb-3">
                 <label for="">Product Name</label>
-                <input class="form-control" type="text" name="product_name" value="{{ $product->product_name }}">
+                <input class="form-control" type="text" name="product_name" value="{{ $product->product_name }}" style="background-color: whitesmoke;">
                 @error('product_name')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -64,21 +64,53 @@
 
                <div class="form-group mb-3">
                 <label for="">Product Category</label>
-                <input class="form-control" type="text" name="product_category" value="{{ $product->product_category }}">
+                <input class="form-control" type="text" name="product_category" value="{{ $product->product_category }}" style="background-color: whitesmoke;">
                 @error('product_category')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
             </div>
 
+            <div class="form-group mb-3">
+               <label for="">Product Price</label>
+               <input class="form-control" type="number" name="product_price" value="{{ $product->product_price }}" style="background-color: whitesmoke;">
+               @error('product_price')
+               <small class="text-danger">{{ $message }}</small>
+               @enderror
+           </div>
+
+           <div class="form-group mb-3">
+            <label for="">Product Brand</label>
+            <input class="form-control" type="text" name="product_brand" value="{{ $product->product_brand }}" style="background-color: whitesmoke;">
+            @error('product_brand')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="">Product Size</label>
+            <input class="form-control" type="text" name="product_size" value="{{ $product->product_size }}" style="background-color: whitesmoke;">
+            @error('product_size')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+
+        <div class="form-group mb-3">
+            <label for="">Product Colour</label>
+            <input class="form-control" type="text" name="product_colour" value="{{ $product->product_colour }}" style="background-color: whitesmoke;">
+            @error('product_colour')
+            <small class="text-danger">{{ $message }}</small>
+            @enderror
+        </div>
+
                <div class="form-group mb-3">
                 <label for="">Product Image</label>
-                <input class="form-control" type="file" name="product_image">
+                <input class="form-control" type="file" name="product_image" style="background-color: whitesmoke;">
                </div>
 
 
                <div class="form-group mb-3">
                 <label for="">Product Description</label>
-                <textarea class="form-control" name="product_description" id="" cols="30" rows="5">{{ $product->product_description }}</textarea>
+                <textarea class="form-control" name="product_description" id="" cols="30" rows="5" style="background-color: whitesmoke;">{{ $product->product_description }}</textarea>
                 @error('product_description')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror

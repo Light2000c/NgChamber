@@ -5,7 +5,7 @@
   <!-- Start main-content -->
   <div class="main-content bg-lighter">
     <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="images/bg/bg6.jpg">
+    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="/web/images/bg/bg6.jpg">
       <div class="container pt-70 pb-20">
         <!-- Section Content -->
         <div class="section-content">
@@ -29,18 +29,29 @@
         <div class="section-content">
           <div class="row mt-10">
             <div class="col-sm-12 col-md-6 mb-sm-20 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
-              <h3 class="text-uppercase mt-15">Welcome To <span class="text-theme-color-2">  LearnPress </span></h3>
-              <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisi cing elit. Quos dolo rem consequ untur, natus laudantium commodi earum aliquid in ullam.Lorem ipsum.</p>
-              <p class="mb-15">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum sunt ut dolorem laboriosam culpa excepturi sed distinctio eius! Ut magnam numquam libero quia vero blanditiis fugit corporis quisquam, debitis quidem laudantium deleniti.</p>
-              <p class="mb-10">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum sunt ut dolorem laboriosam culpa excepturi sed distinctio eius! Ut magnam numquam libero quia vero blanditiis fugit corporis quisquam, debitis quidem laudantium deleniti.</p>
-              <a class="btn btn-colored btn-theme-colored btn-lg text-uppercase font-13 mt-0" href="#">View Details</a>
+              <h3 class="text-uppercase mt-15">About <span class="text-theme-color-2">  Us </span></h3>
+              <p>The Nigerians in Diaspora Chamber of Commerce (NiDCC) gives voice and visibility to the collective energy of emerging markets with Nigeria as a focal point. The Chamber is a futuristic business organization that aims to position emerging generation of entrepreneurs, businesses, and individuals in connection with advanced global leaders in business to thrive as highly productive business members. NiDCC connect members with peers, provide access to opportunities and share resources to benefit members businesses and careers. The chamber creates viable connections to advance members businesses. We gain the respect of our members as trusted advocates, partners, leaders that work to accelerate their businesses, careers, and lives. NiDCC advocates for policies that leads to the creation of jobs through our member businesses to advance emerging economies.</p>
             </div>
             <div class="col-sm-12 col-md-6 mt-10 wow fadeInDown" data-wow-duration="1s" data-wow-delay="0.5s">
               <div class="video-popup">
                 <a href="https://www.youtube.com/watch?v=pW1uVUg5wXM" data-lightbox-gallery="youtube-video" title="Video">
-                  <img alt="" src="images/about/5.jpg" class="img-responsive img-fullwidth mt-10 ml-30 ml-xs-0 ml-sm-0">
+                  <img alt="" src="/web/images/about/5.jpg" class="img-responsive img-fullwidth mt-10 ml-30 ml-xs-0 ml-sm-0">
                 </a>
               </div>
+            </div>
+          </div>
+
+          <div>
+           <p>We help the Diaspora community grow and thrive as professionals, business owners, and entrepreneurs. NiDCC will also encourage expansion of the Diaspora community in an efficient manner while assisting private businesses and organizations to be economically strong. The Chamber will encourage members, citizens, and business communities towards sustainable economic and social growth. We believe and work for the transformation and advancement of women and youths in business. We connect our members with leaders in business and government through high level networking events and special forums. We serve to educate, advocate, inform and connect our members with advance markets, fighting for the future of emerging economies represented in NiDCC.</p>
+          </div>
+          <div class="row mt-10">
+            <div class="col-sm-12 col-md-6 mb-sm-20 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+              <h3 class="text-uppercase mt-15">Our <span class="text-theme-color-2">  Mission </span></h3>
+              <p>The mission of the Chamber is to harness the resources and competencies of entrepreneurs, businesses and global corporate stakeholders towards sustainable economic and social growth, advancement, and quality of life while charting a path of economic prosperity for its members.</p>
+            </div>
+            <div class="col-sm-12 col-md-6 mb-sm-20 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
+              <h3 class="text-uppercase mt-15">Our <span class="text-theme-color-2"> Vision </span></h3>
+              <p>Building viable connections for national wealth through business leadership and partnerships.</p>
             </div>
           </div>
         </div>
@@ -58,7 +69,7 @@
                 <div class="item">
                   <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                     <div class="team-thumb">
-                      <img class="img-fullwidth" alt="" src="images/team/lg2.jpg">
+                      <img class="img-fullwidth" alt="" src="/web/images/team/lg2.jpg">
                       <div class="team-overlay"></div>
                     </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
@@ -76,7 +87,7 @@
                 <div class="item">
                   <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                     <div class="team-thumb">
-                      <img class="img-fullwidth" alt="" src="images/team/lg3.jpg">
+                      <img class="img-fullwidth" alt="" src="/web/images/team/lg3.jpg">
                       <div class="team-overlay"></div>
                     </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
@@ -94,7 +105,7 @@
                 <div class="item">
                   <div class="team-members border-bottom-theme-color-2px text-center maxwidth400">
                     <div class="team-thumb">
-                      <img class="img-fullwidth" alt="" src="images/team/lg4.jpg">
+                      <img class="img-fullwidth" alt="" src="/web/images/team/lg4.jpg">
                       <div class="team-overlay"></div>
                     </div>
                   <div class="team-details bg-silver-light pt-10 pb-10">
@@ -119,7 +130,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as1.jpg" alt="">
+                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as1.jpg" alt="">
                         </div>
                       </div>
                       <div class="col-md-6 p-10 pl-sm-50">
@@ -139,7 +150,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as2.jpg" alt="">
+                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as2.jpg" alt="">
                         </div>
                       </div>
                       <div class="col-md-6 p-10 pl-sm-50">
@@ -159,7 +170,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as3.jpg" alt="">
+                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as3.jpg" alt="">
                         </div>
                       </div>
                       <div class="col-md-6 p-10 pl-sm-50">
@@ -179,7 +190,7 @@
                     <div class="row">
                       <div class="col-md-6">
                         <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="images/about/as4.jpg" alt="">
+                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as4.jpg" alt="">
                         </div>
                       </div>
                       <div class="col-md-6 p-10 pl-sm-50">
@@ -285,7 +296,7 @@
             </div>
           </div>
           <div class="col-md-5">
-            <img src="images/about/6.png" alt="">
+            <img src="/web/images/about/6.png" alt="">
           </div>
         </div>
       </div>
@@ -298,16 +309,16 @@
           <div class="col-md-12">
             <!-- Section: Clients -->
             <div class="owl-carousel-6col transparent text-center owl-nav-top">
-              <div class="item"> <a href="#"><img src="images/clients/w1.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w2.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w3.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w4.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w5.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w6.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w3.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w4.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w5.png" alt=""></a></div>
-              <div class="item"> <a href="#"><img src="images/clients/w6.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w1.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w2.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w3.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w4.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w5.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w6.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w3.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w4.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w5.png" alt=""></a></div>
+              <div class="item"> <a href="#"><img src="/web/images/clients/w6.png" alt=""></a></div>
             </div>
           </div>
         </div>

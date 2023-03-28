@@ -17,7 +17,6 @@
 						<div class="card">
 							<div class="card-body">
 								<h4 class="card-title">Add Product</h4>
-								<p class="text-muted mb-3">Read the <a href="https://github.com/mimo84/bootstrap-maxlength" target="_blank"> Official Bootstrap MaxLength Documentation </a>for a full list of instructions and other options.</p>
 
                                 @if(session('success'))
                     @php
@@ -44,57 +43,78 @@
            </div>
            @endif
 
+           <form action="{{ route('view-event', $event) }}" method="post" enctype="multipart/form-data">
+
            <div class="row">
             <div class="col-lg-6 mb-4">
              <div class="d-flex justify-content-center mb-4"><img class="img-fluid" src="/event/{{ $event->image }}" alt=""></div>
+             
+             <div class="form-group mb-3">
+                <label for="">Start Date</label>
+                <input class="form-control" type="datetime-local" name="start_date" value="{{ $event->start_date }}" style="background-color: whitesmoke;">
+                @error('start_date')
+                <small class="text-danger">{{ $message }}</small>
+                @enderror
+            </div>
 
+               <div class="form-group mb-3">
+                <label for="">End Date</label>
+                <input class="form-control" type="datetime-local" name="end_date" value="{{ $event->end_date }}" style="background-color: whitesmoke;">
+                @error('end_date')
+                <small class="text-danger">{{ $message }}</small>
+                @enderror
+               </div>
             </div>
 
             <div class="col">
-            <form action="{{ route('view-event', $event) }}" method="post" enctype="multipart/form-data">
+            
 
             @csrf
                                 @method('put')
             <div class="form-group mb-3">
                 <label for="">Title</label>
-                <input class="form-control" type="text" name="title" value="{{ $event->title }}">
+                <input class="form-control" type="text" name="title" value="{{ $event->title }}" style="background-color: whitesmoke;">
                 @error('title')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
                </div>
 
+
+
                <div class="form-group mb-3">
                 <label for="">Category</label>
-                <input class="form-control" type="text" name="category" value="{{ $event->category }}">
+                <input class="form-control" type="text" name="category" value="{{ $event->category }}" style="background-color: whitesmoke;">
                 @error('category')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
                </div>
 
                <div class="form-group mb-3">
-                <label for="">To</label>
-                <input class="form-control" type="datetime-local" name="to" value="{{ $event->to }}">
-                @error('to')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
-
-               <div class="form-group mb-3">
-                <label for="">From</label>
-                <input class="form-control" type="datetime-local" name="from" value="{{ $event->from }}">
-                @error('from')
+                <label for="">Location</label>
+                <input class="form-control" type="text" name="location" value="{{ $event->location }}" style="background-color: whitesmoke;">
+                @error('location')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
                </div>
 
                <div class="form-group mb-3">
+                <label for="host">Host</label>
+                <input class="form-control" type="text" name="host" value="{{ $event->host }}" style="background-color: whitesmoke;">
+                @error('host')
+                <small class="text-danger">{{ $message }}</small>
+                @enderror
+               </div>
+
+       
+
+               <div class="form-group mb-3">
                 <label for="">From</label>
-                <input class="form-control" type="file" name="image">
+                <input class="form-control" type="file" name="image" style="background-color: whitesmoke;">
                </div>
 
                <div class="form-group mb-3">
                 <label for="">Description</label>
-                <textarea class="form-control" name="description" id="" cols="30" rows="5">{{ $event->description }}</textarea>
+                <textarea class="form-control" name="description" id="" cols="30" rows="5" style="background-color: whitesmoke;">{{ $event->description }}</textarea>
                 @error('description')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -103,12 +123,13 @@
             <div class="d-grid mt-2">
                <button class="btn btn-primary btn-sm">Save Changes</button>
             </div>
-            </form>
+           
            </div>
 
 
 
 							</div>
+                        </form>
 						</div>
 					</div>
 			   </div>

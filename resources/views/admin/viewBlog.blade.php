@@ -56,7 +56,7 @@
                                 @method('put')
                <div class="form-group mb-3">
                 <label for="">Title</label>
-                <input class="form-control" type="text" name="title" value="{{ $blog->title }}">
+                <input class="form-control" type="text" name="title" value="{{ $blog->title }}" style="background-color: whitesmoke;">
                 @error('title')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -64,7 +64,7 @@
 
                <div class="form-group mb-3">
                 <label for="">Category</label>
-                <input class="form-control" type="text" name="category" value="{{  $blog->category }}">
+                <input class="form-control" type="text" name="category" value="{{  $blog->category }}" style="background-color: whitesmoke;">
                 @error('category')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror
@@ -72,13 +72,13 @@
 
                <div class="form-group mb-3">
                 <label for="">Image</label>
-                <input class="form-control" type="file" name="image">
+                <input class="form-control" type="file" name="image" style="background-color: whitesmoke;">
                </div>
 
 
                <div class="form-group mb-3">
                 <label for="">Description</label>
-                <textarea class="form-control" name="description" id="" cols="30" rows="5">{{  $blog->description }}</textarea>
+                <textarea class="form-control" name="description" id="" cols="30" rows="5" style="background-color: whitesmoke;">{{  $blog->description }}</textarea>
                 @error('description')
                 <small class="text-danger">{{ $message }}</small>
                 @enderror

@@ -2,12 +2,12 @@
 
 @section('content')
 
-			<div class="page-content">
+			<div class="page-content"  ng-app="myApp" ng-controller="myCtrl">
 
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Team Members</li>
+						<li class="breadcrumb-item active" aria-current="page">Users</li>
 					</ol>
 				</nav>
 
@@ -15,62 +15,46 @@
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Team Members</h6>
-                <p class="text-muted mb-3">Manage Team Members (Add, Edit or Delete).</p>
-                <div class="row mb-4">
-                <div class="col-12 d-flex justify-content-end">
-                <button class="btn btn-primary btn small"><i class="fa fa-plus me-2" aria-hidden="true"></i>Add Product</button>
-                </div>
-                </div>
-                <div class="table-responsive">
+                <h6 class="card-title">User Table</h6>
+                <p class="text-muted mb-3">Manage Users (Edit or Delete).</p>
+                <p>@{{ name }}</p>
+
+                <div class="table-responsive mt-4">
                   <table id="dataTableExample" class="table">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Action</th>
+                        <th>ID</th>
+                        <th>Full Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
+                        <th>Created_at</th>
+                        <th>Updated_at</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
+                        @foreach($users as $user)
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                        <td>{{ $user->id }}</td>
+                        <td>{{ $user->fullname }}</td>
+                        <td>{{ $user->email }}</td>
+                        @if ($user->is_admin == 1)
+                        <td> Admin </td>
+                        @else
+                        <td>{{ $user->is_admin }}</td>
+                        @endif
+                        <td>{{ $user->email }}</td>
+                        <td>{{ $user->created_at }}</td>
+                        <td>{{ $user->updated_at }}</td>
+                        <td>
+                            <form action="{{ route('adminMembersDelete', $user) }}" method="post">
+                                @csrf
+                               @method('delete')
+                            <button class="btn btn-primary btn-sm">delete</button>
+                        </form>
+                    </td>
                       </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

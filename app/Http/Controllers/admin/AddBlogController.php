@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Models\Blog;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -13,7 +14,10 @@ class AddBlogController extends Controller
 {
     public function index()
     {
-        return view('admin.addBlog');
+        $category = Category::where('model','blog')->get();
+        return view('admin.addBlog',[
+            'categories' => $category,
+        ]);
     }
 
     public function store(Request $request)
@@ -21,7 +25,7 @@ class AddBlogController extends Controller
         $this->validate($request, [
           'title'=>'required|unique:blogs,title',
           'category'=> 'required',
-          'image' => 'required|mimes:jpeg,jpg,png,jfif',
+          'image' => 'required|mimes:jpeg,jpg,png,jfif,webp',
           'description' => 'required'
         ]);
 

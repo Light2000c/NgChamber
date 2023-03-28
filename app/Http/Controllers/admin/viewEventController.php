@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\admin;
 
-use App\Http\Controllers\Controller;
 use App\Models\Event;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class viewEventController extends Controller
 {
@@ -19,11 +20,10 @@ class viewEventController extends Controller
     {
         if ($request->hasFile('image')) {
             $this->validate($request, [
-                'title' => 'required',
+                'title' => 'required|',
                 'category' => 'required',
-                'to' => 'required',
-                'from' => 'required',
-                'image' => 'required|mimes:jpeg,jpg,png,jfif',
+                'start_date' => 'required',
+                'image' => 'required|mimes:jpeg,jpg,jfif,png,webp',
                 'description' => 'required',
             ]);
 
@@ -31,14 +31,16 @@ class viewEventController extends Controller
 
             $upload = $request->file('image')->move('event/', $new_image);
 
-            $success = $event->update([
-                'title' => $request->title,
-                'category' => $request->category,
-                'to' => $request->to,
-                'from' => $request->from,
+            $success =  Auth::user()->event()->update([
+              'title'=> $request->title,
+                'category'=> $request->category,
+                'location' => $request->location,
+                'host' => $request->host,
+                'start_date' => $request->start_date,
+                'end_date' => $request->end_date,
                 'image' => $new_image,
                 'description' => $request->description,
-            ]);
+             ]);
 
             if ($upload && $success) {
                 return back()->with('success', 'Event has been successfully updated.');
@@ -49,19 +51,20 @@ class viewEventController extends Controller
         } else {
 
             $this->validate($request, [
-                'title' => 'required',
+                'title' => 'required|',
                 'category' => 'required',
-                'to' => 'required',
-                'from' => 'required',
+                'start_date' => 'required',
                 'description' => 'required',
             ]);
 
             $events = $event->update([
-                'title' => $request->title,
-                'category' => $request->category,
-                'to' => $request->to,
-                'from' => $request->from,
-                'description' => $request->description,
+                'title'=> $request->title,
+                  'category'=> $request->category,
+                  'location' => $request->location,
+                  'host' => $request->host,
+                  'start_date' => $request->start_date,
+                  'end_date' => $request->end_date,
+                  'description' => $request->description,
             ]);
 
             if ($events) {

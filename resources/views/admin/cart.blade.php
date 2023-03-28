@@ -16,57 +16,38 @@
             <div class="card">
               <div class="card-body">
                 <h6 class="card-title">Cart Table</h6>
-                <p class="text-muted mb-3">Manage Carts (Edit or Delete).</p>
 
                 <div class="table-responsive mt-4">
                   <table id="dataTableExample" class="table">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Action</th>
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Product Name</th>
+                        <th>Product Image</th>
+                        <th>Product Price</th>
+                        <th>Quantity</th>
+                        <th>Created_At</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
+                      @foreach ($carts as $cart)
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
+                        <th>{{ $cart->id }}</th>
+                        <th>{{ $cart->user->fullname }}</th>
+                        <th>{{ $cart->product->product_name }}</th>
+                        <th><img class="img-fluid" src="/products/{{ $cart->product->product_image }}" width="65px" height="65px" alt="" srcset=""></th>
+                        <th>{{ $cart->product->product_price }}</th>
+                        <th>{{ $cart->quantity }}</th>
+                        <th>{{ $cart->created_at }}</th>
+                        <form action="{{ route('adminCartDelete', $cart) }}" method="post">
+                          @csrf
+                          @method('delete')
                         <td><button class="btn btn-primary btn-sm">delete</button></td>
+                      </form>
                       </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                      @endforeach
                     </tbody>
                   </table>
                 </div>

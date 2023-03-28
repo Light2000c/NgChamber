@@ -14,8 +14,10 @@ class Event extends Model
         'user_id',
         'title',
         'category',
-        'to',
-        'from',
+        'location',
+        'host',
+        'start_date',
+        'end_date',
         'image',
         'description'
     ];

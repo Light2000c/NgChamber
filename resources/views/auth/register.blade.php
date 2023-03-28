@@ -78,7 +78,7 @@
           <div class="container">
             <div class="row">
               <div class="col-md-6 col-md-push-3">
-                <div class="text-center mb-60"><a href="#" class=""><img alt="" src="/web/images/logo-wide.png"></a></div>
+                <div class="text-center mb-60"><a href="#" class=""><img alt="" src="/logos/NIDCC CHAMBERS LOGO.png" style="width: 130px; height: auto;"></a></div>
                 <h4 class="text-theme-colored mt-0 pt-5">Register</h4>
                 <hr>
                 <p>Lorem ipsum dolor sit amet, consectetur elit.</p>

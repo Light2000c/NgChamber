@@ -15,8 +15,7 @@
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Blog Table</h6>
-                <p class="text-muted mb-3">Add new blog post or make changes to an already existing one.</p>
+                <h6 class="card-title mt-3">Blog Table</h6>
                 <div class="row mb-4">
                 <div class="col-12 d-flex justify-content-end">
                 <a href="{{ route('adminAddBlog') }}" class="btn btn-primary btn small"><i class="fa fa-plus me-2" aria-hidden="true"></i>Add Blog Post</a>
@@ -42,10 +41,10 @@
                         @foreach($blogs as $blog)
                       <tr>
                         <th>{{ $blog->id }}</th>
-                        <td>{{ $blog->title }}</td>
+                        <td class="text-wrap">{{ Str::limit($blog->title,40) }}</td>
                         <td>{{ $blog->category }}</td>
-                        <td><img src="/blog/{{ $blog->image }}" alt=""></td>
-                        <td class="text-wrap">{{ $blog->description }}</td>
+                        <td><img class="img-fluid" src="/blog/{{ $blog->image }}" width="80px" height="80px" alt="No Image"></td>
+                        <td class="text-wrap">{{ Str::limit($blog->description,50) }}</td>
                         <td>{{ $blog->user->fullname }}</td>
                         <td>{{ $blog->created_at }}</td>
                         <td>{{ $blog->updated_at }}</td>

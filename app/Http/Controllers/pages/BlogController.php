@@ -2,12 +2,16 @@
 
 namespace App\Http\Controllers\pages;
 
-use App\Http\Controllers\Controller;
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class BlogController extends Controller
 {
     public function index(){
-        return view('pages.blog');
+        $category = Category::where('model', 'blog')->get();
+        return view('pages.blog',[
+            'categories' => $category,
+        ]);
     }
 }

@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Blog;
+use App\Models\Cart;
 use App\Models\Event;
 use App\Models\Product;
 use Laravel\Sanctum\HasApiTokens;
@@ -23,6 +24,11 @@ class User extends Authenticatable
     protected $fillable = [
         'fullname',
         'email',
+        'business_name',
+        'article_of_registration',
+        'phone',
+        'website',
+        'whatsapp',
         'password',
     ];
 
@@ -57,5 +63,9 @@ class User extends Authenticatable
 
     public function product(){
         return $this->hasMany(Product::class);
+    }
+
+    public function cart(){
+        return $this->hasMany(Cart::class);
     }
 }

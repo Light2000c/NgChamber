@@ -29,8 +29,12 @@
                         <th>ID</th>
                         <th>Product Name</th>
                         <th>Product Category</th>
+                        <th>Product Price</th>
+                        <th>Product Brand</th>
+                        <th>Product Size</th>
+                        <th>Product Colour</th>
                         <th>Product Image</th>
-                        <th>Product Category</th>
+                        <th>Product Description</th>
                         <th>Created_by</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
@@ -42,10 +46,26 @@
                         @foreach($products as $product)
                       <tr>
                         <td>{{ $product->id }}</td>
-                        <td>{{ $product->product_name }}</td>
+                        <td class="text-wrap">{{ Str::limit($product->product_name) }}</td>
                         <td>{{ $product->product_category }}</td>
+                        <td>₦{{ $product->product_price }}</td>
                         <td><img src="/products/{{ $product->product_image }}" alt=""></td>
-                        <td>{{ $product->product_description }}</td>
+                        @if($product->brand)
+                        <td>{{ $product->product_brand }}</td>
+                        @else
+                         <td>Null</td>
+                        @endif
+                        @if($product->product_size)
+                        <td>{{ $product->product_size }}</td>
+                        @else
+                         <td>Null</td>
+                        @endif
+                        @if($product->product_colour)
+                        <td>{{ $product->product_colour }}</td>
+                        @else
+                         <td>Null</td>
+                        @endif
+                        <td class="text-wrap">{{ Str::limit($product->product_description) }}</td>
                         <td>{{ $product->user->fullname }}</td>
                         <td>{{ $product->created_at }}</td>
                         <td>{{ $product->updated_at }}</td>
