@@ -22,12 +22,9 @@ class AddEventController extends Controller
         'title' => 'required|unique:events,title',
         'category' => 'required',
         'start_date' => 'required',
-        'image' => 'required|mimes:jpeg,jpg,jfif,png,webp',
         'description' => 'required',
      ]);
-     $new_image = time().'-'.$request->title.'.'.$request->file('image')->guessExtension();
 
-     $upload = $request->file('image')->move('event/', $new_image);
 
      $event = Auth::user()->event()->create([
       'title'=> $request->title,
@@ -36,11 +33,10 @@ class AddEventController extends Controller
         'host' => $request->host,
         'start_date' => $request->start_date,
         'end_date' => $request->end_date,
-        'image' => $new_image,
         'description' => $request->description,
      ]);
 
-     if($upload && $event){
+     if($event){
       return back()->with('success', 'Event has been successfully created.');
      }else{
       return back()->with('error', 'Something went wrong, please try again later.');

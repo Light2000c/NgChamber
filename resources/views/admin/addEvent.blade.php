@@ -110,16 +110,6 @@
 
 
 
-
-                                                            <div class="form-group mb-3">
-                                                                <label for="imagee">Image</label>
-                                                                <input name="image" value="{{ old('image') }}" class="form-control"
-                                                                    type="file" style="background-color: whitesmoke;">
-                                                                @error('image')
-                                                                    <small class="text-danger">{{ $message }}</small>
-                                                                    @endif
-                                                                </div>
-
                                                                 <div class="form-group mb-3">
                                                                     <label for="description">Description</label>
                                                                     <textarea class="form-control" name="description" value="{{ old('description') }}" id="" cols="30"

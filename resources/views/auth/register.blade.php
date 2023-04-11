@@ -77,6 +77,9 @@
         <div class="display-table-cell">
           <div class="container">
             <div class="row">
+              {{-- <div class="col-md-6 ">
+                <img src="/news/1680198950-This once-thriving lake has all but dried up. It’s a story repeated across Europe as the drought deepens.webp" alt="" srcset="">
+              </div> --}}
               <div class="col-md-6 col-md-push-3">
                 <div class="text-center mb-60"><a href="#" class=""><img alt="" src="/logos/NIDCC CHAMBERS LOGO.png" style="width: 130px; height: auto;"></a></div>
                 <h4 class="text-theme-colored mt-0 pt-5">Register</h4>
@@ -113,6 +116,57 @@
                       @enderror
                     </div>
                   </div>
+
+                  <div class="row">
+                    <div class="form-group col-md-6">
+                      <label for="form_username_email">Business Name</label>
+                      <input id="form_username_email" name="business_name" value="{{ old('business_name') }}" class="form-control" type="text" placeholder="Business Name">
+                      @error('business_name')
+                      <small class="text-danger">{{ $message }}</small>
+                      @enderror
+                    </div>
+
+                    <div class="form-group col-md-6">
+                      <label for="form_username_email">Phone Number</label>
+                      <input id="form_username_email" name="phone" value="{{ old('phone') }}" class="form-control" type="tel" placeholder="Phone Number">
+                      @error('email')
+                      <small class="text-danger">{{ $message }}</small>
+                      @enderror
+                    </div>
+                </div>
+
+
+                <div class="row">
+                  <div class="form-group col-md-6">
+                    <label for="form_username_email">Address (Optional)</label>
+                    <input id="form_username_email" name="address" value="{{ old('address') }}" class="form-control" type="text" placeholder="Current Address">
+                    @error('address')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                  </div>
+
+                  <div class="form-group col-md-6">
+                    <label for="form_username_email">Website (Optional)</label>
+                    <input id="form_username_email" name="website" value="{{ old('website') }}" class="form-control" type="text" placeholder="Link To Your Website">
+                    @error('website')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="form_username_email">Article of Registration</label>
+                  <input id="form_username_email" name="article_of_registration" value="{{ old('article_of_registration') }}" class="form-control" type="text" placeholder="Article of Registration">
+                  @error('article_of_registration')
+                  <small class="text-danger">{{ $message }}</small>
+                  @enderror
+                </div>
+
+                <div class="form-group col-md-6">
+              
+                </div>
+            </div>
 
                   <div class="row">
                     <div class="form-group col-md-12">

@@ -12,10 +12,6 @@
           <div class="row">
             <div class="col-md-12">
               <h2 class="title text-white text-center">Shop</h2>
-              <ol class="breadcrumb text-left text-black mt-10">
-                <li><a href="#">Home</a></li>
-                <li class="active text-gray-silver">Shop</li>
-              </ol>
             </div>
           </div>
         </div>
@@ -37,9 +33,9 @@
                       <div class="product-thumb">
                         <img alt="" src="products/{{ $product->product_image }}" class="img-responsive img-fullwidth" style="width:285px; height: 300px">
                         <div class="overlay">
-                           <div class="btn-add-to-cart-wrapper">
+                           {{-- <div class="btn-add-to-cart-wrapper">
                             <button id="" class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700">Wishlist </button>
-                          </div>
+                          </div> --}}
                           {{-- <div class="btn-add-to-cart-wrapper">
                             <button id="{{ $product->id }}" class="btn btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700">favorite</button>
                           </div>
@@ -66,9 +62,9 @@
                                 });
                             });
                         </script> --}}
-                          <div class="btn-product-view-details">
+                          {{-- <div class="btn-product-view-details">
                             <a class="btn btn-default btn-theme-colored btn-sm btn-flat pl-20 pr-20 btn-add-to-cart text-uppercase font-weight-700" href="{{ route('product-details', $product) }}"> Details </a>
-                          </div>
+                          </div> --}}
                         </div>
                       </div>
                       <div class="product-details text-center">

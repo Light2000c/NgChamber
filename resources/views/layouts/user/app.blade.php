@@ -47,6 +47,11 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
+
+<link href="/personal/personal.css" rel="stylesheet" type="text/css">
+
+{{-- ionic cdn --}}
+
 {{-- bootstrap --}}
 {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
@@ -110,7 +115,7 @@
                   <a href="{{ route('profile') }}" class="text-white">{{ Auth::user()->fullname }}</a>
                 </li>
                 <li class="text-white">|</li>
-                <a href="#" class="text-white">Logout</a>
+                <li><a class="btn" style="color: white;" type="submit" class="text-white">Logout</a></li>
                 @else
                 <li>
                   <a href="{{ route('login') }}" class="text-white">Login</a>
@@ -135,7 +140,7 @@
                {{-- <img src="/web/images/logo-wide.png" alt=""> --}}
             </a>
             <ul class="menuzord-menu">
-              <li class="active"><a href="#home">Home</a>
+              <li class=""><a href="#home">Home</a>
               </li>
               <li><a href="#">NIDCC</a>
                 <ul class="dropdown">
@@ -144,14 +149,10 @@
                   </li>
                   <li><a href="{{ route('event') }}">Events</a>
                   </li>
-                  <li><a href="{{ route('blog') }}">Blogs</a></li>
                 </ul>
               </li>
-              <li><a href="">Topics</a>
               </li>
-              <li><a href="{{ route('contact') }}">Contact Us</a>
-              </li>
-              <li><a href="{{ route('about') }}">About Us</a>
+              <li class=""><a href="{{ route('news') }}">News</a>
               </li>
               <li><a href="javascript:void(0)">Topics</a>
                 <div class="megamenu">
@@ -196,6 +197,10 @@
                   </div>
                 </div>
               </li>
+              <li><a href="{{ route('contact') }}">Contact Us</a>
+              </li>
+              <li><a href="{{ route('about') }}">About Us</a>
+              </li>
             </ul>
           </nav>
         </div>
@@ -211,11 +216,10 @@
    <footer id="footer" class="footer bg-black-222" data-bg-img="/web/images/footer-bg.png">
     <div class="container pt-70 pb-40">
       <div class="row">
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-4">
           <div class="widget dark">
-            <img class="mt-10 mb-15" alt="" src="/web/images/logo-wide-white.png">
-            <p class="font-16 mb-10">GreenPeace is a library of Crowdfunding and Charity templates with predefined elements which helps you to build your own site. Lorem ipsum dolor sit amet consectetur.</p>
-            <a class="font-14" href="#"><i class="fa fa-angle-double-right text-theme-colored"></i> Read more</a>
+            <img class="mt-10 mb-15" alt="" src="/logos/NIDCC LOGO DIMENSIONED 1.png">
+            <p class="font-16 mb-10">NiDCC connect members with peers, provide access to opportunities and share resources to benefit members businesses and careers.</p>
             <ul class="styled-icons icon-dark mt-20">
               <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".1s" data-wow-offset="10"><a href="#" data-bg-color="#3B5998"><i class="fa fa-facebook"></i></a></li>
               <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s" data-wow-offset="10"><a href="#" data-bg-color="#02B0E8"><i class="fa fa-twitter"></i></a></li>
@@ -225,54 +229,19 @@
             </ul>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
-          <div class="widget dark">
-            <h5 class="widget-title line-bottom">Latest News</h5>
-            <div class="latest-posts">
-              <article class="post media-post clearfix pb-0 mb-10">
-                <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                <div class="post-right">
-                  <h5 class="post-title mt-0 mb-5"><a href="#">Sustainable Construction</a></h5>
-                  <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                </div>
-              </article>
-              <article class="post media-post clearfix pb-0 mb-10">
-                <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                <div class="post-right">
-                  <h5 class="post-title mt-0 mb-5"><a href="#">Industrial Coatings</a></h5>
-                  <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                </div>
-              </article>
-              <article class="post media-post clearfix pb-0 mb-10">
-                <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                <div class="post-right">
-                  <h5 class="post-title mt-0 mb-5"><a href="#">Storefront Installations</a></h5>
-                  <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                </div>
-              </article>
-              <article class="post media-post clearfix pb-0 mb-10">
-                <a href="#" class="post-thumb"><img alt="" src="http://placehold.it/80x55"></a>
-                <div class="post-right">
-                  <h5 class="post-title mt-0 mb-5"><a href="#">Industrial Coatings</a></h5>
-                  <p class="post-date mb-0 font-12">Mar 08, 2015</p>
-                </div>
-              </article>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-4">
           <div class="widget dark">
             <h5 class="widget-title line-bottom">Useful Links</h5>
             <ul class="list angle-double-right list-border">
+              <li><a href="#">Home</a></li>
+              <li><a href="#">About US</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">New</a></li>
               <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Donor Privacy Policy</a></li>
-              <li><a href="#">Disclaimer</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Media Center</a></li>
             </ul>
           </div>
         </div>
-        <div class="col-sm-6 col-md-3">
+        <div class="col-sm-6 col-md-4">
           <div class="widget dark">
             <h5 class="widget-title line-bottom">Quick Contact</h5>
             <ul class="list-border">

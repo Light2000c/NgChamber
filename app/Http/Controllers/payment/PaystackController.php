@@ -10,8 +10,29 @@ use Paystack;
 
 class PaystackController extends Controller
 {
-    public function index(){
-        return view('payment.paystack');
+    public function index($plan){
+
+        if(!$plan){
+            return redirect()->route('plans');
+        }
+
+        $amount = 0;
+
+        if($plan == "individual"){
+          $amount = 275;
+        }else if($plan == "bronze"){
+            $amount = 475;
+          }else if($plan == "gold"){
+            $amount = 300;
+          }else if($plan == "platinum"){
+            $amount = 700;
+          }
+
+
+        return view('payment.paystack', [
+            "plan" => $plan,
+            "amount" => $amount,
+        ]);
     }
 
     

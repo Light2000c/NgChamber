@@ -1,95 +1,78 @@
 @extends('layouts.user.app')
 
 @section('content')
-<div class="main-content">
+   <!-- Start main-content -->
+   <div class="main-content">
     <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="images/bg/bg6.jpg">
-      <div class="container pt-70 pb-20">
+    <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg6.jpg">
+      <div class="container pt-60 pb-60">
         <!-- Section Content -->
         <div class="section-content">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h3 class="font-28 text-white">Event Details 2</h2>
+              <h2 class="title text-white">Event Detail</h2>
               <ol class="breadcrumb text-center text-black mt-10">
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Pages</a></li>
-                <li class="active text-gray-silver">Page Title</li>
+                <li><a href="#">Event</a></li>
+                <li class="active text-white">This is event title</li>
               </ol>
             </div>
-          </div>
-        </div>
-      </div>      
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <ul>
-              <li>
-                <h5>Topics:</h5>
-                <p>{{ $event->title }}</p>
-              </li>
-              @if($event->host)
-              <li>
-                <h5>Host:</h5>
-                <p>{{ $event->host }}</p>
-              </li>
-              @endif
-              @if($event->loaction)
-              <li>
-                <h5>Location:</h5>
-                <p>#{{  $event->location }}</p>
-              </li>
-              @endif
-              <li>
-                <h5>Start Date:</h5>
-                <p>{{ $event->start_date }}</p>
-              </li>
-              @if($event->end_date)
-              <li>
-                <h5>End Date:</h5>
-                <p>{{ $event->end_date }}</p>
-              </li>
-              @endif
-              <li>
-                <h5>Share:</h5>
-                <div class="styled-icons icon-sm icon-gray icon-circled">
-                  <a href="#"><i class="fa fa-facebook"></i></a>
-                  <a href="#"><i class="fa fa-twitter"></i></a>
-                  <a href="#"><i class="fa fa-instagram"></i></a>
-                  <a href="#"><i class="fa fa-google-plus"></i></a>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="col-md-8">
-            <div class="owl-carousel-1col" data-nav="true">
-              <div class="item"><img src="/event/{{ $event->image }}" style="width: 755px; height: 480px;" alt=""></div>
-              {{-- <div class="item"><img src="https://placehold.it/755x480" alt=""></div>
-              <div class="item"><img src="https://placehold.it/755x480" alt=""></div>
-              <div class="item"><img src="https://placehold.it/755x480" alt=""></div>
-              <div class="item"><img src="https://placehold.it/755x480" alt=""></div> --}}
-            </div>
-          </div>
-        </div>
-
-        <div class="row mt-60">
-          <div class="col-md-6">
-            <h4 class="mt-0">Event Description</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi id perspiciatis facilis nulla possimus quasi, amet qui. Ea rerum officia, aspernatur nulla neque nesciunt alias repudiandae doloremque, dolor, quam nostrum laudantium earum illum odio quasi excepturi mollitia corporis quas ipsa modi nihil, ad ex tempore.</p>
-          </div>
-          <div class="col-md-6">
-            <blockquote>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-              <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
-            </blockquote>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- Section: Blog -->
+    <section>
+      <div class="container mt-30 mb-30 pt-30 pb-30">
+        <div class="row">
+          <div class="col-md-9 pull-right flip sm-pull-none">
+            <div class="blog-posts single-post">
+              <article class="post clearfix mb-0">
+                {{-- <div class="entry-header">
+                  <div class="post-thumb thumb"> <img src="/news/{{ $news->image }}" alt="" class="img-responsive img-fullwidth"> </div>
+                </div> --}}
+                <div class="entry-content">
+                  <div class="entry-meta media no-bg no-border mt-15 pb-20">
+                    <div class="media-body pl-15">
+                      <div class="event-content pull-left flip">
+                        <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="blog-single-right-sidebar.html">This Is The Event Title</a></h3>
+                        <span class="mb-10 text-gray-darkgray mr-10 font-13">Jan 19 Tues</span>                       
+                      </div>
+                    </div>
+                  </div>
 
-  </div>
+                   {{-- <div>
+                    {!! $news->description !!}
+                   </div> --}}
+                   <div>
+                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure deserunt repudiandae animi magnam illum minus a cum voluptatum delectus facilis id nobis facere omnis asperiores, ab corrupti neque. Iure, perspiciatis repudiandae nesciunt similique officiis beatae unde nulla in saepe explicabo reiciendis maxime consequatur facilis, soluta pariatur cupiditate doloremque consectetur aliquam! Dicta voluptatibus veritatis, in possimus laudantium aut laborum assumenda rerum quae accusantium soluta ut, harum omnis ducimus placeat unde iste laboriosam. Quas, magni velit! Vitae voluptatibus harum incidunt illum ea nulla est. Quis alias eius deleniti laborum ut, repellendus provident dignissimos consequuntur enim id dolor ab facilis unde magnam similique. Saepe accusantium magni et sed, eligendi adipisci eos voluptates autem aliquid, ipsam quasi possimus minus aut numquam nulla perferendis veniam.
+                   </div>
+                </div>
+              </article>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div class="sidebar sidebar-left mt-sm-30">
+              <div class="widget">
+                <h5 class="widget-title line-bottom">Search box</h5>
+                <div class="search-form">
+                  <form>
+                    <div class="input-group">
+                      <input type="text" placeholder="Click to Search" class="form-control search-input">
+                      <span class="input-group-btn">
+                      <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
+                      </span>
+                    </div>
+                  </form>
+                </div>
+              </div>
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> 
+  </div>  
   <!-- end main-content -->
 @endsection

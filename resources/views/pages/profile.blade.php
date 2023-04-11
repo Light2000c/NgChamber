@@ -10,9 +10,7 @@
         <div class="section-content">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2 class="title text-white">Home</h2>
-              <ol class="breadcrumb text-center text-black mt-10">
-                <li class="active text-white">Profile</li>
+              <h2 class="title text-white">Profile</h2>
               </ol>
             </div>
           </div>
@@ -21,6 +19,139 @@
     </section>
 
     <section>
+
+      <div class="container mt-30 mb-30 pt-30 pb-30">
+      <div class="row" >
+      <div class="col-md-3 p-15">
+        <div class="pb-15">
+         <h4>Welcome Clinton!</h4>
+         <p>Welcome to your profile page</p>
+         <p>Manage your products, subscriptions, wishlist.</p>
+        </div>
+
+        <ul class="nav nav-pills nav-stacked">
+          <li class="active"><a href="{{ route('profile') }}">Overview</a></li>
+          <li><a  href="{{ route('edit-profile') }}">My Profile</a></li>
+          <li><a  href="{{ route('edit-address') }}">Address</a></li>
+          <li><a  href="{{ route('manage-product') }}">Products</a></li>
+          <li><a  href="{{ route('call-request') }}">Call Request</a></li>
+          <li><a  href="{{ route('wishlist') }}">Wishlist</a></li>
+        </ul>
+      </div>
+
+      <div class="col-md-9">
+      <div class="tab-contents">
+        <div id="overview" class="" style="margin-bottom: 25px;">
+          <h3>Overview</h3>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="profile-box " style="margin-bottom: 25px">
+              <div>
+                <h5>My Profile</h5>
+                <small>Personal Information</small>
+              </div>
+              <div>
+              <p>Clinton Onitsha</p>
+              <p>clintononitsha20@gmail.com</p>
+              <p>08128161958</p>
+              </div>
+              <div class="" >
+              <a href="{{ route('edit-profile') }}">
+                <div style="display: flex; justify-content: space-between">
+                  <span>Edit Profile</span><span><i class="fa fa-angle-right" style="transform: scale(1.5)"></i></span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="profile-box" style="margin-bottom: 25px">
+              <div>
+                <h5>Products</h5>
+                <small>Manage Products</small>
+              </div>
+              <div>
+                <p><b>0 </b> Reviews</p>
+                <p><b>0 </b> Products</p>
+              </div>
+              <div class="" >
+              <a href="{{ route('manage-product') }}">
+                <div style="display: flex; justify-content: space-between">
+                  <span>Go To products</span><span><i class="fa fa-angle-right" style="transform: scale(1.5)"></i></span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-md-6">
+            <div class="profile-box" style="margin-bottom: 25px">
+              <div>
+                <h5>Call request</h5>
+                <small>Manage Call Request</small>
+              </div>
+              <div>
+                <p><b>0 </b> Call Request</p>
+              </div>
+              <div class="" >
+              <a href="{{ route('call-request') }}">
+                <div style="display: flex; justify-content: space-between">
+                  <span>View Call Request</span><span><i class="fa fa-angle-right" style="transform: scale(1.5)"></i></span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" >
+            <div class="profile-box" style="margin-bottom: 25px">
+              <div>
+                <h5>Address</h5>
+                <small>Address information</small>
+              </div>
+              <div>
+             
+              </div>
+              <div class="" >
+              <a href="{{ route('edit-address') }}">
+                <div style="display: flex; justify-content: space-between">
+                  <span>Edit Address</span><span><i class="fa fa-angle-right" style="transform: scale(1.5)"></i></span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6" >
+            <div class="profile-box" style="margin-bottom: 25px">
+              <div>
+                <h5>Wishlist</h5>
+                <small>Manage Wishlist</small>
+              </div>
+              <div>
+                <p><b>3 </b> wishes</p>
+              </div>
+              <div class="" >
+              <a href="{{ route('wishlist') }}">
+                <div style="display: flex; justify-content: space-between">
+                  <span>Go To Wishlist</span><span><i class="fa fa-angle-right" style="transform: scale(1.5)"></i></span></div>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+      </div>
+
+    </div>
+  </div>
+  </section>
+
+    {{-- <section>
       <div class="container mt-30 mb-30 pt-30 pb-30">
 
         <div class="row">
@@ -36,7 +167,7 @@
                 <p>{{  Auth::user()->fullname }}</p>
                 <p>{{ Auth::user()->email  }}</p>
                 @endif()
-                {{-- <p>Verified</p> --}}
+              
                 <button class="btn btn-primary btn-medium" style="margin-bottom: 10px;">Edit Profile</button>
             </div>
         </div>
@@ -219,8 +350,8 @@
   </div>
 
     </div>
-    </section> 
-  </div>  
+    </section>  
+  </div>  --}}
   <!-- end main-content -->  
 
 @endsection

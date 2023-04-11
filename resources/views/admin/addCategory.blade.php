@@ -52,6 +52,7 @@
                                             <option value="product">Product</option>
                                             <option value="blog">Blog</option>
                                             <option value="event">Event</option>
+                                            <option value="news">News</option>
                                         </select>
                                         @error('category')
                                             <small class="text-danger">{{ $message }}</small>

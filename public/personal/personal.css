@@ -1,0 +1,89 @@
+.membership-box{
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.membership-header{
+    text-align: center;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.membership-name{
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.membership-price{
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.membership-price h4 sub{
+   font-size: 18px;
+}
+
+.membership-select{
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.membership-select button{
+  color: white;
+  font-size: 18px;
+    font-weight: bold;
+   background-color: #4D7902;
+   border-radius: 12px;
+}
+
+.membership-select button:hover{
+    color: white;
+    font-size: 20px;
+      font-weight: bold;
+
+     background-color: #4D7902;
+
+     border-radius: 12px;
+
+  }
+
+.membership-list{
+    margin-bottom: 30px;
+}
+
+.membership-list i{
+    color: #7C9C47;
+    margin-right: 5px;
+}
+
+
+.membership-more{
+    text-align: center;
+}
+
+.membership-more hr{
+    height: 5px;
+}
+
+.membership-more p{
+    color: #4D7902;
+}
+
+.profile-box{
+    padding: 20px;
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      width: auto; height: 300px; display: flex;
+       flex-direction: column;
+        justify-content: space-between;
+}
+
+.profile-box2{
+    padding: 20px;
+     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+      display: flex;
+       flex-direction: column;
+        justify-content: space-between;
+}

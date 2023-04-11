@@ -8,7 +8,7 @@
 					<ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
 						<li class="breadcrumb-item"><a href="#">Event</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Event title</li>
+						<li class="breadcrumb-item active" aria-current="page">{{ $event->title }}</li>
 					</ol>
 				</nav>
 
@@ -16,7 +16,7 @@
 			   <div class="col grid-margin stretch-card">
 						<div class="card">
 							<div class="card-body">
-								<h4 class="card-title">Add Product</h4>
+								<h4 class="card-title">Event</h4>
 
                                 @if(session('success'))
                     @php
@@ -46,27 +46,13 @@
            <form action="{{ route('view-event', $event) }}" method="post" enctype="multipart/form-data">
 
            <div class="row">
-            <div class="col-lg-6 mb-4">
+            {{-- <div class="col-lg-6 mb-4">
              <div class="d-flex justify-content-center mb-4"><img class="img-fluid" src="/event/{{ $event->image }}" alt=""></div>
              
-             <div class="form-group mb-3">
-                <label for="">Start Date</label>
-                <input class="form-control" type="datetime-local" name="start_date" value="{{ $event->start_date }}" style="background-color: whitesmoke;">
-                @error('start_date')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-            </div>
+ 
+            </div> --}}
 
-               <div class="form-group mb-3">
-                <label for="">End Date</label>
-                <input class="form-control" type="datetime-local" name="end_date" value="{{ $event->end_date }}" style="background-color: whitesmoke;">
-                @error('end_date')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-               </div>
-            </div>
-
-            <div class="col">
+            <div class="col-lg-8">
             
 
             @csrf
@@ -105,12 +91,25 @@
                 @enderror
                </div>
 
-       
+               <div class="row">
+               <div class="col form-group mb-3">
+                  <label for="">Start Date</label>
+                  <input class="form-control" type="datetime-local" name="start_date" value="{{ $event->start_date }}" style="background-color: whitesmoke;">
+                  @error('start_date')
+                  <small class="text-danger">{{ $message }}</small>
+                  @enderror
+              </div>
+  
+                 <div class="col form-group mb-3">
+                  <label for="">End Date</label>
+                  <input class="form-control" type="datetime-local" name="end_date" value="{{ $event->end_date }}" style="background-color: whitesmoke;">
+                  @error('end_date')
+                  <small class="text-danger">{{ $message }}</small>
+                  @enderror
+                 </div>
 
-               <div class="form-group mb-3">
-                <label for="">From</label>
-                <input class="form-control" type="file" name="image" style="background-color: whitesmoke;">
                </div>
+
 
                <div class="form-group mb-3">
                 <label for="">Description</label>

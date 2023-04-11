@@ -23,13 +23,9 @@ class viewEventController extends Controller
                 'title' => 'required|',
                 'category' => 'required',
                 'start_date' => 'required',
-                'image' => 'required|mimes:jpeg,jpg,jfif,png,webp',
                 'description' => 'required',
             ]);
 
-            $new_image = time() . '-' . $request->title . '.' . $request->file('image')->guessExtension();
-
-            $upload = $request->file('image')->move('event/', $new_image);
 
             $success =  Auth::user()->event()->update([
               'title'=> $request->title,
@@ -38,11 +34,10 @@ class viewEventController extends Controller
                 'host' => $request->host,
                 'start_date' => $request->start_date,
                 'end_date' => $request->end_date,
-                'image' => $new_image,
                 'description' => $request->description,
              ]);
 
-            if ($upload && $success) {
+            if ($success) {
                 return back()->with('success', 'Event has been successfully updated.');
             } else {
                 return back()->with('error', 'Something went wrong, please try again later.');

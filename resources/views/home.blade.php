@@ -8,7 +8,7 @@
      <section id="home">
         
       <!-- Slider Revolution Start -->
-      <div class="rev_slider_wrapper">
+      <div class="rev_slider_wrapper" style="margin-bottom: 100px;">
         <div class="rev_slider" data-version="5.0">
           <ul>
 
@@ -325,7 +325,7 @@
 
 
     <!-- Section: Sevices -->
-    <section>
+    {{-- <section>
       <div class="container">
         <div class="section-content">
           <div class="row">
@@ -357,11 +357,11 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> --}}
 
         <!-- Section: About -->
         <section id="about">
-          <div class="container mt-0 pb-70 pt-0">
+          <div class="container mt-0 pb-70 pt-0" >
             <div class="section-content">
               <div class="row mt-10">
                 <div class="col-sm-12 col-md-6 mb-sm-20 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s">
@@ -488,7 +488,7 @@
                   <div class="project-details p-15 pt-10 pb-10">
                     <h5 class="font-14 font-weight-500 mb-5">Business Planning</h5>
                     <h4 class="font-weight-700 text-uppercase mt-0"><a href="page-courses-accounting-technologies.html">Business Planning</a></h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam. </p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum diam tortor, egestas varius erat aliquam . </p>
                   </div>
                 </div>
               </div>
@@ -536,86 +536,39 @@
             </div>
             <div class="section-content">
               <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                @foreach ($events as $event)
+                <div class="col-xs-12 col-sm-6 col-md-4 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
                   <div class="pricing table-horizontal maxwidth400">
                     <div class="row">
-                      <div class="col-md-6">
-                        <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as7.jpg" alt="">
-                        </div>
+                      <div class="col p-30 pl-sm-50">
+                        <h4 class="mt-0 mb-5"><a href="#" class="text-white">{{ Str::limit($event->title,23) }}</a></h4>
+                        <ul class="list-inline mb-5 text-white">
+                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> {{ $event->start_date }} </li>
+                          {{-- <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>| New York</li> --}}
+                        </ul>
+                        <p class="mb-15 mt-15 text-white">{{ Str::limit($event->description, 62) }}</p>
+                        <a class="text-white font-weight-600" href="#">Read More →</a>
                       </div>
-                      <div class="col-md-6 p-30 pl-sm-50">
+                    </div>
+                  </div>
+                </div>       
+                @endforeach
+                {{-- <div class="col-xs-12 col-sm-6 col-md-4 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
+                  <div class="pricing table-horizontal maxwidth400">
+                    <div class="row">
+                      <div class="col p-30 pl-sm-50">
                         <h4 class="mt-0 mb-5"><a href="#" class="text-white">Upcoming Events Title</a></h4>
                         <ul class="list-inline mb-5 text-white">
                           <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
                           <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
                         </ul>
-                        <p class="mb-15 mt-15 text-white">Lorem ipsum dolor sit amet, consectetur adi isicing elit. Quas eveniet, nemo dicta. Ullam nam.</p>
+                        <p class="mb-15 mt-15 text-white">Lorem ipsum dolor sit amet, consectetur adi isicing elit. Quas eveniet, nemo dicta. Ullam nam. </p>
                         <a class="text-white font-weight-600" href="#">Read More →</a>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <div class="pricing table-horizontal maxwidth400">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as8.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-6 p-30 pl-sm-50">
-                        <h4 class="mt-0 mb-5"><a href="#" class="text-white">Upcoming Events Title</a></h4>
-                        <ul class="list-inline mb-5 text-white">
-                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
-                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
-                        </ul>
-                        <p class="mb-15 mt-15 text-white">Lorem ipsum dolor sit amet, consectetur adi isicing elit. Quas eveniet, nemo dicta. Ullam nam.</p>
-                        <a class="text-white font-weight-600" href="#">Read More →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <div class="pricing table-horizontal maxwidth400">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as9.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-6 p-30 pl-sm-50">
-                        <h4 class="mt-0 mb-5"><a href="#" class="text-white">Upcoming Events Title</a></h4>
-                        <ul class="list-inline mb-5 text-white">
-                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
-                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
-                        </ul>
-                        <p class="mb-15 mt-15 text-white">Lorem ipsum dolor sit amet, consectetur adi isicing elit. Quas eveniet, nemo dicta. Ullam nam.</p>
-                        <a class="text-white font-weight-600" href="#">Read More →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 mb-30 wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                  <div class="pricing table-horizontal maxwidth400">
-                    <div class="row">
-                      <div class="col-md-6">
-                        <div class="thumb">
-                        <img class="img-fullwidth mb-sm-0" src="/web/images/about/as10.jpg" alt="">
-                        </div>
-                      </div>
-                      <div class="col-md-6 p-30 pl-sm-50">
-                        <h4 class="mt-0 mb-5"><a href="#" class="text-white">Upcoming Events Title</a></h4>
-                        <ul class="list-inline mb-5 text-white">
-                          <li class="pr-0"><i class="fa fa-calendar mr-5"></i> June 26, 2016 |</li>
-                          <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>New York</li>
-                        </ul>
-                        <p class="mb-15 mt-15 text-white">Lorem ipsum dolor sit amet, consectetur adi isicing elit. Quas eveniet, nemo dicta. Ullam nam.</p>
-                        <a class="text-white font-weight-600" href="#">Read More →</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </div> --}}
+             
               </div>
             </div>
           </div>
@@ -637,44 +590,26 @@
             <div class="row">
               <div class="col-md-12">
                   <div class="owl-carousel-3col owl-nav-top mb-sm-0" data-dots="true">
+                    @foreach($news as $new)
                   <div class="item">
                     <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
                       <div class="entry-header">
-                        <div class="post-thumb thumb"> <img src="/web/images/blog/1.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                        <div class="entry-meta meta-absolute text-center pl-10 pr-10">
-                        <div class="display-table">
-                          <div class="display-table-cell">
-                            <ul>
-                              <li><a class="text-white" href="#"><i class="fa fa-comments-o mt-0 pt-0"></i> 85 <br> comments</a></li>
-                              <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up mt-20"></i> 250 <br> Likes</a></li>
-                            </ul>
-                          </div>
-                        </div>
-                        </div>
+                        <div class="post-thumb thumb"> <img src="news/{{ $new->image }}" alt="" class="img-responsive img-fullwidth"> </div>
                       </div>
                       <div class="entry-content border-1px p-20">
-                        <h4 class="entry-title mt-0 pt-0"><a href="#">Post Title Here</a></h4>
-                          <span class="text-theme-colored mr-10 font-14">Admin | <i class="fa fa-calendar mr-5 text-theme-colored"></i> 21 February 2016</span>
-                        <p class="text-left mb-20 mt-5 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                        <h4 class="entry-title mt-0 pt-0"><a href="#">{{ Str::limit($new->title, 30) }}</a></h4>
+                          <span class="text-theme-colored mr-10 font-14">| {{ $new->created_at }}</i> </span>
+                        <p class="text-left mb-20 mt-5 font-13">{!!  Str::limit($new->description, 90) !!} </p>
                         <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="blog-single-left-sidebar.html">Read more</a>
                         <div class="clearfix"></div>
                       </div>
                     </article>
-                  </div>
-                  <div class="item">
+                  </div>                
+                  @endforeach
+                  {{-- <div class="item">
                     <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".4s">
                       <div class="entry-header">
                         <div class="post-thumb thumb"> <img src="/web/images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                        <div class="entry-meta meta-absolute text-center pl-10 pr-10">
-                          <div class="display-table">
-                            <div class="display-table-cell">
-                              <ul>
-                                <li><a class="text-white" href="#"><i class="fa fa-comments-o mt-0 pt-0"></i> 85 <br> comments</a></li>
-                                <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up mt-20"></i> 250 <br> Likes</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
                       </div>
                       <div class="entry-content border-1px p-20">
                         <h4 class="entry-title mt-0 pt-0"><a href="#">Post Title Here</a></h4>
@@ -684,79 +619,7 @@
                         <div class="clearfix"></div>
                       </div>
                     </article>
-                  </div>
-                  <div class="item">
-                    <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".6s">
-                      <div class="entry-header">
-                        <div class="post-thumb thumb"> <img src="/web/images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                        <div class="entry-meta meta-absolute text-center pl-10 pr-10">
-                          <div class="display-table">
-                            <div class="display-table-cell">
-                              <ul>
-                                <li><a class="text-white" href="#"><i class="fa fa-comments-o mt-0 pt-0"></i> 85 <br> comments</a></li>
-                                <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up mt-20"></i> 250 <br> Likes</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="entry-content border-1px p-20">
-                        <h4 class="entry-title mt-0 pt-0"><a href="#">Post Title Here</a></h4>
-                          <span class="text-theme-colored mr-10 font-14">Admin | <i class="fa fa-calendar mr-5 text-theme-colored"></i> 21 February 2016</span>
-                        <p class="text-left mb-20 mt-5 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                        <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="blog-single-left-sidebar.html">Read more</a>
-                        <div class="clearfix"></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="item">
-                    <article class="post clearfix maxwidth600 mb-sm-30">
-                      <div class="entry-header">
-                        <div class="post-thumb thumb"> <img src="/web/images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                        <div class="entry-meta meta-absolute text-center pl-10 pr-10">
-                          <div class="display-table">
-                            <div class="display-table-cell">
-                              <ul>
-                                <li><a class="text-white" href="#"><i class="fa fa-comments-o mt-0 pt-0"></i> 85 <br> comments</a></li>
-                                <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up mt-20"></i> 250 <br> Likes</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="entry-content border-1px p-20">
-                        <h4 class="entry-title mt-0 pt-0"><a href="#">Post Title Here</a></h4>
-                          <span class="text-theme-colored mr-10 font-14">Admin | <i class="fa fa-calendar mr-5 text-theme-colored"></i> 21 February 2016</span>
-                        <p class="text-left mb-20 mt-5 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                        <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="blog-single-left-sidebar.html">Read more</a>
-                        <div class="clearfix"></div>
-                      </div>
-                    </article>
-                  </div>
-                  <div class="item">
-                    <article class="post clearfix maxwidth600 mb-sm-30">
-                      <div class="entry-header">
-                        <div class="post-thumb thumb"> <img src="/web/images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                        <div class="entry-meta meta-absolute text-center pl-10 pr-10">
-                          <div class="display-table">
-                            <div class="display-table-cell">
-                              <ul>
-                                <li><a class="text-white" href="#"><i class="fa fa-comments-o mt-0 pt-0"></i> 85 <br> comments</a></li>
-                                <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up mt-20"></i> 250 <br> Likes</a></li>
-                              </ul>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="entry-content border-1px p-20">
-                        <h4 class="entry-title mt-0 pt-0"><a href="#">Post Title Here</a></h4>
-                          <span class="text-theme-colored mr-10 font-14">Admin | <i class="fa fa-calendar mr-5 text-theme-colored"></i> 21 February 2016</span>
-                        <p class="text-left mb-20 mt-5 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                        <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="blog-single-left-sidebar.html">Read more</a>
-                        <div class="clearfix"></div>
-                      </div>
-                    </article>
-                  </div>
+                  </div> --}}
                 </div>
               </div>
             </div>
@@ -894,12 +757,168 @@
     </section>
 
 
+            <!-- Section: Planyts -->
+            <section id="plans">
+              <div class="container pt-70 pb-40">
+                <div class="section-title text-center">
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                      <h2 class="mt-0 line-height-1 text-center text-uppercase mb-10 text-black-333">Membership <span class="text-theme-color-2"> Plans</span></h2>
+                      <p>NiDCC Membership Plans and Benefits</p>
+                    </div>
+                  </div>
+                </div>
+             
+                <div class="section-content">
+                  <div class="row">
+                   
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                      <div class="schedule-box maxwidth500 membership-box bg-white mb-30" style="height: 660px; padding: 10px">
+                        <div>
+                        <div class="membership-header">
+                          <h4>NiDCC Membership Plan</h4>
+                        </div>
+                        <div class="membership-name">
+                        <p>Individual Membership</p>
+                      </div>
+                      <div class="membership-price">
+                       <h4> <sup>$</sup>175/monthly</h4>
+                      </div>
+                      <div class="membership-select">
+                        <button class="btn btn-sm">Select Plan</button>
+                      </div>
+                    </div>
+
+                      <div class="membership-list">
+                        <ul>
+                          <li><i class="fa fa-check"></i> Business name and description, website, and social media links on our website directory </li>
+                          <li><i class="fa fa-check"></i> Post your events on the Chamber’s online Calendar of Events </li>
+                          <li><i class="fa fa-check"></i> Membership certificate, window sticker, and digital “Chamber Member” artwork rights </li>
+                          <li><i class="fa fa-check"></i> Welcome in Chamber’s e-newsletter and on Facebook page </li>
+                        </ul>
+                      </div>
+
+                        <div class="membership-more">
+                          <hr>
+                          <p><a href="{{ route('plan-details', 'individual') }}">See More Benefits <i class="fa fa-angle-double-right"></i></a></p>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                      <div class="schedule-box maxwidth500 membership-box bg-white mb-30" style="height: 660px; padding: 10px">
+                        <div>
+                        <div class="membership-header">
+                          <h4>NiDCC Membership Plan</h4>
+                        </div>
+                        <div class="membership-name">
+                        <p>Bronze Membership</p>
+                      </div>
+                      <div class="membership-price">
+                       <h4> <sup>$</sup>300/monthly</h4>
+                      </div>
+                      <div class="membership-select">
+                        <button class="btn btn-sm">Select Plan</button>
+                      </div>
+                      </div>
+
+                      <div class="membership-list">
+                        <ul>
+                          <li><i class="fa fa-check"></i> Enhanced listing on website directory including logo and second category </li>
+                          <li><i class="fa fa-check"></i> Support on your company’s ribbon-cuttings, grand-openings and open houses </li>
+                          <li><i class="fa fa-check"></i> Free inclusion of your marketing materials in quarterly NiDCC newsletter </li>
+                          <li><i class="fa fa-check"></i> Free inclusion of your marketing materials in event guest bags (when available) </li>
+                        </ul>
+                      </div>
+                        <div class="membership-more">
+                          <hr>
+                          <p><a href="{{ route('plan-details', 'bronze') }}">See More Benefits <i class="fa fa-angle-double-right"></i></a></p>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                      <div class="schedule-box maxwidth500 membership-box bg-white mb-30" style="height: 660px; padding: 10px">
+                        <div>
+                        <div class="membership-header">
+                          <h4>NiDCC Membership Plan</h4>
+                        </div>
+                        <div class="membership-name">
+                        <p>Gold Membership</p>
+                      </div>
+                      <div class="membership-price">
+                       <h4> <sup>$</sup>800/monthly</h4>
+                      </div>
+                      <div class="membership-select">
+                        <button class="btn btn-sm">Select Plan</button>
+                      </div>
+                      </div>
+
+                      <div class="membership-list">
+                        <ul>
+                          <li><i class="fa fa-check"></i>  Up to two free one-time use email list or mailing labels for your marketing purposes </li>
+                          <li><i class="fa fa-check"></i>  Access to the Members directory </li>
+                          <li><i class="fa fa-check"></i>  Opportunity to host a workshop promoted to Chamber members </li>
+                          <li><i class="fa fa-check"></i>  Ability to participate in member-only committees </li>
+                          <li><i class="fa fa-check"></i>  Four free tickets to Annual Awards event </li>
+                        </ul>
+                      </div>
+                        <div class="membership-more">
+                          <hr>
+                          <p><a href="{{ route('plan-details', 'gold') }}">See More Benefits <i class="fa fa-angle-double-right"></i></a></p>
+                        </div>
+
+                      </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-3 col-lg-3">
+                      <div class="schedule-box maxwidth500 membership-box bg-white mb-30" style="height: 660px; padding: 10px">
+                        <div>
+                        <div class="membership-header">
+                          <h4>NiDCC Membership Plan</h4>
+                        </div>
+                        <div class="membership-name">
+                        <p>Platinum Membership</p>
+                      </div>
+                      <div class="membership-price">
+                       <h4> <sup>$</sup>1,800/monthly</h4>
+                      </div>
+                      <div class="membership-select">
+                        <button class="btn btn-sm">Select Plan</button>
+                      </div>
+                      </div>
+
+                      <div class="membership-list">
+                        <ul>
+                          <li><i class="fa fa-check"></i> Featured once annually on Chamber Facebook page, twitter and Instagram </li>
+                          <li><i class="fa fa-check"></i> First crack at sponsorships for Chamber’s signature events </li>
+                          <li><i class="fa fa-check"></i> Logo appears on Chamber website home page, banners </li>
+                          <li><i class="fa fa-check"></i> Logo appears on Ambassadors’ t-shirts </li>
+                          <li><i class="fa fa-check"></i> Your logo repeats on pages throughout the Chamber’s website </li>
+                        </ul>
+                      </div>
+                        <div class="membership-more">
+                          <hr>
+                          <p><a href="{{ route('plan-details', 'platinum') }}">See More Benefits <i class="fa fa-angle-double-right"></i></a></p>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </section>
+
+
     <!-- Section: Client Say -->
     <section class="divider parallax layer-overlay overlay-dark-4" data-background-ratio="0.5" data-bg-img="/web/images/bg/bg2.jpg">
       <div class="container pt-60 pb-60">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-              <h2 class="text-uppercase mt-0 pb-0  text-center text-white">Our Students say</h2>
+              <h2 class="text-uppercase mt-0 pb-0  text-center text-white">What People Say</h2>
             <div class="owl-carousel-1col" data-dots="true">
               <div class="item">
                 <div class="testimonial-wrapper text-center">

@@ -11,12 +11,7 @@
         <div class="section-content">
           <div class="row">
             <div class="col-md-12">
-              <h2 class="title text-white text-center">About</h2>
-              <ol class="breadcrumb text-left text-black mt-10">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Pages</a></li>
-                <li class="active text-gray-silver">Page Title</li>
-              </ol>
+              <h2 class="title text-white text-center">About Us</h2>
             </div>
           </div>
         </div>

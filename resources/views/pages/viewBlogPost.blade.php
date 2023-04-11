@@ -44,7 +44,7 @@
                     <h5><i class="fa fa-clock"></i> {{ $blogs->created_at }}</h5>
                     <h5><i class="fa fa-product"></i> {{ $blogs->category }}</h5>
                 </div>
-                  <p>{{ $blogs->description }}</p>
+                  <p class="text-wrap">{{ $blogs->description }}</p>
                   
                 </div>
               </article>

@@ -33,7 +33,6 @@
                         <th>Host</th>
                         <th>Start Date</th>
                         <th>End Date</th>
-                        <th>Image</th>
                         <th>Description</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
@@ -51,7 +50,6 @@
                         <td>{{ $event->host }}</td>
                         <td>{{ $event->start_date }}</td>
                         <td>{{ $event->end_date }}</td>
-                        <td><img src="/event/{{ $event->image }}" alt="" srcset=""></td>
                         <td class="text-wrap">{{ Str::limit($event->description,50) }}</td>
                         <td>{{ $event->created_at }}</td>
                         <td>{{ $event->updated }}</td>

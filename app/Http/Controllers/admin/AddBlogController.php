@@ -20,7 +20,7 @@ class AddBlogController extends Controller
         ]);
     }
 
-    public function store(Request $request)
+   public function store(Request $request)
     {
         $this->validate($request, [
           'title'=>'required|unique:blogs,title',
@@ -49,6 +49,6 @@ class AddBlogController extends Controller
    }
 
 
-    }
+    } 
 
 }

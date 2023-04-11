@@ -8,16 +8,16 @@ use App\Http\Controllers\Controller;
 
 class EventDetailsController extends Controller
 {
-    public function index($id){
+    public function index(){
         
-    $event = Event::find($id);
+    // $event = Event::find($id);
 
-    if(!$event){
-        return;
-    }
+    // if(!$event){
+    //     return;
+    // }
 
     return view('pages.eventDetails',[
-        'event' => $event,
+        // 'event' => $event,
     ]);
      
     }
