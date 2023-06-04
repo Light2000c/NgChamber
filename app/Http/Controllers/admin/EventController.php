@@ -5,26 +5,31 @@ namespace App\Http\Controllers\admin;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 
 class EventController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
-        $event = Event::paginate(15);
-        return view('admin.event',[
+        $event = Event::orderBy('created_at', 'DESC')->paginate(15);
+        return view('admin.event', [
             'events' => $event,
         ]);
     }
 
 
-    public function destroy(Event $event){
+    public function destroy(Event $event)
+    {
 
-        // $events = Event::find($event->id);
+        try {
 
-        $success = $event->delete();
-        if($success){
+            $success = $event->delete();
+            if ($success) {
+                return back();
+            }
+        } catch (Exception $e) {
             return back();
         }
-
     }
 }

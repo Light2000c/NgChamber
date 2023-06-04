@@ -23,9 +23,8 @@ class isAdmin
             }
 
             return redirect()->route('home');
-
-        }else{
-            return redirect()->route('login');
+        } else {
+            return redirect()->route('adminLogin');
         }
     }
 }

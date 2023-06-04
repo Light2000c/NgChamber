@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\Event;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 
 class viewEventController extends Controller
@@ -18,6 +19,7 @@ class viewEventController extends Controller
 
     public function update(Request $request, Event $event)
     {
+        try{
         if ($request->hasFile('image')) {
             $this->validate($request, [
                 'title' => 'required|',
@@ -68,6 +70,8 @@ class viewEventController extends Controller
                 return back()->with('error', 'Something went wrong, please try again later.');
             }
         }
-
+    } catch (Exception $e) {
+        return back();
+    }
     }
 }

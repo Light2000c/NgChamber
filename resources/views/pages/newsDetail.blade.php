@@ -4,23 +4,25 @@
    <!-- Start main-content -->
    <div class="main-content">
     <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg6.jpg">
+    <section class="inner-header divider parallax layer-overlay overlay-dark-2" data-bg-img="/logos/simple3.jpeg">
       <div class="container pt-60 pb-60">
         <!-- Section Content -->
         <div class="section-content">
           <div class="row">
             <div class="col-md-12 text-center">
-              <h2 class="title text-white">News Details</h2>
-              <ol class="breadcrumb text-center text-black mt-10">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">News</a></li>
-                <li class="active text-white">{{ $news->title }}</li>
-              </ol>
+              <h2 class="font-28 text-white" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">NEWS</h2>
             </div>
           </div>
         </div>
-      </div>
+      </div>      
     </section>
+    <div>
+    <ul class="breadcrumb">
+      <li><a href="{{ route('home') }}">Home</a></li>
+      <li><a href="{{ route('news') }}">News</a></li>
+      <li>{{ $news->title }}</li>
+    </ul>
+  </div>  
 
     <!-- Section: Blog -->
     <section>
@@ -34,15 +36,15 @@
                 </div>
                 <div class="entry-content">
                   <div class="entry-meta media no-bg no-border mt-15 pb-20">
-                    <div class="media-body pl-15">
+                    <div class="media-body pl-5">
                       <div class="event-content pull-left flip">
-                        <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="blog-single-right-sidebar.html">{{ $news->title }}</a></h3>
-                        <span class="mb-10 text-gray-darkgray mr-10 font-13">{{ $news->created_at }}</span>                       
+                        <h3 class="entry-title text-white text-uppercase pt-0 mt-0" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><a href="blog-single-right-sidebar.html">{{ $news->title }}</a></h3>
+                        <span class="mb-10 text-gray-darkgray mr-10 font-13" style="color: #4D7902; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ $news->created_at }}</span>                       
                       </div>
                     </div>
                   </div>
 
-                   <div>
+                   <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">
                     {!! $news->description !!}
                    </div>
                 </div>
@@ -53,10 +55,10 @@
             <div class="sidebar sidebar-left mt-sm-30">
               <div class="widget">
                 <h5 class="widget-title line-bottom">Published By</h5>
-                <p>Clinton Onitsha</p>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">Admin</p>
              
                 <h5 class="widget-title line-bottom">Time</h5>
-                <p>Jan 15 2023</p>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ $news->created_at }}</p>
               </div>
            
             </div>

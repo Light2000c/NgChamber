@@ -10,7 +10,7 @@
 <meta name="author" content="ThemeMascot" />
 
 <!-- Page Title -->
-<title>LearnPress | Education & Courses HTML Template</title>
+<title>NiDCC</title>
 
 <!-- Favicon and Touch Icons -->
 <link href="/web/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -44,6 +44,7 @@
 
 <!-- CSS | Theme Color -->
 <link href="/web/css/colors/theme-skin-color-set-1.css" rel="stylesheet" type="text/css">
+<link href="/personal/personal.css" rel="stylesheet" type="text/css">
 
 <!-- external javascripts -->
 <script src="/web/js/jquery-2.2.4.min.js"></script>
@@ -77,11 +78,15 @@
         <div class="display-table-cell">
           <div class="container">
             <div class="row">
-              <div class="col-md-6 col-md-push-3">
-                <div class="text-center mb-60"><a href="#" class=""><img alt="" src="/logos/NIDCC CHAMBERS LOGO.png" style="width: 130px; height: auto;"></a></div>
-                <h4 class="text-theme-colored mt-0 pt-5"> Login</h4>
+              <div class="col-md-8 auth-image">
+               <img src="logos/auth.jpg" alt="" srcset="">
+              </div>
+              <div class="col-md-4">
+                {{-- <div class="col-md-6 col-md-push-3"> --}}
+                <div class="text-center mb-60 auth-logo"><a href="#" class=""><img alt="" src="/logos/NIDCC CHAMBERS LOGO.png" style="width: 130px; height: auto;"></a></div>
+                <h4 class="mt-0 pt-5" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #7C9C47; font-size: 23px"> Login</h4>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px;">Hi Welcome back, login to continue...</p>
                 <form name="login-form" action="{{ route('login') }}" method="post">
                     @csrf
 
@@ -113,18 +118,18 @@
                     </div>
                   </div>
                   <div class="clear text-right pt-10">
-                    <a class="text-theme-colored font-weight-600 font-12" href="#">Forgot Your Password?</a>
+                    <a class="text-theme-colored font-weight-600 font-12" href="{{ route('forgot-password') }}">Forgot Your Password?</a>
                   </div>
                   <div class="clear text-center pt-10">
-                    <button class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" type="submit"  data-bg-color="#3b5998">Sign In</button>
-                    <!-- <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee">Login with twitter</a> -->
+                    <button class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" type="submit" style="background-color: #7C9C47;">Sign In</button>
                   </div>
                   <div class="clear text-center pt-10">
-                    <h5 class="">Dont't have an account? <a class="text-theme-colored font-weight-600 font-14" href="" >Sign Up</a></h5>
+                    <h5 class="">Dont't have an account? <a class="text-theme-colored font-weight-600 font-14" href="{{ route('register') }}" >Sign Up</a></h5>
                   </div>
                 </form>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -136,9 +141,9 @@
   <footer id="footer" class="footer text-center bg-lighter">
     <div class="container">
       <div class="row">
-        <div class="col-md-12">
+        {{-- <div class="col-md-12">
           <p class="mb-0">Copyright ©2015 Medinova. All Rights Reserved</p>
-        </div>
+        </div> --}}
       </div>
     </div>
   </footer>

@@ -3,24 +3,25 @@
 @section('content')
    <!-- Start main-content -->
    <div class="main-content">
-    <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg6.jpg">
-      <div class="container pt-60 pb-60">
-        <!-- Section Content -->
-        <div class="section-content">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h2 class="title text-white">Event Detail</h2>
-              <ol class="breadcrumb text-center text-black mt-10">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Event</a></li>
-                <li class="active text-white">This is event title</li>
-              </ol>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+          <section class="inner-header divider parallax layer-overlay overlay-dark-2" data-bg-img="/logos/simple3.jpeg">
+            <div class="container pt-60 pb-60">
+              <!-- Section Content -->
+              <div class="section-content">
+                <div class="row">
+                  <div class="col-md-12 text-center">
+                    <h2 class="font-28 text-white" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">EVENTS</h2>
+                  </div>
+                </div>
+              </div>
+            </div>      
+          </section>
+          <div>
+          <ul class="breadcrumb">
+            <li><a href="{{ route('home') }}">Home</a></li>
+            <li><a href="{{ route('event') }}">Events</a></li>
+            <li>{{ $event->title }}</li>
+          </ul>
+        </div>  
 
     <!-- Section: Blog -->
     <section>
@@ -29,15 +30,17 @@
           <div class="col-md-9 pull-right flip sm-pull-none">
             <div class="blog-posts single-post">
               <article class="post clearfix mb-0">
-                {{-- <div class="entry-header">
-                  <div class="post-thumb thumb"> <img src="/news/{{ $news->image }}" alt="" class="img-responsive img-fullwidth"> </div>
-                </div> --}}
+                @if($event->image)
+                <div class="entry-header">
+                  <div class="post-thumb thumb"> <img src="/events/{{ $event->image }}" alt="" class="img-responsive img-fullwidth"> </div>
+                </div>
+                @endif
                 <div class="entry-content">
                   <div class="entry-meta media no-bg no-border mt-15 pb-20">
                     <div class="media-body pl-15">
                       <div class="event-content pull-left flip">
-                        <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="blog-single-right-sidebar.html">This Is The Event Title</a></h3>
-                        <span class="mb-10 text-gray-darkgray mr-10 font-13">Jan 19 Tues</span>                       
+                        <h3 class="entry-title text-white text-uppercase pt-0 mt-0"><a href="blog-single-right-sidebar.html" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ $event->title }}</a></h3>
+                        {{-- <span class="mb-10 text-gray-darkgray mr-10 font-13">Jan 19 Tues</span>                       --}}
                       </div>
                     </div>
                   </div>
@@ -45,8 +48,8 @@
                    {{-- <div>
                     {!! $news->description !!}
                    </div> --}}
-                   <div>
-                   Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iure deserunt repudiandae animi magnam illum minus a cum voluptatum delectus facilis id nobis facere omnis asperiores, ab corrupti neque. Iure, perspiciatis repudiandae nesciunt similique officiis beatae unde nulla in saepe explicabo reiciendis maxime consequatur facilis, soluta pariatur cupiditate doloremque consectetur aliquam! Dicta voluptatibus veritatis, in possimus laudantium aut laborum assumenda rerum quae accusantium soluta ut, harum omnis ducimus placeat unde iste laboriosam. Quas, magni velit! Vitae voluptatibus harum incidunt illum ea nulla est. Quis alias eius deleniti laborum ut, repellendus provident dignissimos consequuntur enim id dolor ab facilis unde magnam similique. Saepe accusantium magni et sed, eligendi adipisci eos voluptates autem aliquid, ipsam quasi possimus minus aut numquam nulla perferendis veniam.
+                   <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">
+                  {{ $event->description }}
                    </div>
                 </div>
               </article>
@@ -55,17 +58,22 @@
           <div class="col-md-3">
             <div class="sidebar sidebar-left mt-sm-30">
               <div class="widget">
-                <h5 class="widget-title line-bottom">Search box</h5>
-                <div class="search-form">
-                  <form>
-                    <div class="input-group">
-                      <input type="text" placeholder="Click to Search" class="form-control search-input">
-                      <span class="input-group-btn">
-                      <button type="submit" class="btn search-button"><i class="fa fa-search"></i></button>
-                      </span>
-                    </div>
-                  </form>
-                </div>
+                @if($event->location )
+                <h5 class="widget-title line-bottom" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">Location</h5>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">{{ $event->location }}</p>
+                @endif
+                @if($event->host )
+                <h5 class="widget-title line-bottom" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">Host</h5>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ $event->host }}</p>
+                @endif
+                @if($event->location )
+                <h5 class="widget-title line-bottom" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">Start Date</h5>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ $event->start_date }}</p>
+                @endif
+                @if($event->end_date )
+                <h5 class="widget-title line-bottom" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">End Date</h5>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">{{ $event->end_date }}</p>
+                @endif
               </div>
            
             </div>

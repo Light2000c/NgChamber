@@ -4,7 +4,7 @@
     <!-- Start main-content -->
     <div class="main-content">
       <!-- Section: inner-header -->
-      <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="images/bg/bg6.jpg">
+      <section class="inner-header divider parallax layer-overlay overlay-dark-2" data-bg-img="/logos/simple3.jpeg">
         <div class="container pt-70 pb-20">
           <!-- Section Content -->
           <div class="section-content">
@@ -62,31 +62,24 @@
                   <div class="schedule-box maxwidth500 membership-box bg-white mb-30" style="height: 300px; padding: 10px; display: flex; flex-direction: column; justify-content: space-between;">
                     <div> 
                     <h4 class="" style="font-weight: bolder;  color: #4D7902;">Individual Membership Plan </h4>
-                       <h4> $275/yearly</h4>
+                       <h4>$275.00</h4>
                        <p>Pay with:</p>
                       </div>  
                        
-                       <div class="" style="display: flex; margin-bottom: 10px;">
-                           <div style="margin: 10px">
-                       <div class="" style="display: flex; border: 1px #4D7902 solid; padding: 10px; border-radius: 12px;">
-                           <div style="margin-right: 10px;"><input type="radio" name="pay" id=""></div>
-                           <img src="/logos/paystack.svg" alt="" srcset="" width="80" height="50">
-                         </div>
-                         <small class="" style="text-align: center;">Paystack</small>
-                       </div>
-   
-                       <div style="margin: 10px">
-                         <div class="" style="display: flex; border: 1px #4D7902 solid; padding: 10px; border-radius: 12px;">
-                           <div style="margin-right: 10px;"><input type="radio" name="pay" id=""></div>
-                           <img src="/logos/stripe.svg" alt="" srcset="" width="80" height="50">
-                         </div>
-                         <small class="text-center" style="text-align: center;">Stripe</small>
-                       </div>
-                       </div>
+                      <div class="">
+                        <div>
+                          <a href="{{ route('pay-with-paypal', 'individual') }}" class="btn btn-large btn-primary " style="width: 100%; margin-bottom: 15px;">Continue With Paypal</a>
+                        </div>
+                        <div>
+                          <a href="{{ route('paystack', 'individual') }}" class="btn btn-large btn-primary" style="width: 100%; margin-bottom: 15px;">Continue With Paystack</a>
+                        </div>
+                        <div>
+                          <a class="btn btn-large btn-primary" style="width: 100%; margin-bottom: 15px;">Continue With Stripe</a>
+                        </div>
+
+                      </div>
+                 
                        
-                       <div class="">
-                           <a href="{{ route('paystack', 'individual') }}" class="btn btn-md" style="background-color: #4D7902; color: whitesmoke;">Proceed To Payment</a>
-                       </div>
          
                    </div>
                    </div>

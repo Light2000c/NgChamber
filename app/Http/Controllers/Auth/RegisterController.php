@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Providers\RouteServiceProvider;
+use Exception;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -43,36 +44,73 @@ class RegisterController extends Controller
         // $this->middleware('guest');
     }
 
-    public function index(){
+    public function index()
+    {
         return view('auth.register');
     }
 
-    public function register(Request $request){
-      $this->validate($request,[
-        'fullname' => 'required',
-        'email' => 'required|unique:users,email',
-        'business_name' => 'required',
-        'article_of_registration' => 'required',
-        'phone' => 'required',
-        'password' => 'required|min:8|confirmed',
-      ]);
 
 
-      $user = User::create([
-        'fullname' => $request->fullname,
-        'email' => $request->email,
-        'business_name' => $request->business_name,
-        'article_of_registration' => $request->article_of_registration,
-        'phone' => $request->phone,
-        'website' => $request->website,
-        'password' => Hash::make($request->password),
-      ]);
+    public function register(Request $request)
+    {
+try{
+        $this->validate($request, [
+            'fullname' => 'required',
+            'email' => 'required|unique:users,email',
+            'password' => 'required|min:8|confirmed',
+            'agreement-to-terms-and-conditions' => 'required',
+        ], [
+            'agreement-to-terms-and-conditions.required' => 'Please agree to terms and condions.',
+        ]);
 
-      if(!Auth::attempt($request->only('email','password', true))){
-        return back()->with('error', 'Something went wrong, please try again later.');
-      }
 
-      return redirect()->route('home');
+        User::create([
+            'fullname' => $request->fullname,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
+        ]);
+
+        if (!Auth::attempt($request->only('email', 'password', true))) {
+            return back()->with('error', 'Something went wrong, please try again later.');
+        }
+
+        return redirect()->route('home');
+    } catch (Exception $e) {
+        return back();
+    }
     }
 
+
+
+    public function purchasePlan(Request $request)
+    {
+
+        $this->validate($request, [
+            'amount' => 'required',
+            'plan' => 'required',
+            'phone' => 'required',
+            'city' => 'required',
+            'state' => 'required',
+            'country' => 'required',
+            'address' => 'required',
+            'business_name' => 'required',
+            'business_email' => 'required',
+            'business_phone' => 'required',
+            'business_city' => 'required',
+            'business_state' => 'required',
+            'business_country' => 'required',
+            'business_address' => 'required',
+            'business_number' => 'required',
+        ]);
+
+        session_start();
+
+        $_SESSION['userInfo'] = $request->all();
+
+
+        $new_data = $_SESSION["userInfo"];
+
+        // dd($new_data);
+        return redirect()->route('paystack');
+    }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
@@ -13,6 +14,8 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+
+      try{
      $this->validate($request,[
         'email'=> 'required',
         'password'=> 'required'
@@ -23,5 +26,9 @@ class LoginController extends Controller
       }
 
       return redirect()->route('adminDashboard');
+
+    } catch (Exception $e) {
+      return back();
+  }
     }
 }

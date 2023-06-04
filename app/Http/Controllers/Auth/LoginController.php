@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Providers\RouteServiceProvider;
+use Exception;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
@@ -45,6 +46,7 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
+        try{
        $this->validate($request,[
         'email' => 'required',
         'password' => 'required',
@@ -55,5 +57,8 @@ class LoginController extends Controller
        }
 
        return redirect()->route('home');
+    } catch (Exception $e) {
+        return back();
+    }
     }
 }

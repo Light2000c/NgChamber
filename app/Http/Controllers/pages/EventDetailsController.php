@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class EventDetailsController extends Controller
 {
-    public function index(){
+    public function index(Event $event){
         
     // $event = Event::find($id);
 
@@ -17,7 +17,7 @@ class EventDetailsController extends Controller
     // }
 
     return view('pages.eventDetails',[
-        // 'event' => $event,
+        'event' => $event,
     ]);
      
     }

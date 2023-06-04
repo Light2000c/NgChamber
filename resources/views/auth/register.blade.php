@@ -10,7 +10,7 @@
 <meta name="author" content="ThemeMascot" />
 
 <!-- Page Title -->
-<title>LearnPress | Education & Courses HTML Template</title>
+<title>NiDCC</title>
 
 <!-- Favicon and Touch Icons -->
 <link href="/web/images/favicon.png" rel="shortcut icon" type="image/png">
@@ -44,6 +44,8 @@
 
 <!-- CSS | Theme Color -->
 <link href="/web/css/colors/theme-skin-color-set-1.css" rel="stylesheet" type="text/css">
+<link href="/personal/personal.css" rel="stylesheet" type="text/css">
+
 
 <!-- external javascripts -->
 <script src="/web/js/jquery-2.2.4.min.js"></script>
@@ -77,14 +79,14 @@
         <div class="display-table-cell">
           <div class="container">
             <div class="row">
-              {{-- <div class="col-md-6 ">
-                <img src="/news/1680198950-This once-thriving lake has all but dried up. It’s a story repeated across Europe as the drought deepens.webp" alt="" srcset="">
-              </div> --}}
-              <div class="col-md-6 col-md-push-3">
-                <div class="text-center mb-60"><a href="#" class=""><img alt="" src="/logos/NIDCC CHAMBERS LOGO.png" style="width: 130px; height: auto;"></a></div>
-                <h4 class="text-theme-colored mt-0 pt-5">Register</h4>
+              <div class="col-md-8 auth-image" style="align-self: center; margin-top: 50px;" >
+                <img src="logos/auth.jpg" alt="" srcset="" > 
+               </div>
+              <div class="col-md-4 ">
+                <div class="text-center mb-60 auth-logo"><a href="#" class=""><img alt="" src="/logos/NIDCC CHAMBERS LOGO.png" style="width: 130px; height: auto;"></a></div>
+                <h4 class="mt-0 pt-5" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #7C9C47; font-size: 23px">Register</h4>
                 <hr>
-                <p>Lorem ipsum dolor sit amet, consectetur elit.</p>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px;">Register With Us To Get Started...</p>
                 <form  class="clearfix"  action="{{ route('register') }}" method="post">
                     @csrf
 
@@ -118,57 +120,6 @@
                   </div>
 
                   <div class="row">
-                    <div class="form-group col-md-6">
-                      <label for="form_username_email">Business Name</label>
-                      <input id="form_username_email" name="business_name" value="{{ old('business_name') }}" class="form-control" type="text" placeholder="Business Name">
-                      @error('business_name')
-                      <small class="text-danger">{{ $message }}</small>
-                      @enderror
-                    </div>
-
-                    <div class="form-group col-md-6">
-                      <label for="form_username_email">Phone Number</label>
-                      <input id="form_username_email" name="phone" value="{{ old('phone') }}" class="form-control" type="tel" placeholder="Phone Number">
-                      @error('email')
-                      <small class="text-danger">{{ $message }}</small>
-                      @enderror
-                    </div>
-                </div>
-
-
-                <div class="row">
-                  <div class="form-group col-md-6">
-                    <label for="form_username_email">Address (Optional)</label>
-                    <input id="form_username_email" name="address" value="{{ old('address') }}" class="form-control" type="text" placeholder="Current Address">
-                    @error('address')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                  </div>
-
-                  <div class="form-group col-md-6">
-                    <label for="form_username_email">Website (Optional)</label>
-                    <input id="form_username_email" name="website" value="{{ old('website') }}" class="form-control" type="text" placeholder="Link To Your Website">
-                    @error('website')
-                    <small class="text-danger">{{ $message }}</small>
-                    @enderror
-                  </div>
-              </div>
-
-              <div class="row">
-                <div class="form-group col-md-6">
-                  <label for="form_username_email">Article of Registration</label>
-                  <input id="form_username_email" name="article_of_registration" value="{{ old('article_of_registration') }}" class="form-control" type="text" placeholder="Article of Registration">
-                  @error('article_of_registration')
-                  <small class="text-danger">{{ $message }}</small>
-                  @enderror
-                </div>
-
-                <div class="form-group col-md-6">
-              
-                </div>
-            </div>
-
-                  <div class="row">
                     <div class="form-group col-md-12">
                       <label for="form_password">Password</label>
                       <input id="form_password" name="password" class="form-control" type="password" placeholder="Create a Password">
@@ -183,6 +134,20 @@
                       <input id="form_password" name="password_confirmation" class="form-control" type="password" placeholder="Confirm Password">
                     </div>
                   </div>
+
+                  <div>
+                  <div class="row">
+                    <div class="form-group col-md-12" style="display: flex;">
+                      <div style="margin-right: 15px;">
+                     <input id="form_password" name="agreement-to-terms-and-conditions"  type="checkbox">
+                    </div>
+                    <div><label style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 15px;">I agree to <a href="{{ route('terms-and-conditions') }}" style="color: #7C9C47;">Terms & Conditions</label></div>
+                    </div>
+                  </div>
+                  @error('agreement-to-terms-and-conditions')
+                  <div class="text-danger" style="margin-top: -20%"><small>{{ $message}}</small></div>
+                  @enderror
+                </div>
                   <!-- <div class="form-group pull-right mt-10">
                     <button type="submit" class="btn btn-dark btn-sm">Login</button>
                   </div> -->
@@ -190,11 +155,10 @@
                     <a class="text-theme-colored font-weight-600 font-12" href="#">Forgot Your Password?</a>
                   </div>
                   <div class="clear text-center pt-10">
-                    <button class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" type="submit" data-bg-color="#3b5998">Sign Up</button>
-                    <!-- <a class="btn btn-dark btn-lg btn-block no-border" href="#" data-bg-color="#00acee">Login with twitter</a> -->
+                    <button class="btn btn-dark btn-lg btn-block no-border mt-15 mb-15" type="submit" style="background-color: #7C9C47;">Sign Up</button>
                   </div>
                   <div class="clear text-center pt-10">
-                    <h5 class="">Already have an account? <a class="text-theme-colored font-weight-600 font-14" href="" >Sign In</a></h5>
+                    <h5 class="">Already have an account? <a class="text-theme-colored font-weight-600 font-14" href="{{ route('login') }}" >Sign In</a></h5>
                   </div>
                 </form>
               </div>

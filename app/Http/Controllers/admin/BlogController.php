@@ -6,26 +6,31 @@ use App\Models\Blog;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 
 class BlogController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $blog = Blog::paginate(15);
-        return view('admin.blog',[
+        return view('admin.blog', [
             'blogs' => $blog,
         ]);
     }
 
-    public function destroy(Blog $blog){
+    public function destroy(Blog $blog)
+    {
 
         // $blogs = Blog::find($blog->id);
 
-        $success = $blog->delete();
-        if($success){
+        try {
+            $success = $blog->delete();
+            if ($success) {
+                return back();
+            }
+        } catch (Exception $e) {
             return back();
         }
-
     }
-
 }

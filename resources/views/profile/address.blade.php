@@ -4,7 +4,7 @@
     <!-- Start main-content -->
     <div class="main-content" ng-app="profileApp" ng-controller="profileCtrl">
         <!-- Section: inner-header -->
-        <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg6.jpg">
+        <section class="inner-header divider parallax layer-overlay overlay-dark-2" data-bg-img="logos/simple3.jpeg">
             <div class="container pt-60 pb-60">
                 <!-- Section Content -->
                 <div class="section-content">
@@ -58,37 +58,41 @@
                                                 <div class="form-group">
                                                     <label for="address">Address</label>
                                                     <input class="form-control" name="address" type="text"
-                                                        value="" placeholder="Address">
+                                                        value="{{ old('address') }}" placeholder="Address">
+                                                        @error('address')
+                                                            <small>{{ $message }}</small>
+                                                        @enderror
                                                 </div>
 
                                                 <div class="row">
                                                     <div class="col-md-6 form-group">
                                                         <label for="city">City</label>
-                                                        <input class="form-control" name="city" type="text"
+                                                        <input class="form-control" name="city" type="text"  value="{{ old('city') }}"
                                                             placeholder="City">
+                                                            @error('city')
+                                                            <small>{{ $message }}</small>
+                                                        @enderror
                                                     </div>
 
                                                     <div class="col-md-6 form-group">
                                                         <label for="state">State</label>
-                                                        <input class="form-control" name="state" type="text"
+                                                        <input class="form-control" name="state" type="text"  value="{{ old('state') }}"
                                                             placeholder="State">
+                                                            @error('state')
+                                                            <small>{{ $message }}</small>
+                                                        @enderror
                                                     </div>
                                                 </div>
 
-                                                <div class="row">
-                                                    <div class="col-md-6 form-group">
-                                                        <label for="zip_code">Zip Code</label>
-                                                        <input class="form-control" name="zip_code" type="number"
-                                                            placeholder="Zip Code">
-                                                    </div>
-
-                                                </div>
 
                                                 <div class="row">
                                                     <div class="col-md-6 form-group">
                                                         <label for="product_price">Country</label>
-                                                        <input class="form-control" name="country" type="text"
+                                                        <input class="form-control" name="country" type="text"  value="{{ old('country') }}"
                                                             placeholder="Product Price">
+                                                            @error('country')
+                                                            <small>{{ $message }}</small>
+                                                        @enderror
                                                     </div>
 
                                                 </div>

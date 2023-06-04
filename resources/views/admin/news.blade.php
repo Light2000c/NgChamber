@@ -21,6 +21,7 @@
                 <a href="{{ route('adminAddBlog') }}" class="btn btn-primary btn small"><i class="fa fa-plus me-2" aria-hidden="true"></i>Add News</a>
                 </div>
                 </div>
+                
                 <div class="table-responsive">
                   <table id="dataTableExample" class="table">
                     <thead>
@@ -60,6 +61,9 @@
                       @endforeach
                     </tbody>
                   </table>
+                  <div>
+                    {{ $leaders->links('pagination::bootstrap-5') }}
+                  </div>
                 </div>
               </div>
             </div>

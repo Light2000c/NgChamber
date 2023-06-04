@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Blog;
+use Exception;
 use Illuminate\Http\Request;
 
 class viewBlogController extends Controller
@@ -18,6 +19,7 @@ class viewBlogController extends Controller
 
     public function update(Request $request, Blog $blog)
     {
+        try{
         if ($request->hasFile('image')) {
             $this->validate($request, [
                 'title' => 'required',
@@ -63,7 +65,9 @@ class viewBlogController extends Controller
                 return back()->with('error', 'Something went wrong, please try again later.');
             }
         }
-
+    } catch (Exception $e) {
+        return back();
+    }
     }
 
 }

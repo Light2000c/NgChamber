@@ -7,7 +7,7 @@
 				<nav class="page-breadcrumb">
 					<ol class="breadcrumb">
 						<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-						<li class="breadcrumb-item active" aria-current="page">Users</li>
+						<li class="breadcrumb-item active" aria-current="page">Team Members</li>
 					</ol>
 				</nav>
 
@@ -15,9 +15,11 @@
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">User Table</h6>
-                <p class="text-muted mb-3">Manage Users (Edit or Delete).</p>
-                <p>@{{ name }}</p>
+                <h6 class="card-title">Team Members Table</h6>
+                <p class="text-muted mb-3">Manage Team Members.</p>
+                <div class="col-12 d-flex justify-content-end">
+                  <a href="{{ route('adminAddTeam') }}" class="btn btn-primary btn small"><i class="fa fa-plus me-2" aria-hidden="true"></i>Add Team Members</a>
+                  </div>
 
                 <div class="table-responsive mt-4">
                   <table id="dataTableExample" class="table">

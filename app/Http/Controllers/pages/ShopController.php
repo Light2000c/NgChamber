@@ -11,8 +11,8 @@ class ShopController extends Controller
 {
     
     public function index(){
-        $products = Product::paginate(9);
-        $topProducts = Product::orderBy('created_at', 'Desc')->take(3)->get();
+        $products = Product::whereNotNull('reviewed_at')->orderBy('created_at', 'Desc')->paginate(9);
+        $topProducts = Product::whereNotNull('reviewed_at')->orderBy('created_at', 'Desc')->take(3)->get();
         $categories = Category::where('model', 'product')->get();
        return view('pages.shop', [
         'products' => $products,

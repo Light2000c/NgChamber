@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\News;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 
 class viewNewsController extends Controller
 {
@@ -18,6 +19,8 @@ class viewNewsController extends Controller
 
     public function update(Request $request, News $news)
     {
+
+        try{
         if ($request->hasFile('image')) {
             $this->validate($request, [
                 'title' => 'required',
@@ -63,6 +66,8 @@ class viewNewsController extends Controller
                 return back()->with('error', 'Something went wrong, please try again later.');
             }
         }
-
+    } catch (Exception $e) {
+        return back();
+    }
     }
 }

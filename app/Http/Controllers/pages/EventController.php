@@ -13,12 +13,8 @@ class EventController extends Controller
     public function index(){
 
         $events = Event::paginate(10);
-        $category = Category::where('model','event')->get();
-        $latestNews = Blog::orderBy('created_at', 'DESC')->take(3)->get();
         return view('pages.event',[
             'events' => $events,
-            'categories' => $category,
-            'latestNews' => $latestNews,
         ]);
     }
 }

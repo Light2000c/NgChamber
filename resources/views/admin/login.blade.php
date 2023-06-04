@@ -59,7 +59,10 @@ License: For each use you must have a valid license purchased only from above li
                 </div>
                 <div class="col-md-8 ps-md-0">
                   <div class="auth-form-wrapper px-4 py-5">
-                    <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a>
+                    {{-- <a href="#" class="noble-ui-logo d-block mb-2">Noble<span>UI</span></a> --}}
+                    <div>
+                      <img src="/logos/NIDCC LOGO DIMENSIONED.png" alt="" style="margin-bottom: 15px;">
+                    </div>
                     <h5 class="text-muted fw-normal mb-4">Welcome back Admin! Log in to your account.</h5>
                     <form class="forms-sample" action="{{ route('adminLogin') }}" method="post">
                      @csrf
@@ -88,10 +91,6 @@ License: For each use you must have a valid license purchased only from above li
 
                       <div>
                         <button class="btn btn-primary me-2 mb-2 mb-md-0 text-white">Login</button>
-                        <button type="button" class="btn btn-outline-primary btn-icon-text mb-2 mb-md-0">
-                          <i class="btn-icon-prepend" data-feather="twitter"></i>
-                          Login with twitter
-                        </button>
                       </div>
                     </form>
                   </div>
@@ -106,7 +105,7 @@ License: For each use you must have a valid license purchased only from above li
 	</div>
 
 	<!-- core:js -->
-	<script src="/web1/assets/vendors/core/core.js"></script>
+	{{-- <script src="/web1/assets/vendors/core/core.js"></script> --}}
 	<!-- endinject -->
 
 	<!-- Plugin js for this page -->

@@ -46,13 +46,12 @@
            <form action="{{ route('view-event', $event) }}" method="post" enctype="multipart/form-data">
 
            <div class="row">
-            {{-- <div class="col-lg-6 mb-4">
-             <div class="d-flex justify-content-center mb-4"><img class="img-fluid" src="/event/{{ $event->image }}" alt=""></div>
-             
- 
-            </div> --}}
+            <div class="col-lg-6 mb-4">
+                <div class="d-flex justify-content-center mb-4"><img class="img-fluid" src="/events/{{ $event->image }}" alt=""></div>
+   
+               </div>
 
-            <div class="col-lg-8">
+            <div class="col">
             
 
             @csrf
@@ -109,6 +108,15 @@
                  </div>
 
                </div>
+
+               <div class="row mb-3">
+                <label for="defaultconfig-3" class="col-form-label">Image</label>
+                <input class="form-control"  name="image" value="{{ old('image') }}"
+                    id="defaultconfig-3" type="file" style="background-color: whitesmoke;">
+                @error('image')
+                    <small class="text-danger">{{ $message }}</small>
+                    @endif
+            </div>
 
 
                <div class="form-group mb-3">

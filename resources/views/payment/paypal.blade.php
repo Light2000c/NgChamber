@@ -29,21 +29,22 @@
         <div class="col-md-4 col-md-offset-">
             <p>
                 <div>
-                    Subscribe to our membership plan
+                    Subscribe to  membership plan
                    
                 </div>
             </p>
             <div>
                 <div class="" style="display: flex; justify-content: space-between;">
                     <p>Plan:</p>
-                    <p> Individual</p>
+                    <p>{{ $plan }}</p>
                 </div>
                 <div class="" style="display: flex; justify-content: space-between;">
                     <p>price:</p>
-                    <p>$200</p>
+                    <p>${{ $amount }}</p>
                 </div>
             </div>
-            <input type="hidden" name="amount" value="200">
+            <input type="hidden" name="amount" value="{{ $amount }}">
+            <input type="hidden" name="plan" value="{{ $plan }}">
             {{-- <input type="hidden" name="email" value="{{ Auth::user()->email }}">
             <input type="hidden" name="orderID" value="345">
             <input type="hidden" name="amount" value="20000">

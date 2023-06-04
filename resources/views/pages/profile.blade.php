@@ -3,20 +3,33 @@
 @section('content')
    <!-- Start main-content -->
    <div class="main-content" ng-app="profileApp" ng-controller="profileCtrl">
-    <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg6.jpg">
-      <div class="container pt-60 pb-60">
-        <!-- Section Content -->
-        <div class="section-content">
-          <div class="row">
-            <div class="col-md-12 text-center">
-              <h2 class="title text-white">Profile</h2>
-              </ol>
-            </div>
+   <!-- Section: inner-header -->
+   <section class="inner-header divider parallax layer-overlay overlay-dark-2" data-bg-img="/logos/simple3.jpeg">
+    <div class="container pt-60 pb-60">
+      <!-- Section Content -->
+      <div class="section-content">
+        <div class="row">
+          <div class="col-md-12 text-center">
+            <h2 class="font-28 text-white" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">PROFILE</h2>
           </div>
         </div>
       </div>
-    </section>
+    </div>      
+  </section>
+  <div>
+  <ul class="breadcrumb">
+    <li><a href="{{ route('home') }}">Home</a></li>
+    <li>Profile</li>
+  </ul>
+</div>  
+
+
+    @if(session('info'))
+    @php
+alert()->info('info', session('info'))->persistent('Dismiss');
+@endphp
+
+@endif
 
     <section>
 
@@ -24,38 +37,52 @@
       <div class="row" >
       <div class="col-md-3 p-15">
         <div class="pb-15">
-         <h4>Welcome Clinton!</h4>
-         <p>Welcome to your profile page</p>
-         <p>Manage your products, subscriptions, wishlist.</p>
+         <h4>Welcome {{ Auth::user()->fullname }}!</h4>
+         <p>Manage your account.</p>
         </div>
 
         <ul class="nav nav-pills nav-stacked">
-          <li class="active"><a href="{{ route('profile') }}">Overview</a></li>
+          <li class="active "><a href="{{ route('profile') }}">Overview</a></li>
           <li><a  href="{{ route('edit-profile') }}">My Profile</a></li>
-          <li><a  href="{{ route('edit-address') }}">Address</a></li>
+          {{-- <li><a  href="{{ route('edit-address') }}">Address</a></li>
           <li><a  href="{{ route('manage-product') }}">Products</a></li>
           <li><a  href="{{ route('call-request') }}">Call Request</a></li>
-          <li><a  href="{{ route('wishlist') }}">Wishlist</a></li>
+          <li><a  href="{{ route('wishlist') }}">Wishlist</a></li> --}}
         </ul>
       </div>
 
       <div class="col-md-9">
       <div class="tab-contents">
         <div id="overview" class="" style="margin-bottom: 25px;">
-          <h3>Overview</h3>
+          <h3  style="color: #4D7902;">Overview</h3>
         </div>
+
+        @if(Auth::user() && Auth::user()->is_paid_user != 1)
+        <div class="alert alert-success" role="alert">
+          <h4 class="alert-heading">Well done!</h4>
+          <p style="font-size: 18px">Thankyou for join us. For you to complete your registration, Please Click the link below to purchase a Membership plan</p>
+          <hr>
+          <p class="mb-0" style="font-size: 18px; font-weight: bold;"><a href="{{ route('plans') }}">Purchase Plan <i class="fa fa-arrow-right" style="margin-left: 3px;"></i></a></p>
+        </div>
+        @endif
 
         <div class="row">
           <div class="col-md-6">
             <div class="profile-box " style="margin-bottom: 25px">
               <div>
-                <h5>My Profile</h5>
-                <small>Personal Information</small>
+                <h5 style="color: #4D7902;">My Profile</h5>
+                <small>Account Information</small>
               </div>
               <div>
               <p>Clinton Onitsha</p>
-              <p>clintononitsha20@gmail.com</p>
-              <p>08128161958</p>
+
+              @if(Auth::user()->is_paid_user == 1)
+              <p>Membership -  {{ $plan->type }}</p>
+              @endif
+
+             @if(Auth::user()->email_verified_at)
+              <p>Email  -   <span class="badge badge-success" style="background-color: #4D7902;">Verified</span></p>
+              @endif
               </div>
               <div class="" >
               <a href="{{ route('edit-profile') }}">
@@ -67,10 +94,10 @@
           </div>
 
 
-          <div class="col-md-6">
+          {{-- <div class="col-md-6">
             <div class="profile-box" style="margin-bottom: 25px">
               <div>
-                <h5>Products</h5>
+                <h5 style="color: #4D7902;">Products</h5>
                 <small>Manage Products</small>
               </div>
               <div>
@@ -84,13 +111,13 @@
                 </a>
               </div>
             </div>
-          </div>
-
+          </div> --}}
+{{-- 
 
           <div class="col-md-6">
             <div class="profile-box" style="margin-bottom: 25px">
               <div>
-                <h5>Call request</h5>
+                <h5 style="color: #4D7902;">Call request</h5>
                 <small>Manage Call Request</small>
               </div>
               <div>
@@ -103,9 +130,9 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> --}}
 
-          <div class="col-md-6" >
+          {{-- <div class="col-md-6" >
             <div class="profile-box" style="margin-bottom: 25px">
               <div>
                 <h5>Address</h5>
@@ -121,8 +148,8 @@
                 </a>
               </div>
             </div>
-          </div>
-
+          </div> --}}
+{{-- 
           <div class="col-md-6" >
             <div class="profile-box" style="margin-bottom: 25px">
               <div>
@@ -139,7 +166,7 @@
                 </a>
               </div>
             </div>
-          </div>
+          </div> --}}
 
 
         </div>

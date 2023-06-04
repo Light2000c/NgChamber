@@ -21,6 +21,7 @@ class Product extends Model
         'product_colour',
         'product_image',
         'product_description',
+        'reviewed_at',
     ];
 
     public function user(){

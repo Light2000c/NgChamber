@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\pages;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
 
 class PlanDetailsController extends Controller
@@ -19,6 +20,7 @@ class PlanDetailsController extends Controller
     }
 
     public function pay(Request $request){
+        try{
         if($request->pay == 'paystack'){
            return redirect()->route('paystack');
         }
@@ -26,5 +28,8 @@ class PlanDetailsController extends Controller
         if($request->pay == 'stripe'){
 
         }
+    } catch (Exception $e) {
+        return back();
+    }
     }
 }

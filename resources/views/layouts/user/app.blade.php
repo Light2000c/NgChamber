@@ -10,14 +10,14 @@
 <meta name="author" content="ThemeMascot" />
 
 <!-- Page Title -->
-<title>LearnPress | Education & Courses HTML Template</title>
+<title>NiDCC - Inspiring Business Leadership And Partnership</title>
 
 <!-- Favicon and Touch Icons -->
-<link href="/web/images/favicon.png" rel="shortcut icon" type="image/png">
-<link href="/web/images/apple-touch-icon.png" rel="apple-touch-icon">
-<link href="/web/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-<link href="/web/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-<link href="/web/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/web/images/favicon.ico" rel="shortcut icon" type="image/png">
+<link href="/web/images/apple-icon.png" rel="apple-touch-icon">
+<link href="/web/images/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/web/images/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/web/images/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
 
 <!-- Stylesheet -->
 <link href="/web/css/bootstrap.min.css" rel="stylesheet" type="text/css">
@@ -56,6 +56,7 @@
 {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> --}}
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
 <!-- external javascripts -->
 <script src="/web/js/jquery-2.2.4.min.js"></script>
@@ -72,6 +73,7 @@
 <script src="/personal/mine.js"></script>
 <script src="/personal/event.js"></script>
 <script src="/personal/profile.js"></script>
+<script src="/personal/step.js"></script>
 
 {{-- ionic cdn --}}
 
@@ -83,27 +85,28 @@
 <![endif]-->
 </head>
 <body class="">
+  
   @include('sweetalert::alert')
+  
 <div id="wrapper" class="clearfix">
   <!-- preloader -->
   <div id="preloader">
     <div id="spinner">
       <img alt="" src="/web/images/preloaders/5.gif">
     </div>
-    <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
+    {{-- <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div> --}}
   </div>
 
   <!-- Header -->
   <header id="header" class="header">
-    <div class="header-top bg-theme-color-2 sm-text-center">
+    <div class="header-top bg-theme-color-2 sm-text-center auth">
       <div class="container">
         <div class="row">
           <div class="col-md-8">
             <div class="widget no-border m-0">
               <ul class="list-inline">
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="#">123-456-789</a> </li>
-                <li class="text-white m-0 pl-10 pr-10"> <i class="fa fa-clock-o text-white"></i> Mon-Fri 8:00 to 2:00 </li>
-                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="#">contact@yourdomain.com</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-phone text-white"></i> <a class="text-white" href="tel:+12404449095">+1 (240) 444 9095</a> </li>
+                <li class="m-0 pl-10 pr-10"> <i class="fa fa-envelope-o text-white"></i> <a class="text-white" href="mailto:info@nigeriadiasporachamber.com">info@nigeriadiasporachamber.com</a> </li>
               </ul>
             </div>
           </div>
@@ -112,10 +115,15 @@
               <ul class="list-inline text-right sm-text-center">
                 @if(Auth::user())
                 <li>
-                  <a href="{{ route('profile') }}" class="text-white">{{ Auth::user()->fullname }}</a>
+                  <a href="{{ route('profile') }}" class="text-white"><i class="fa fa-user" style="margin-right: 3px;"></i>{{ Auth::user()->fullname }}</a>
                 </li>
                 <li class="text-white">|</li>
-                <li><a class="btn" style="color: white;" type="submit" class="text-white">Logout</a></li>
+                <li>
+                  <form action="{{  route('logout') }}" method="post">
+                    @csrf
+                  <button class="btn" style="color: #4D7902;" type="submit" class="text-white">Logout</button>
+                </form>
+                </li>
                 @else
                 <li>
                   <a href="{{ route('login') }}" class="text-white">Login</a>
@@ -136,70 +144,90 @@
         <div class="container">
           <nav id="menuzord-right" class="menuzord default">
             <a class="menuzord-brand pull-left flip" href="javascript:void(0)">
-              <img src="/logos/NIDCC LOGO DIMENSIONED.png" alt="">
+              {{-- <img src="/logos/NIDCC LOGO DIMENSIONED.png" alt=""> --}}
+               <img src="/logos/3d-logo.png" alt="">
                {{-- <img src="/web/images/logo-wide.png" alt=""> --}}
             </a>
             <ul class="menuzord-menu">
-              <li class=""><a href="#home">Home</a>
+              <li class=""><a style="font-size: 14px;" href="{{ route('home') }}">Home</a>
               </li>
-              <li><a href="#">NIDCC</a>
+              <li><a style="font-size: 14px;">Membership</a>
                 <ul class="dropdown">
-                  <li><a href="">Help & Faq</a></li>
-                  <li><a href="{{ route('shop') }}">Shop</a>
-                  </li>
-                  <li><a href="{{ route('event') }}">Events</a>
+                  <li><a style="font-size: 14px;" href="{{ route('benefits') }}">Membership Benefit</a></li>
+                  <li><a style="font-size: 14px;" href="{{ route('plans') }}">Membership Plan</a></li>
                   </li>
                 </ul>
               </li>
               </li>
-              <li class=""><a href="{{ route('news') }}">News</a>
-              </li>
-              <li><a href="javascript:void(0)">Topics</a>
+              <li><a style="font-size: 14px;" href="javascript:void(0)">Topics</a>
                 <div class="megamenu">
                   <div class="megamenu-row">
                     <div class="col3">
                       <ul class="list-unstyled list-dashed">
-                        <li><a href="shortcode-accordion.html">Health</a></li>
-                        <li><a href="shortcode-alerts.html">Education</a></li>
-                        <li><a href="shortcode-animations.html">Environment</a></li>
-                        <li><a href="shortcode-background-html5-video.html"> Legislative Affairs / Government Affairs</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('agriculture') }}">Agriculture</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('oil') }}">Oil and Gas</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('education') }}">Education</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('health-care') }}">Health Care</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('manufacturing') }}">Manufacturing</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('trade') }}">Trade</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('insurance') }}">Insurance</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('improving') }}">Improving Government Services</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('professional') }}">Professional Services</a></li>
                       </ul>
                     </div>
                     <div class="col3">
                       <ul class="list-unstyled list-dashed">
-                        <li><a href="shortcode-datetime-datetimepicker.html"> Agro-Industry</a></li>
-                        <li><a href="shortcode-datetime-datepair.html"> Oil and Gas</a></li>
-                        <li><a href="shortcode-flickr-feed.html"> Youth& and Women </a></li>
-                        <li><a href="shortcode-flipbox.html"> Finance</a></li>
-                        <li><a href="shortcode-forms.html"> Lega Matters</a></li>
-                        <li><a href="shortcode-iconbox.html"> Icon Box</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('information') }}">Information Communication Technology</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('water-sanitation') }}">Water Sanitation</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('pharmaceuticals') }}">Pharmaceuticals</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('mining') }}">Mining and Solid Minerals</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('telecommunication') }}">Telecommunication</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('business') }}">Small Business</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('infrastructure') }}">Infrastructure</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('employment') }}">Employment</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('immigration') }}">Immigration</a></li>
                       </ul>
                     </div>
                     <div class="col3">
                       <ul class="list-unstyled list-dashed">
-                        <li><a href="shortcode-listgroup-panels.html"> Security</a></li>
-                        <li><a href="shortcode-lists.html"> International Policy</a></li>
-                        <li><a href="shortcode-maps.html"> Marketing/Communication</a></li>
-                        <li><a href="shortcode-media-embed.html"> Economic Development</a></li>
-                        <li><a href="shortcode-modal-bootstrap.html"> Sports</a></li>
-                        <li><a href="shortcode-modal-lightbox.html"> Lightbox</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('creative') }}">Creative Industry</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('sport') }}">Sport</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('renewable') }}">Renewable Energy</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('transportation') }}">Transportation</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('environment') }}">Environment</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('diversity') }}">Diversity Equity and Inclusion</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('corporate') }}">Corporate Social Responsibility</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('climate') }}">Climate Change</a></li>
                       </ul>
                     </div>
                     <div class="col3">
                       <ul class="list-unstyled list-dashed">
-                        <li><a href="shortcode-styled-icons.html"> The Diaspora Community</a></li>
-                        <li><a href="shortcode-subscribe.html"> Tourism</a></li>
-                        <li><a href="shortcode-tables.html"> Creative Industries</a></li>
-                        <li><a href="shortcode-tabs.html"> Research</a></li>
-                        <li><a href="shortcode-textblock.html"> Textblock</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('hospitality') }}">Hospitality and Tourism</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('banking') }}">Banking and Finance</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('construction') }}">Construction</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('estate') }}">Real Estate</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('retail') }}">Retail and Wholesale</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('taxes') }}">Taxes</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('women') }}">Women and Youth</a></li>
+                        <li><a style="font-size: 14px;" href="{{ route('research') }}">Research</a></li>
                       </ul>
                     </div>
                   </div>
                 </div>
               </li>
-              <li><a href="{{ route('contact') }}">Contact Us</a>
+              <li><a style="font-size: 14px;">NIDCC</a>
+                <ul class="dropdown">
+                  <li><a style="font-size: 14px;" href="{{ route('leaders') }}">Leadership</a></li>
+                  <li><a style="font-size: 14px;" href="{{ route('ambassadors') }}">Patron And Ambassadors</a></li>
+                  <li><a style="font-size: 14px;" href="{{ route('careers') }}">Careers</a></li>
+                  <li><a style="font-size: 14px;" href="{{ route('donation') }}">Donations</a></li>
+                  <li><a style="font-size: 14px;" href="{{ route('news') }}">News</a></li>
+                  <li><a style="font-size: 14px;" href="{{ route('event') }}">Events</a>
+                    <li><a style="font-size: 14px;" href="{{ route('contact') }}">Contact</a></li>
+                  </li>
+                </ul>
               </li>
-              <li><a href="{{ route('about') }}">About Us</a>
+              <li><a style="font-size: 14px;" href="{{ route('about') }}">About</a>
               </li>
             </ul>
           </nav>
@@ -213,13 +241,13 @@
 
 
    <!-- Footer -->
-   <footer id="footer" class="footer bg-black-222" data-bg-img="/web/images/footer-bg.png">
+   <footer id="footer" class="footer bg-black-222 foot-end" data-bg-img="/web/images/footer-bg.png">
     <div class="container pt-70 pb-40">
       <div class="row">
         <div class="col-sm-6 col-md-4">
           <div class="widget dark">
             <img class="mt-10 mb-15" alt="" src="/logos/NIDCC LOGO DIMENSIONED 1.png">
-            <p class="font-16 mb-10">NiDCC connect members with peers, provide access to opportunities and share resources to benefit members businesses and careers.</p>
+            <p class="mb-10" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">NiDCC connect members with peers, provide access to opportunities and share resources to benefit members businesses and careers.</p>
             <ul class="styled-icons icon-dark mt-20">
               <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".1s" data-wow-offset="10"><a href="#" data-bg-color="#3B5998"><i class="fa fa-facebook"></i></a></li>
               <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s" data-wow-offset="10"><a href="#" data-bg-color="#02B0E8"><i class="fa fa-twitter"></i></a></li>
@@ -233,11 +261,13 @@
           <div class="widget dark">
             <h5 class="widget-title line-bottom">Useful Links</h5>
             <ul class="list angle-double-right list-border">
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About US</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">New</a></li>
-              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="{{ route('home') }}">Home</a></li>
+              <li><a href="{{ route('about') }}">About</a></li>
+              <li><a href="{{ route('contact') }}">Contact</a></li>
+              <li><a href="{{ route('news') }}">News</a></li>
+              <li><a href="{{ route('event') }}">Events</a></li>
+              <li><a href="{{ route('privacy-policy') }}">Privacy Policy</a></li>
+              <li><a href="{{ route('terms-agreement') }}">Terms Of Service Agreement</a></li>
             </ul>
           </div>
         </div>
@@ -245,20 +275,12 @@
           <div class="widget dark">
             <h5 class="widget-title line-bottom">Quick Contact</h5>
             <ul class="list-border">
-              <li><a href="#">+(012) 345 6789</a></li>
-              <li><a href="#">hello@yourdomain.com</a></li>
-              <li><a href="#" class="lineheight-20">121 King Street, Melbourne Victoria 3000, Australia</a></li>
+              <li><a href="tel:+12404449095">+1 (240) 444 9095</a></li>
+              <li><a href="mailto:info@nigeriadiasporachamber.com">info@nigeriadiasporachamber.com</a></li>
+              <li><a href="" class="lineheight-20">3519 International Ct NW 
+                Washington, District Of Columbia 20008</a></li>
             </ul>
-            <p class="font-16 text-white mb-5 mt-15">Subscribe to our newsletter</p>
-            <form id="footer-mailchimp-subscription-form" class="newsletter-form mt-10">
-              <label class="display-block" for="mce-EMAIL"></label>
-              <div class="input-group">
-                <input type="email" value="" name="EMAIL" placeholder="Your Email"  class="form-control" data-height="37px" id="mce-EMAIL">
-                <span class="input-group-btn">
-                    <button type="submit" class="btn btn-colored btn-theme-colored m-0"><i class="fa fa-paper-plane-o text-white"></i></button>
-                </span>
-              </div>
-            </form>
+
 
             <!-- Mailchimp Subscription Form Validation-->
             <script type="text/javascript">
@@ -288,21 +310,21 @@
       <div class="container pt-20 pb-20">
         <div class="row">
           <div class="col-md-6">
-            <p class="font-11 text-black-777 m-0">Copyright &copy;2015 ThemeMascot. All Rights Reserved</p>
+            <p class="font-11 text-black-777 m-0">All Rights Reserved by NiDCC</p>
           </div>
           <div class="col-md-6 text-right">
             <div class="widget no-border m-0">
               <ul class="list-inline sm-text-center mt-5 font-12">
                 <li>
-                  <a href="#">FAQ</a>
+                  <a href="{{ route('privacy-policy') }}">Privacy Policy</a>
                 </li>
                 <li>|</li>
                 <li>
-                  <a href="#">Help Desk</a>
+                  <a href="{{ route('terms-and-conditions') }}">Terms and Conditions</a>
                 </li>
                 <li>|</li>
                 <li>
-                  <a href="#">Support</a>
+                  <a href="">Faq</a>
                 </li>
               </ul>
             </div>
@@ -315,9 +337,14 @@
 </div>
 <!-- end wrapper -->
 
+
+{{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
+<script src="https://checkout.flutterwave.com/v3.js"></script>
+
 <!-- Footer Scripts -->
 <!-- JS | Custom script for all pages -->
 <script src="/web/js/custom.js"></script>
+
 
 <!-- SLIDER REVOLUTION 5.0 EXTENSIONS
       (Load Extensions only on Local File Systems !
@@ -331,5 +358,7 @@
 <script type="text/javascript" src="/web/js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
 <script type="text/javascript" src="/web/js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script type="text/javascript" src="/web/js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+
+
 </body>
 </html>

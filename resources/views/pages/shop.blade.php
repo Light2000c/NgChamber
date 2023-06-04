@@ -5,7 +5,7 @@
   <div class="main-content" ng-app="myApp" ng-controller="myCtrl">
 
     <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-5" data-bg-img="web/images/bg/bg3.jpg">
+    <section class="inner-header divider parallax layer-overlay overlay-dark-2" data-bg-img="/logos/simple3.jpeg">
       <div class="container pt-70 pb-20">
         <!-- Section Content -->
         <div class="section-content">
@@ -68,7 +68,7 @@
                         </div>
                       </div>
                       <div class="product-details text-center">
-                        <a href="#"><h5 class="product-title">{{ $product->product_name }}</h5></a>
+                        <a href="{{ route('product-details', $product) }}"><h5 class="product-title">{{ $product->product_name }}</h5></a>
                         <div class="price"><del><span class="amount">₦90.00</span></del><ins><span style="color: #Fb8151;" class="amount">₦{{ number_format($product->product_price) }}</span></ins></div>
                       </div>
                     </div>

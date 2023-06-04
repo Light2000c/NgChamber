@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use Exception;
 use Illuminate\Http\Request;
 
 class viewProductController extends Controller
@@ -17,6 +18,7 @@ class viewProductController extends Controller
 
     public function update(Request $request, Product $product)
     {
+        try{
         if ($request->hasFile('product_image')) {
             $this->validate($request, [
                 'product_name' => 'required',
@@ -71,6 +73,9 @@ class viewProductController extends Controller
                 return back()->with('error', 'Something went wrong, please try again later.');
             }
         }
+    } catch (Exception $e) {
+        return back();
+    }
     }
 
 }

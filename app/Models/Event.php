@@ -18,6 +18,7 @@ class Event extends Model
         'host',
         'start_date',
         'end_date',
+        'image',
         'description'
     ];
 

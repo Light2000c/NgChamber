@@ -33,21 +33,21 @@
                 </div>
             </p>
             <div>
-                <div class="" style="display: flex; justify-content: space-between;">
-                    <p>Plan:</p>
-                    <p> Individual</p>
-                </div>
-                <div class="" style="display: flex; justify-content: space-between;">
-                    <p>price:</p>
-                    <p>${{ $amount }}</p>
-                </div>
+              <div class="" style="display: flex; justify-content: space-between;">
+                <p>Plan:</p>
+                <p>{{ $plan }}</p>
+            </div>
+            <div class="" style="display: flex; justify-content: space-between;">
+                <p>price:</p>
+                <p>${{ $amount }}</p>
+            </div>
             </div>
             <input type="hidden" name="email" value="{{ Auth::user()->email }}"> {{-- required --}}
             <input type="hidden" name="orderID" value="345">
             <input type="hidden" name="amount" value="{{ $amount }}00"> {{-- required in kobo --}}
             {{-- <input type="hidden" name="quantity" value="3"> --}}
             <input type="hidden" name="currency" value="NGN">
-            <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+            <input type="hidden" name="metadata" value="{{ json_encode($array = ['plans' => $plan,]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
             <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
 
             {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}

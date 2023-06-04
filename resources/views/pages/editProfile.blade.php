@@ -4,7 +4,7 @@
    <!-- Start main-content -->
    <div class="main-content">
     <!-- Section: inner-header -->
-    <section class="inner-header divider parallax layer-overlay overlay-dark-8" data-bg-img="images/bg/bg6.jpg">
+    <section class="inner-header divider parallax layer-overlay overlay-dark-2" data-bg-img="/logos/simple3.jpeg">
       <div class="container pt-60 pb-60">
         <!-- Section Content -->
         <div class="section-content">

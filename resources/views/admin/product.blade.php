@@ -35,6 +35,7 @@
                         <th>Product Colour</th>
                         <th>Product Image</th>
                         <th>Product Description</th>
+                        <th>Reviewed_at</th>
                         <th>Created_by</th>
                         <th>Created_at</th>
                         <th>Updated_at</th>
@@ -46,7 +47,7 @@
                         @foreach($products as $product)
                       <tr>
                         <td>{{ $product->id }}</td>
-                        <td class="text-wrap">{{ Str::limit($product->product_name) }}</td>
+                        <td class="text-wrap">{{ Str::words($product->product_name, 8) }}</td>
                         <td>{{ $product->product_category }}</td>
                         <td>₦{{ $product->product_price }}</td>
                         <td><img src="/products/{{ $product->product_image }}" alt=""></td>
@@ -65,16 +66,17 @@
                         @else
                          <td>Null</td>
                         @endif
-                        <td class="text-wrap">{{ Str::limit($product->product_description) }}</td>
+                        <td class="text-wrap">{{ Str::words($product->product_description, 8) }}</td>
+                        <td>{{ $product->reviewed_at }}</td>
                         <td>{{ $product->user->fullname }}</td>
                         <td>{{ $product->created_at }}</td>
                         <td>{{ $product->updated_at }}</td>
-                        <td><a href="{{ route('view-product', $product) }}" class="btn btn-primary btn-sm">view</a></td>
+                        <td><a href="{{ route('view-product', $product) }}" class="btn btn-primary btn-sm"><i class="fa fa-pencil"></i></a></td>
                         <td>
                             <form action="{{ route('adminProductDelete', $product) }}" method="post">
                                 @csrf
                                @method('delete')
-                            <button class="btn btn-primary btn-sm">delete</button>
+                            <button class="btn btn-primary btn-sm"><i class="fa fa-trash"></i></button>
                         </form>
                     </td>
                       </tr>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\pages;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Support\Facades\Auth;
 
 class EditProfileController extends Controller
@@ -15,6 +16,7 @@ class EditProfileController extends Controller
 
     public function store(Request $request){
 
+        try{
         if(Auth::user()->email == $request->email){
         $this->validate($request,[
             'fullname' => 'required',
@@ -43,6 +45,8 @@ class EditProfileController extends Controller
     }else{
         return back()->with('success', 'Profile has been successfully updated');
     }
-    
+} catch (Exception $e) {
+    return back();
+}
     }
 }

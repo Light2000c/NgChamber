@@ -87,7 +87,6 @@
                                                     </div>
 
 
-
                                                     <div class="row">
                                                         <div class="col form-group mb-3">
                                                             <label for="date">Start Date</label>
@@ -108,7 +107,14 @@
                                                                 </div>
                                                             </div>
 
-
+                                                            <div class="row mb-3">
+                                                                <label for="defaultconfig-3" class="col-form-label">Image</label>
+                                                                <input class="form-control"  name="image" value="{{ old('image') }}"
+                                                                    id="defaultconfig-3" type="file" style="background-color: whitesmoke;">
+                                                                @error('image')
+                                                                    <small class="text-danger">{{ $message }}</small>
+                                                                    @endif
+                                                            </div>
 
                                                                 <div class="form-group mb-3">
                                                                     <label for="description">Description</label>

@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.user.app')
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Reset Password') }}</div>
+    <div class="row justify-content-center" style="display: flex; justify-content: center; margin-top: 30px; margin-bottom: 30px;">
+        <div class="col-md-6">
+            <div class="card" style="box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); padding: 15px;">
+                <div class="card-header" style="text-align: start;  margin-bottom: 20px; font-weight: bold;"><h4 style="color: #4D7902;">{{ __('Reset Password') }}</h4></div>
 
                 <div class="card-body">
                     @if (session('status'))
@@ -17,10 +17,8 @@
                     <form method="POST" action="{{ route('password.email') }}">
                         @csrf
 
-                        <div class="row mb-3">
-                            <label for="email" class="col-md-4 col-form-label text-md-end">{{ __('Email Address') }}</label>
-
-                            <div class="col-md-6">
+                            <div class="form-group" style="text-align: start;">
+                                <label for="email" class="text-start">{{ __('Email Address') }}</label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
                                 @error('email')
@@ -29,17 +27,16 @@
                                     </span>
                                 @enderror
                             </div>
-                        </div>
 
-                        <div class="row mb-0">
-                            <div class="col-md-6 offset-md-4">
+                            <div class="">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Send Password Reset Link') }}
                                 </button>
                             </div>
-                        </div>
+
                     </form>
                 </div>
+                
             </div>
         </div>
     </div>

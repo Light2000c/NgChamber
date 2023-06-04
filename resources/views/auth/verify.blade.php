@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.user.app')
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Verify Your Email Address') }}</div>
+    <div class="row justify-content-center" style="display: flex; justify-content: center; margin-top: 30px; margin-bottom: 30px;">
+        <div class="col-md-5">
+            <div class="card" style=" box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); padding-top: 15px;">
+                <div class="card-header" col style="color: #4D7902; margin-bottom: 20px; font-weight: bold;">{{ __('Verify Your Email Address') }}</div>
 
                 <div class="card-body">
                     @if (session('resent'))

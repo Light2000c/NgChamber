@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Exception;
 
 class TeamMembersController extends Controller
 {
@@ -16,13 +17,16 @@ class TeamMembersController extends Controller
     }
 
     public function destroy(User $user){
-        // $products = Product::find($product->id);
+    
+        try{
 
         $success = $user->delete();
 
         if($success){
             return back();
         }
-
+    } catch (Exception $e) {
+        return back();
+    }
     }
 }

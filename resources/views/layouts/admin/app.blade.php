@@ -17,7 +17,7 @@ License: For each use you must have a valid license purchased only from above li
 	<meta name="author" content="NobleUI">
 	<meta name="keywords" content="nobleui, bootstrap, bootstrap 5, bootstrap5, admin, dashboard, template, responsive, css, sass, html, theme, front-end, ui kit, web">
 
-	<title>NobleUI - HTML Bootstrap 5 Admin Dashboard Template</title>
+	<title>NiDCC - Inspiring Business Leadership And Partnership</title>
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,7 +44,7 @@ License: For each use you must have a valid license purchased only from above li
 	<link rel="stylesheet" href="/web1/assets/css/demo1/style.min.css">
   <!-- End layout styles -->
 
-  <link rel="shortcut icon" href="/web1/assets/images/favicon.png" />
+  <link rel="shortcut icon" href="/web1/assets/images/favicon.ico" />
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -84,9 +84,9 @@ License: For each use you must have a valid license purchased only from above li
           </li>
           <li class="nav-item nav-category">Activities</li>
           <li class="nav-item">
-            <a href="{{ route('adminBlog') }}" class="nav-link">
+            <a href="{{ route('adminNews') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
-              <span class="link-title">Blog</span>
+              <span class="link-title">news</span>
             </a>
           </li>
           <li class="nav-item">
@@ -117,26 +117,33 @@ License: For each use you must have a valid license purchased only from above li
           </li> --}}
 
 
-          <li class="nav-item nav-category">Product</li>
+          {{-- <li class="nav-item nav-category">Product</li>
           <li class="nav-item">
             <a href="{{ route('adminProduct') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Products</span>
             </a>
-          {{-- </li>
-          <li class="nav-item">
+         </li>
+           <li class="nav-item">
             <a href="{{ route('adminOrders') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Order</span>
             </a>
-          </li> --}}
-          <li class="nav-item">
+          </li>
+           <li class="nav-item">
             <a href="" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Wishlist</span>
             </a>
+          </li> 
+
+          <li class="nav-item">
+            <a href="{{ route('admin-review') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Reviews</span>
+            </a>
           </li>
-          {{-- <li class="nav-item">
+           <li class="nav-item">
             <a href="{{ route('adminTransactions') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Transactions</span>
@@ -155,6 +162,24 @@ License: For each use you must have a valid license purchased only from above li
             <a href="{{ route('adminTeam') }}" class="nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Team Members</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin-leaders') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Leaders</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin-ambassadors') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Ambassadors</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a href="{{ route('admin-jobs') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Job</span>
             </a>
           </li>
 
@@ -297,18 +322,17 @@ License: For each use you must have a valid license purchased only from above li
 
         @yield('content')
 
-<!-- partial:partials/_footer.html -->
-			<footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
+
+			{{-- <footer class="footer d-flex flex-column flex-md-row align-items-center justify-content-between px-4 py-3 border-top small">
 				<p class="text-muted mb-1 mb-md-0">Copyright © 2023 <a href="" target="_blank">NiDCC</a>.</p>
-			</footer>
-			<!-- partial -->
+			</footer> --}}
 
 		</div>
 
         </div>
 
 <!-- core:js -->
-<script src="/web1/assets/vendors/core/core.js"></script>
+{{-- <script src="/web1/assets/vendors/core/core.js"></script> --}}
 <!-- endinject -->
 
 <!-- Plugin js for this page -->
