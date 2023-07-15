@@ -8,9 +8,10 @@ use App\Models\Cart;
 use App\Models\Plan;
 use App\Models\Event;
 use App\Models\Product;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
+use App\Models\Transaction;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
@@ -86,6 +87,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function plan(){
     return  $this->hasMany(Plan::class);
     }
+
+    public function transaction(){
+        return  $this->hasMany(Transaction::class);
+        }
 
 
 }

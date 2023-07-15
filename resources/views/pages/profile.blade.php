@@ -44,6 +44,7 @@ alert()->info('info', session('info'))->persistent('Dismiss');
         <ul class="nav nav-pills nav-stacked">
           <li class="active "><a href="{{ route('profile') }}">Overview</a></li>
           <li><a  href="{{ route('edit-profile') }}">My Profile</a></li>
+          <li ><a  href="{{ route('transactions') }}">Transactions</a></li>
           {{-- <li><a  href="{{ route('edit-address') }}">Address</a></li>
           <li><a  href="{{ route('manage-product') }}">Products</a></li>
           <li><a  href="{{ route('call-request') }}">Call Request</a></li>
@@ -60,7 +61,7 @@ alert()->info('info', session('info'))->persistent('Dismiss');
         @if(Auth::user() && Auth::user()->is_paid_user != 1)
         <div class="alert alert-success" role="alert">
           <h4 class="alert-heading">Well done!</h4>
-          <p style="font-size: 18px">Thankyou for join us. For you to complete your registration, Please Click the link below to purchase a Membership plan</p>
+          <p style="font-size: 18px">Thank you for joining us. For you to complete your registration, Please Click the link below to purchase a Membership plan</p>
           <hr>
           <p class="mb-0" style="font-size: 18px; font-weight: bold;"><a href="{{ route('plans') }}">Purchase Plan <i class="fa fa-arrow-right" style="margin-left: 3px;"></i></a></p>
         </div>
@@ -94,24 +95,24 @@ alert()->info('info', session('info'))->persistent('Dismiss');
           </div>
 
 
-          {{-- <div class="col-md-6">
+          <div class="col-md-6">
             <div class="profile-box" style="margin-bottom: 25px">
               <div>
-                <h5 style="color: #4D7902;">Products</h5>
-                <small>Manage Products</small>
+                <h5 style="color: #4D7902;">Transaction</h5>
+                <small>Transaction History</small>
               </div>
               <div>
-                <p><b>0 </b> Reviews</p>
-                <p><b>0 </b> Products</p>
+              
               </div>
               <div class="" >
-              <a href="{{ route('manage-product') }}">
+              <a href="{{ route('transactions') }}">
                 <div style="display: flex; justify-content: space-between">
-                  <span>Go To products</span><span><i class="fa fa-angle-right" style="transform: scale(1.5)"></i></span></div>
+                  <span>View All Transactions</span><span><i class="fa fa-angle-right" style="transform: scale(1.5)"></i></span></div>
                 </a>
               </div>
             </div>
-          </div> --}}
+          </div>
+
 {{-- 
 
           <div class="col-md-6">

@@ -67,7 +67,7 @@ class HomeController extends Controller
 
 
 
-    if (Mail::to('clintononitsha20@gmail.com')->send(new ContactUs($details))) {
+    if (Mail::to('service@nigeriadiasporachamber.com')->send(new ContactUs($details))) {
       return back()->with('success', 'Message has been successfully sent to our team');
     }
   } catch (Exception $e) {

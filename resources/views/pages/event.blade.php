@@ -39,7 +39,7 @@
                         <li class="pr-0" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;"><i class="fa fa-calendar mr-5" ></i> {{ $event->start_date }} </li>
                         {{-- <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>| New York</li> --}}
                       </ul>
-                      <p class="mb-15 mt-15 text-white" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px;">{{ Str::limit($event->description, 62) }}</p>
+                      <h5 class="mb-15 mt-15 text-white" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 16px; color: white;">{!! Str::limit($event->description, 62) !!}</h5>
                       <a class="text-white font-weight-600" href="{{ route('events-detail', $event->id) }}">Read More →</a>
                     </div>
                   </div>

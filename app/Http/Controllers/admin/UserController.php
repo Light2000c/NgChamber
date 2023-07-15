@@ -16,6 +16,36 @@ class UserController extends Controller
         ]);
     }
 
+    public function update(User $user,Request $request){
+
+        // try{
+
+            if($request->has('activate')){
+                $paid_user = 1;
+                $success = $user->update([
+                    'is_paid_user' => $paid_user,
+                ]);
+
+                if($success){
+                    return back();
+                }
+            }else{
+                $paid_user = 0;
+                $success = $user->update([
+                    'is_paid_user' => $paid_user,
+                ]);
+    
+                if($success){
+                    return back();
+                }
+            }
+            
+        // } catch (Exception $e) {
+        //     return back();
+        // }
+        }
+    
+
     public function destroy(User $user){
         
         try{

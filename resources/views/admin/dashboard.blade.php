@@ -158,7 +158,7 @@
                 </tr>
               </thead>
               <tbody>
-                  {{-- @foreach($news as $new)
+                  @foreach($allNews as $new)
                 <tr>
                   <th>{{ $new->id }}</th>
                   <td class="text-wrap">{{ Str::limit($new->title,40) }}</td>
@@ -177,9 +177,12 @@
                   </form>
               </td>
                 </tr>
-                @endforeach --}}
+                @endforeach
               </tbody>
             </table>
+            {{-- <div>
+              {{ $allNews->links('pagination::bootstrap-5') }}
+            </div> --}}
           </div>
         </div>
         </div>

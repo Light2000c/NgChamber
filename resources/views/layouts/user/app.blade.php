@@ -249,11 +249,10 @@
             <img class="mt-10 mb-15" alt="" src="/logos/NIDCC LOGO DIMENSIONED 1.png">
             <p class="mb-10" style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">NiDCC connect members with peers, provide access to opportunities and share resources to benefit members businesses and careers.</p>
             <ul class="styled-icons icon-dark mt-20">
-              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".1s" data-wow-offset="10"><a href="#" data-bg-color="#3B5998"><i class="fa fa-facebook"></i></a></li>
-              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s" data-wow-offset="10"><a href="#" data-bg-color="#02B0E8"><i class="fa fa-twitter"></i></a></li>
-              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".3s" data-wow-offset="10"><a href="#" data-bg-color="#05A7E3"><i class="fa fa-skype"></i></a></li>
-              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".4s" data-wow-offset="10"><a href="#" data-bg-color="#A11312"><i class="fa fa-google-plus"></i></a></li>
-              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".5s" data-wow-offset="10"><a href="#" data-bg-color="#C22E2A"><i class="fa fa-youtube"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".1s" data-wow-offset="10"><a href="https://www.facebook.com/nidchamber" data-bg-color="#3B5998"><i class="fa fa-facebook"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".2s" data-wow-offset="10"><a href="https://twitter.com/nidchamber " data-bg-color="#02B0E8"><i class="fa fa-twitter"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".4s" data-wow-offset="10"><a href="https://www.linkedin.com/company/nidchamber/?viewAsMember=tru" data-bg-color="#3B5998"><i class="fa fa-linkedin"></i></a></li>
+              <li class="wow fadeInLeft" data-wow-duration="1.5s" data-wow-delay=".5s" data-wow-offset="10"><a href="https://www.instagram.com/nidchamber/" data-bg-color="#A11312"><i class="fa fa-instagram"></i></a></li>
             </ul>
           </div>
         </div>
@@ -340,6 +339,8 @@
 
 {{-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script> --}}
 <script src="https://checkout.flutterwave.com/v3.js"></script>
+
+<script src="https://js.stripe.com/v3/"></script>
 
 <!-- Footer Scripts -->
 <!-- JS | Custom script for all pages -->

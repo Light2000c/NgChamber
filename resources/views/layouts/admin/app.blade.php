@@ -183,6 +183,27 @@ License: For each use you must have a valid license purchased only from above li
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="{{ route('admin-donations') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Donations</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('admin-transactions') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Transactions</span>
+            </a>
+          </li>
+
+          <li class="nav-item">
+            <a href="{{ route('admin-plans') }}" class="nav-link">
+              <i class="link-icon" data-feather="box"></i>
+              <span class="link-title">Plans</span>
+            </a>
+          </li>
+
           <li class="nav-item nav-category">Security</li>
           <li class="nav-item">
             <a href="" class="nav-link">
@@ -193,10 +214,13 @@ License: For each use you must have a valid license purchased only from above li
 
           <li class="nav-item nav-category">Auth</li>
           <li class="nav-item">
-            <a href="" class="nav-link">
+            <form action="{{  route('logout') }}" method="post">
+              @csrf
+            <button type="submit" class="btn nav-link">
               <i class="link-icon" data-feather="box"></i>
               <span class="link-title">Logout</span>
-            </a>
+            </button>
+            </form>
           </li>
 
         </ul>
@@ -265,9 +289,8 @@ License: For each use you must have a valid license purchased only from above li
                 <a href="javascript:;" class="dropdown-item py-2"><i class="flag-icon flag-icon-es" title="es" id="es"></i> <span class="ms-1"> Spanish </span></a>
 							</div>
             </li> --}}
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								{{-- <img class="wd-30 ht-30 rounded-circle" src="../assets/images/faces/face1.jpg" alt="profile"> --}}
+						{{-- <li class="nav-item dropdown">
+
                 @if(Auth::user())
                 {{ Auth::user()->fullname }}
                 @endif
@@ -311,7 +334,12 @@ License: For each use you must have a valid license purchased only from above li
                   </li>
                 </ul>
 							</div>
-						</li>
+						</li> --}}
+            <div>
+              @if(Auth::user())
+             <h5>{{ Auth::user()->fullname }}</h5>
+              @endif
+            </div>
 					</ul>
 				</div>
 			</nav>

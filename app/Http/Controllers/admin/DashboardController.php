@@ -11,7 +11,8 @@ use App\Http\Controllers\Controller;
 class DashboardController extends Controller
 {
     public function index(){
-
+        
+        $allNews = News::orderBy('created_at', 'DESC')->paginate(4);
         $users = User::get();
         $events = Event::get();
         $news = News::get();
@@ -19,6 +20,7 @@ class DashboardController extends Controller
             'users' => $users,
             'events' => $events,
             'news' => $news,
+            'allNews' => $allNews,
         ]);
     }
 }

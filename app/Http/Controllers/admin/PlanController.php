@@ -3,26 +3,26 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\Transaction;
+use App\Models\Plan;
 use Exception;
 use Illuminate\Http\Request;
 
-class TransactionController extends Controller
+class PlanController extends Controller
 {
     public function index(){
-        $transactions = Transaction::paginate(15);
-        return view('admin.transactions', [
-            'transactions' => $transactions,
+        $plans = Plan::paginate(15);
+        return view('admin.plans', [
+            'plans' => $plans,
         ]);
     }
 
 
-    public function destroy(Transaction $transaction){
+    public function destroy(Plan $plan){
 
 
         try{
 
-        $success = $transaction->delete();
+        $success = $plan->delete();
         if($success){
             return back();
         }

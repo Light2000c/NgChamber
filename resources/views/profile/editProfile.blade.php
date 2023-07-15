@@ -38,6 +38,7 @@
                         <ul class="nav nav-pills nav-stacked">
                             <li ><a href="{{ route('profile') }}">Overview</a></li>
                             <li class="active"><a  href="{{ route('edit-profile') }}">My Profile</a></li>
+                            <li ><a  href="{{ route('transactions') }}">Transactions</a></li>
                             {{-- <li ><a  href="{{ route('edit-address') }}">Address</a></li>
                             <li><a  href="{{ route('manage-product') }}">Products</a></li>
                             <li ><a  href="{{ route('call-request') }}">Call Request</a></li>
@@ -48,7 +49,7 @@
                     <div class="col-md-9">
                         <div class="tab-contents">
                             <div id="overview" class="" style="margin-bottom: 25px;">
-                                <h3>My Profile</h3>
+                                <h3 style="color: #4D7902;">My Profile</h3>
                             </div>
 
                             <div class="row">

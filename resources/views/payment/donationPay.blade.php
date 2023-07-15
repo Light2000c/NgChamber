@@ -31,16 +31,14 @@
                             <div style="margin-top: 10px;">
                                 <li
                                     style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">
-                                    <b>Plan: </b> {{ $plan }}
-                                </li>
+                                    <b>Complete your donation by making payment</b></li>
                                 <li
                                     style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px;">
-                                    <b>Amount: </b> ${{ $amount }}
-                                </li>
+                                    <b>Amount: </b> ${{ $amount }}</li>
                             </div>
                             <hr>
                         </div>
-                        <form action="/checkout" method="post">
+                        <form action="/donation-checkout" method="post">
                             {{-- @csrf --}}
                             {{-- <input type="hidden" name="token"> --}}
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
@@ -89,29 +87,27 @@
                                     </div>
                                 </div>
                             </div>
-                           
                             <div>
-                                <button class="btn btn-expand btn-large" id="confirm-btn"
+                                <button class="btn btn-expand btn-large" id="donation-btn"
                                     style="background-color: #7C9C47; color: whitesmoke; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-weight: bold;"
                                     type="submit" disabled>
                                     CONFIRM</button>
                             </div>
-                    
-            <script type="text/javascript">
 
-             var submitButton = document.getElementById('confirm-btn');
+                            <script type="text/javascript">
+                                var submitButton = document.getElementById('donation-btn');
 
-             window.onload = function(){
-                submitButton.disabled = false;
-             }
+                                window.onload = function() {
+                                    submitButton.disabled = false;
+                                }
 
-document.getElementById('confirm-btn').onclick = function() {
+                                document.getElementById('confirm-btn').onclick = function() {
 
-    setTimeout(function() {
-        submitButton.disabled = true;
-        }, 1000);
-}
-            </script>
+                                    setTimeout(function() {
+                                        submitButton.disabled = true;
+                                    }, 1000);
+                                }
+                            </script>
 
                         </form>
                     </div>

@@ -16,7 +16,7 @@
                         <source src="logos/190802_12_ConstructionandMarinaDrone_18_preview.mp4" type="video/mp4">
                     </video>
                     <div class="tick-border">
-                      <marquee behavior="" direction="" style="margin-top: 5px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px; color: whitesmoke"> NiDCC presents "CONNECTING THE DOTS on the 3rd of June, 2023, to be streamed live on all social media platforms. Go to the events section, to register and get more information</marquee>
+                      <marquee behavior="" direction="" style="margin-top: 5px; font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 18px; color: whitesmoke"> NiDCC presents "CONNECTING THE DOTS on the 10th of June, 2023, to be streamed live on all social media platforms. Go to the events section, to register and get more information</marquee>
                     </div>
                 </div>
                 <div class="text-overlay" id="text-overlay">
@@ -610,9 +610,7 @@
                                                         class="fa fa-calendar mr-5"></i> {{ $event->start_date }} </li>
                                                 {{-- <li class="pl-5"><i class="fa fa-map-marker mr-5"></i>| New York</li> --}}
                                             </ul>
-                                            <p class="mb-15 mt-15 text-white"
-                                                style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 16px;">
-                                                {{ Str::limit($event->description, 62) }}</p>
+                                            <h5 class="mb-15 mt-15 text-white" style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size: 16px; color: white;">{!! Str::limit($event->description, 62) !!}</h5>
                                             <a class="text-white font-weight-600"
                                                 href="{{ route('events-detail', $event->id) }}">Read More →</a>
                                         </div>

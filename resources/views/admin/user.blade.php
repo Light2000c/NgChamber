@@ -26,6 +26,7 @@
                         <th>Full Name</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Paid User</th>
                         <th>city</th>
                         <th>state</th>
                         <th>country</th>
@@ -51,6 +52,7 @@
                         <td>{{ $user->fullname }}</td>
                         <td>{{ $user->email }}</td>
                         <td>{{ $user->phone }}</td>
+                        <td>{{ $user->is_paid_user }}</td>
                         <td>{{ $user->city }}</td>
                         <td>{{ $user->state }}</td>
                         <td>{{ $user->country }}</td>
@@ -66,6 +68,26 @@
                         <td>{{ $user->email_verified_at }}</td>
                         <td>{{ $user->created_at }}</td>
                         <td>{{ $user->updated_at }}</td>
+                        @if ($user->is_paid_user == 1)
+                        <td>
+                        <form action="{{ route('adminUsersUpdate', $user) }}" method="post">
+                          @csrf
+                         @method('put')
+                         <input type="text" value="deactivate" name="deactivate" hidden>
+                      <button class="btn btn-primary btn-sm">Deactivate plan</i></button>
+                  </form>
+                </td>
+                  @else
+                  <td>
+                  <form action="{{ route('adminUsersUpdate', $user) }}" method="post">
+                    @csrf
+                   @method('put')
+                   <input type="text" value="activate" name="activate" hidden>
+                <button class="btn btn-primary btn-sm">Activate plan</i></button>
+            </form>
+          </td>
+                        @endif
+
                         <td>
                             <form action="{{ route('adminUsersDelete', $user) }}" method="post">
                                 @csrf

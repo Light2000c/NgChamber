@@ -4,6 +4,14 @@
   <form  action="{{ route('plans') }}" method="post">
     @csrf
 
+    @if (session('info'))
+    @php
+        alert()
+            ->success('info', session('info'))
+            ->persistent('Dismiss');
+    @endphp
+@endif
+
   <div >
 
     <div style="margin-top: 30px; margin-bottom: 40px;">
@@ -159,6 +167,9 @@
       <div class="">
         <select name="business_type" class="form-control" id="">
           <option value="">Select business type</option>
+          <option value="Partnership">Partnership</option>
+          <option value="Sole Proprietorship">Sole Proprietorship</option>
+          <option value="Limited Liability (Corporate)">Limited Liability (Corporate)</option>
           <option value="others">Others</option>
         </select>
         @error('business_type')
@@ -171,6 +182,18 @@
       <div class="">
         <select name="business_industry" class="form-control" id="">
           <option value="">Select business industry</option>
+          <option value="Agriculture">Agriculture</option>
+          <option value="Technology">Technology</option>
+          <option value="Health">Health</option>
+          <option value="Tourism and Lifestyle">Tourism and Lifestyle</option>
+          <option value="Science">Science</option>
+          <option value="Information Technology">Information Technology</option>
+          <option value="Fashion">Fashion</option>
+          <option value="Architecture">Architecture</option>
+          <option value="Real Estate">Real Estate</option>
+          <option value="Business and Consultancy">Business and Consultancy</option>
+          <option value="Finance">Finance</option>
+          <option value="Education">Education</option>
            <option value="others">Others</option>
         </select>
         @error('business_industry')

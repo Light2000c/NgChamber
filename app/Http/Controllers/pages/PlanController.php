@@ -12,15 +12,14 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class PlanController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('pages.plans');
     }
 
 
     public function purchasePlan(Request $request)
     {
-        try{
-        
 
         $user = User::where('id', Auth::user()->id)->first();
         $this->validate($request, [
@@ -43,29 +42,26 @@ class PlanController extends Controller
             'business_industry' => 'required',
         ]);
 
-        $plan = Plan::get();
-        // if(!$plan->hasUser(Auth::user())){
-         
-      
+        try {
 
-        session_start();
-        
-       $_SESSION['userInfo'] = $request->all();
 
-      
-        $new_data = $_SESSION["userInfo"];
+            if (!$user->is_paid_user == 1) {
 
-      
-        // return redirect()->route('paystack');
-        return redirect()->route('pay-with-paypal');
 
-    // }else{
-       
-    //     return back()->with('info', 'You already have an active plan.');
-     
-    // }
-} catch (Exception $e) {
-    return back();
-}
+
+                session_start();
+
+                $_SESSION['userInfo'] = $request->all();
+
+
+                $new_data = $_SESSION["userInfo"];
+
+                return redirect()->route('pay');
+            } else {
+                return back()->with('info', 'You already have an active membership plan.');
+            }
+        } catch (Exception $e) {
+            return back();
+        }
     }
 }

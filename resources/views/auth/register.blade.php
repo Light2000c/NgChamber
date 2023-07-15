@@ -10,14 +10,14 @@
 <meta name="author" content="ThemeMascot" />
 
 <!-- Page Title -->
-<title>NiDCC</title>
+<title>NiDCC - Inspiring Business Leadership And Partnership</title>
 
 <!-- Favicon and Touch Icons -->
-<link href="/web/images/favicon.png" rel="shortcut icon" type="image/png">
-<link href="/web/images/apple-touch-icon.png" rel="apple-touch-icon">
-<link href="/web/images/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
-<link href="/web/images/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
-<link href="/web/images/apple-touch-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
+<link href="/web/images/favicon.ico" rel="shortcut icon" type="image/png">
+<link href="/web/images/apple-icon.png" rel="apple-touch-icon">
+<link href="/web/images/apple-icon-72x72.png" rel="apple-touch-icon" sizes="72x72">
+<link href="/web/images/apple-icon-114x114.png" rel="apple-touch-icon" sizes="114x114">
+<link href="/web/images/apple-icon-144x144.png" rel="apple-touch-icon" sizes="144x144">
 
 <!-- Stylesheet -->
 <link href="/web/css/bootstrap.min.css" rel="stylesheet" type="text/css">

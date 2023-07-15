@@ -80,7 +80,7 @@
 
                         <div style="padding: 15px";>
                             <div style="">
-                                <form action="{{ route('donation-pay') }}" method="post">
+                                <form action="{{ route('donation') }}" method="post">
                                     @csrf
                                     <div class="form-group">
 

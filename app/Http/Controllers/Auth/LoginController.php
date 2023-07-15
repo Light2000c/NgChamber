@@ -46,12 +46,14 @@ class LoginController extends Controller
     }
 
     public function login(Request $request){
-        try{
+    
        $this->validate($request,[
         'email' => 'required',
         'password' => 'required',
        ]);
 
+       try{
+        
        if(!Auth::attempt($request->only('email','password',true))){
          return back()->with('error','Login was not successful, please check login details and try again.');
        }

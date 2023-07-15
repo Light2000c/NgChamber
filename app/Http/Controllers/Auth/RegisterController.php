@@ -53,7 +53,7 @@ class RegisterController extends Controller
 
     public function register(Request $request)
     {
-try{
+
         $this->validate($request, [
             'fullname' => 'required',
             'email' => 'required|unique:users,email',
@@ -63,6 +63,7 @@ try{
             'agreement-to-terms-and-conditions.required' => 'Please agree to terms and condions.',
         ]);
 
+        try{
 
         User::create([
             'fullname' => $request->fullname,
@@ -82,35 +83,35 @@ try{
 
 
 
-    public function purchasePlan(Request $request)
-    {
+    // public function purchasePlan(Request $request)
+    // {
 
-        $this->validate($request, [
-            'amount' => 'required',
-            'plan' => 'required',
-            'phone' => 'required',
-            'city' => 'required',
-            'state' => 'required',
-            'country' => 'required',
-            'address' => 'required',
-            'business_name' => 'required',
-            'business_email' => 'required',
-            'business_phone' => 'required',
-            'business_city' => 'required',
-            'business_state' => 'required',
-            'business_country' => 'required',
-            'business_address' => 'required',
-            'business_number' => 'required',
-        ]);
+    //     $this->validate($request, [
+    //         'amount' => 'required',
+    //         'plan' => 'required',
+    //         'phone' => 'required',
+    //         'city' => 'required',
+    //         'state' => 'required',
+    //         'country' => 'required',
+    //         'address' => 'required',
+    //         'business_name' => 'required',
+    //         'business_email' => 'required',
+    //         'business_phone' => 'required',
+    //         'business_city' => 'required',
+    //         'business_state' => 'required',
+    //         'business_country' => 'required',
+    //         'business_address' => 'required',
+    //         'business_number' => 'required',
+    //     ]);
 
-        session_start();
+    //     session_start();
 
-        $_SESSION['userInfo'] = $request->all();
+    //     $_SESSION['userInfo'] = $request->all();
 
 
-        $new_data = $_SESSION["userInfo"];
+    //     $new_data = $_SESSION["userInfo"];
 
-        // dd($new_data);
-        return redirect()->route('paystack');
-    }
+    //     // dd($new_data);
+    //     return redirect()->route('paystack');
+    // }
 }

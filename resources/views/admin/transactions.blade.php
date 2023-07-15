@@ -15,60 +15,44 @@
 					<div class="col-md-12 grid-margin stretch-card">
             <div class="card">
               <div class="card-body">
-                <h6 class="card-title">Transactions Table</h6>
-                <p class="text-muted mb-3">Manage Transactions (Edit or Delete).</p>
-
-                <div class="table-responsive mt-4">
+                <h6 class="card-title mt-3">Transactions Table</h6>
+                
+                <div class="table-responsive">
                   <table id="dataTableExample" class="table">
                     <thead>
                       <tr>
-                        <th>Name</th>
-                        <th>Position</th>
-                        <th>Office</th>
-                        <th>Age</th>
-                        <th>Start date</th>
-                        <th>Action</th>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Description</th>
+                        <th>Created_at</th>
                         <th>Action</th>
                       </tr>
                     </thead>
                     <tbody>
+                        @foreach($transactions as $transaction)
                       <tr>
-                        <td>Tiger Nixon</td>
-                        <td>System Architect</td>
-                        <td>Edinburgh</td>
-                        <td>61</td>
-                        <td>2011/04/25</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                        <th>{{ $transaction->id }}</th>
+                        <th>{{ $transaction->user->fullname }}</th>
+                        <th>{{ $transaction->type }}</th>
+                        <th>${{ $transaction->amount }}</th>
+                        <td>{{ $transaction->description }}</td>
+                        <td>{{ $transaction->created_at }}</td>
+                        <td>
+                            <form action="{{ route('delete-transactions', $transaction) }}" method="post">
+                                @csrf
+                               @method('delete')
+                            <button type="submit" class="btn btn-primary btn-sm">delete</button>
+                        </form>
+                    </td>
                       </tr>
-                      <tr>
-                        <td>Garrett Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>
-                        <td>63</td>
-                        <td>2011/07/25</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Ashton Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>
-                        <td>66</td>
-                        <td>2009/01/12</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
-                      </tr>
-                      <tr>
-                        <td>Rhona Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>
-                        <td>55</td>
-                        <td>2010/10/14</td>
-                        <td><button class="btn btn-primary btn-sm">view</button></td>
-                        <td><button class="btn btn-primary btn-sm">delete</button></td>
+                      @endforeach
                     </tbody>
                   </table>
+                  <div>
+                    {{ $transactions->links('pagination::bootstrap-5') }}
+                  </div>
                 </div>
               </div>
             </div>

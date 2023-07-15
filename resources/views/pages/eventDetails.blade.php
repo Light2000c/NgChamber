@@ -48,8 +48,8 @@
                    {{-- <div>
                     {!! $news->description !!}
                    </div> --}}
-                   <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: bold;">
-                  {{ $event->description }}
+                   <div style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">
+                  {!! $event->description !!}
                    </div>
                 </div>
               </article>
@@ -58,6 +58,8 @@
           <div class="col-md-3">
             <div class="sidebar sidebar-left mt-sm-30">
               <div class="widget">
+                <h5 class="widget-title line-bottom" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">Posted BY</h5>
+                <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">Admin</p>
                 @if($event->location )
                 <h5 class="widget-title line-bottom" style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 18px;">Location</h5>
                 <p style="font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; ">{{ $event->location }}</p>
